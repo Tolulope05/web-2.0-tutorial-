@@ -208,9 +208,16 @@ p::selection {
 
 /* New Section on Transition */
 .transition{
-   background: #9a9fa1;
+   border: 5px #003049 solid;
 }
+
 .transition h1{
     font-size: 2em;
     text-align: center;
+}
+
+.transition .circle {
+    height: 300px;
+    width: 300px;
+    background-color: magenta;
 }
