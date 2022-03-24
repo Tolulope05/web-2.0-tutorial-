@@ -126,7 +126,7 @@ p::selection {
     /* align-items: center; */
     /* align-content: space-around;  */
     /* align content Only works when we have wrap turned on */
-    display: none;
+ 
     
 }
 
@@ -162,15 +162,15 @@ p::selection {
     border: 5px solid #9a9fa1;
     display: flex;
     flex-direction: row;
-    display: none;
+ 
 }
 
 /* New Section on RGBA */
 .new-section{
     /* background-color: #2a9942; */
     width: 90%;
-    height: 400px;
-    margin: 0 auto;
+    margin: 10px auto;
+    padding: 10px 0;
     border: 5px solid #003049;
     display: flex;
     flex-direction: row;
@@ -178,7 +178,6 @@ p::selection {
     flex-wrap: wrap;
     align-items: center;
     align-content: space-around;  
-    display: none;  
 }
 
 .one{
@@ -208,6 +207,10 @@ p::selection {
 }
 
 /* New Section on Transition */
-.transition {
-
+.transition{
+   background: #9a9fa1;
+}
+.transition h1{
+    font-size: 2em;
+    text-align: center;
 }
