@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form input</title>
+    <link rel="icon" href="icons/t.png">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1 class="inheader">Feel free to give us a Message</h1>
+
+    <form action="formsubmit" method="get" class="formsubmit">
+        <p>
+            <label for="firstname">First Name:</label>
+            <input type="text" name="firstname" id="firstname">
+            <label for="lasttname">Last Name:</label>
+            <input type="text" name="lastname" id="lastname">
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+        
+        <p>
+            <label for="sex">Sex: </label>
+            <label for="male">Male</label>
+            <input type="radio" name="sex" id="male" value="male">
+            <label for="female">Female</label>
+            <input type="radio" name="sex" id="female" value="female">
+            <label for="hermaphrodite">Hermaphrodite</label>
+            <input type="radio" name="sex" id="hermaphrodite" value="hermaphrodite">
+        </p>
+        <p>
+            <label for="color">Your favourite color:</label>
+            <input type="color" name="color" id="color">
+        </p>
+        <p>
+            <label for="text">Feedback:</label>
+            <textarea name="text" id="" cols="30" rows="5" disabled fixed></textarea>
+        </p>
+        <p>
+            <label for="age">Select age group:</label>
+            <select name="age" id="age">
+                <option value="">select</option>
+                <option value="below_18">0-17</option>
+                <option value="18-24">18-24</option>
+                <option value="24-30">24-30</option>
+                <option value="30-70">30-70</option>
+                <option value="above 70">70-100</option>
+            </select>
+        </p>
+        <button type="submit">Login</button>
+    </form>
+    
+</body>
+</html>

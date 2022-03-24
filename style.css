@@ -1,0 +1,185 @@
+/*Nav bar*/
+nav {
+    border-bottom: 1px solid black;
+}
+
+.crumbs ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.crumb {
+    display: inline-block;
+}
+
+.crumb a::after {
+    display: inline-block;
+    color: #000;
+    content: '>>';
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0 3px;
+}
+/* Header  */
+header.page-header {
+    background: no-repeat left/cover url(images/debby-hudson-juJQdVYml78-unsplash.jpg);
+    display: flex;
+    height: 120px;
+    min-width: 120px;
+    align-items: center;
+    color: #fff;
+    text-shadow: #000 0 0 .2em;
+}
+
+header.page-header > h1 {
+    font: bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script', cursive,
+        fantasy;
+    margin: 2%;
+}
+
+main {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+/*Intimidating leopard style*/
+.warning {
+    border: 10px ridge #f00;
+    background-color: #ff0;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.warning img {
+    width: 100%;
+}
+
+.warning p {
+    font: small-caps bold 1.2rem sans-serif;
+    text-align: center;
+}
+/*Intimidating leopard style end*/
+
+/*weather forecast*/
+.forecast {
+    margin: 0;
+    padding: .3rem;
+    background-color: #eee;
+    font: 1rem 'Fira Sans', sans-serif;
+    width: fit-content;
+}
+
+.forecast > h1,
+.day-forecast {
+    margin: .5rem;
+    padding: .3rem;
+    font-size: 1.2rem;
+}
+
+.day-forecast {
+    background: right/contain content-box border-box no-repeat
+        url('/media/examples/rain.svg') white;
+}
+
+.day-forecast > h2,
+.day-forecast > p {
+    margin: .2rem;
+    font-size: 1rem;
+}
+/* Aside div  */
+.aside{
+    width:300px;
+}
+aside {
+    width: 40%;
+    padding-left: .5rem;
+    margin-left: .5rem;
+    float: right;
+    box-shadow: inset 5px 0 5px -5px #29627e;
+    font-style: italic;
+    color: #29627e;
+}
+
+aside > p {
+    margin: .5rem;
+}
+
+p {
+    font-family: 'Roboto';
+}
+
+/* p::first-letter {
+   font-size: xx-large;
+} */
+
+/** Input styling **/
+input[type='text']:nth-of-type(2n){
+    border: 2px #3d886f dotted;
+}
+input{
+    border: 2px #3d886f solid;
+}
+select{
+    border: 2px #3d886f solid;
+}
+
+/* PSEUDO ELEMENT  */
+p::selection {
+    text-transform:capitalize;
+    font-size: 110%;
+}
+
+/* Flex Box  */
+.fbox h1{
+    text-align: center;
+    
+}
+.fbox .container {
+    background-color: #003049;
+    width: 90%;
+    /* height: 500px; */
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border: 5px solid #003049;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    /* align-content: space-around;  */
+    /* align content Only works when we have wrap turned on */
+    
+}
+
+.fbox .container div {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    flex-basis: 200px;
+    flex-grow: 1;
+    /* max-width: 350px; */
+    min-width: 100px;
+
+}
+
+.container div:nth-of-type(1) {
+    /* align-self: flex-end; */
+    flex-grow: 1;
+
+}
+
+.container div:nth-of-type(5) {
+    /* align-self: flex-start; */
+    flex-grow: 2;
+
+}
+
+.fbox main {
+    background-color: rgb(247, 242, 242);
+    width: 90%;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    /* flex-direction: row; */
+    border: 5px solid #9a9fa1;
+}
