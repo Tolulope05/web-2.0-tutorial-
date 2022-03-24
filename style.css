@@ -1,28 +1,6 @@
-/*Nav bar*/
-nav {
-    border-bottom: 1px solid black;
-}
-
-.crumbs ol {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.crumb {
-    display: inline-block;
-}
-
-.crumb a::after {
-    display: inline-block;
-    color: #000;
-    content: '>>';
-    font-size: 80%;
-    font-weight: bold;
-    padding: 0 3px;
-}
 /* Header  */
 header.page-header {
-    background: no-repeat left/cover url(images/debby-hudson-juJQdVYml78-unsplash.jpg);
+    background: no-repeat left/cover url(images/marek-piwnicki-SQeoekKJ--4-unsplash.jpg);
     display: flex;
     height: 120px;
     min-width: 120px;
@@ -129,7 +107,7 @@ p::selection {
     font-size: 110%;
 }
 
-/* Flex Box  */
+/* Flex Box Tutorial */
 .fbox h1{
     text-align: center;
     
@@ -148,6 +126,7 @@ p::selection {
     /* align-items: center; */
     /* align-content: space-around;  */
     /* align content Only works when we have wrap turned on */
+    display: none;
     
 }
 
@@ -159,6 +138,7 @@ p::selection {
     flex-grow: 1;
     /* max-width: 350px; */
     min-width: 100px;
+    
 
 }
 
@@ -182,10 +162,12 @@ p::selection {
     border: 5px solid #9a9fa1;
     display: flex;
     flex-direction: row;
+    display: none;
 }
 
+/* New Section on RGBA */
 .new-section{
-    background-color: #2a9942;
+    /* background-color: #2a9942; */
     width: 90%;
     height: 400px;
     margin: 0 auto;
@@ -195,28 +177,37 @@ p::selection {
     justify-content:space-around;
     flex-wrap: wrap;
     align-items: center;
-    align-content: space-around;    
+    align-content: space-around;  
+    display: none;  
 }
+
 .one{
-    background-color: #003049;
+    background-color: rgba(0, 48, 73, 0.5);
     width: 100px;
     height: 100px;
     border: 5px solid #cadbe4;
     border-radius: 10% / 50%;
 }
+
 .two {
-    background-color: #42cac3;
+    background-color: rgba(66, 202, 195, 0.5);
     width: 100px;
     height: 100px;
     border: 5px solid #cdd6db;
     border-radius: 10% / 50%;
     
 }
+
 .three {
-    background-color: #003049;
+    background-color: rgba(0, 48, 73, 0.5);
     width: 100px;
     height: 100px;
     border: 5px solid #cfd6da;
     border-radius: 10% / 50%;
     
+}
+
+/* New Section on Transition */
+.transition {
+
 }
