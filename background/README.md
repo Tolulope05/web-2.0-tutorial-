@@ -1,0 +1,1 @@
+Background Property for images and color
