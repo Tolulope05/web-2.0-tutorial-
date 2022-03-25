@@ -1,6 +1,6 @@
 /* Header  */
 header.page-header {
-    background: no-repeat left/cover url(images/marek-piwnicki-SQeoekKJ--4-unsplash.jpg);
+    background: no-repeat left/cover url(images/christian-lambert-dJ_5-Kpn2zY-unsplash.jpg);
     display: flex;
     height: 120px;
     min-width: 120px;
@@ -131,7 +131,7 @@ p::selection {
      height: 300px;
      width: 300px;
      background-color: magenta;
-     transition: all 1s ease-in;
+     transition: background-color 1s ease-in, border-radius 1s ease-in;
      
  }
  .circle:hover {
