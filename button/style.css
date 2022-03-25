@@ -11,6 +11,16 @@ body{
     background-color: #151B29;
 }
 
-
-
+button {
+    background-color: #FFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffa260;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
 
