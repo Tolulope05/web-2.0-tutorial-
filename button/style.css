@@ -12,15 +12,19 @@ body{
 }
 
 button {
-    background-color: #FFF;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
+    background:none;
+    border: 2px solid;
+    padding: 1em 2em;
     margin: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1em;
     color: #ffa260;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: all .5s ease;
+}
+
+button:hover {
+    border-color: #f1ff5c;
+    color: #fff;
+    box-shadow: 0 .5em .5em -.4em #f1ff5c;
+    transform: translateY(-.25em);
 }
 
