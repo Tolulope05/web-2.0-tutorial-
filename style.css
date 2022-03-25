@@ -230,33 +230,36 @@ p::selection {
     height: 300px;
     width: 300px;
     background-color: magenta;
-    transition: 1s;
+    transition: all 1s ease-in;
     
 }
 .circle:hover {
     background-color: #003049;
-    /* transition: background-color 1s; */
     border-radius: 50%;
 }
 .trans{
     width: 100px;
     height: 100px;
-    margin-bottom: 2px;
-    transition: margin-left 3s, background-color 3s ;
-}
-/* .trans:nth-of-type(1){
+    margin: 10px 0;
     background-color: #3d886f;
+    transition: margin-left 3s ;
+}
+
+.transition section:hover .trans{
+    margin-left: 500px;
+}
+.trans:nth-of-type(1){
+    transition-timing-function: ease-in;
 }
 .trans:nth-of-type(2){
-    background-color: #4a2997;
+    transition-timing-function: ease-out;
+    
 }
 .trans:nth-of-type(3){
-    background-color: #ac2960;
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+    
 }
 .trans:nth-of-type(4){
-    background-color: #779940;
-} */
-.trans:hover{
-    margin-left: 60px;
-    background-color: #cce4ca70;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  
 }
