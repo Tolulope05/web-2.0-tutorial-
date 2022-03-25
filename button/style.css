@@ -1,5 +1,14 @@
 body{
     font-family: "roboto", sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* It is important to set the height to 100 view height port
+     * in order to get the button to center of the screen
+    */
+    background-color: #151B29;
 }
 
 
