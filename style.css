@@ -242,9 +242,9 @@ p::selection {
     width: 100px;
     height: 100px;
     margin-bottom: 2px;
-    transition: margin-left 3s .1s,background-color 3s .1s;
+    transition: margin-left 3s, background-color 3s ;
 }
-.trans:nth-of-type(1){
+/* .trans:nth-of-type(1){
     background-color: #3d886f;
 }
 .trans:nth-of-type(2){
@@ -255,7 +255,7 @@ p::selection {
 }
 .trans:nth-of-type(4){
     background-color: #779940;
-}
+} */
 .trans:hover{
     margin-left: 60px;
     background-color: #cce4ca70;
