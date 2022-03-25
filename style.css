@@ -204,23 +204,37 @@ p::selection {
 .transform h1:nth-of-type(4){
     background-color: #31aa60;
     transform: translateX(400px);
-    /* Translate can be x horizontal and y vertical */
+    /* Translate can be x horizontal and y vertical
+     * as it takes to values
+     * It is used to move objects on the screen
+    */
+    transform:translate(50px,15px);
+    
 }
 .transform h1:nth-of-type(5){
     background-color: #555f59;
-    /* transform: rotate(45deg); */
+    transform: skew(30deg);
+    transform: skew(30deg,0deg);
+
 }
 .transform h1:nth-of-type(6){
     background-color: #aa319a;
-    /* transform: rotate(45deg); */
+    /* We can rotate and scale an item at same time  */
+    transform: rotate(45deg) scale(.75);
 }
 .transform h1:nth-of-type(7){
     background-color: #6d880b;
-    /* transform: rotate(45deg); */
+    /* We can do many things with transform  */
+    transform: rotate(20deg) scale(.75) translateX(400px);
 }
 .transform h1:nth-of-type(8){
     background-color: #4915c2;
     /* transform: rotate(45deg); */
+    transition: transform 3s ease;
+}
+.transform h1:nth-of-type(8):hover {
+    /* Transform  */
+    transform: rotate(45deg) scale(.75) translateX(400px);
 }
 
 
