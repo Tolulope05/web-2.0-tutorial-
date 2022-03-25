@@ -166,6 +166,14 @@ p::selection {
      transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
  } 
 
+
+ /* New Section on Transform */
+.transform {
+    width: 500px;
+    height: 200px;
+    background-color: #cdd6db;
+    border: 5px ;
+}
 /* Flex Box Tutorial */
 .fbox h1{
     text-align: center;
