@@ -64,6 +64,7 @@ main {
     margin: .2rem;
     font-size: 1rem;
 }
+
 /* Aside div  */
 .aside{
     width:300px;
@@ -90,16 +91,7 @@ p {
    font-size: xx-large;
 } */
 
-/** Input styling **/
-input[type='text']:nth-of-type(2n){
-    border: 2px #3d886f dotted;
-}
-input{
-    border: 2px #3d886f solid;
-}
-select{
-    border: 2px #3d886f solid;
-}
+
 
 /* PSEUDO ELEMENT  */
 p::selection {
