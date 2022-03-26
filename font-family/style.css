@@ -1,4 +1,11 @@
 body {
+    /* font-family: 'Crimson Pro', serif; */
+    /* font-size: 1.5em; */
+}
+p:nth-child {
     font-family: 'Crimson Pro', serif;
-    /* font-size: 48px; */
-  }
+}
+
+p:nth-child(2) {
+    font-family: 'Literata’, serif;
+}
