@@ -22,6 +22,7 @@ h1 {
     color: #fff;
     text-align: center;
 }
+
 /* In background order doesnt mater  */
 section:last-of-type{
     width:80%;
@@ -31,5 +32,12 @@ section:last-of-type{
     /* background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),url("https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"); */
     background-size: cover;
     background-position: top;
-    background: url("https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80") center cover;
+    background:left/40% no-repeat url("https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"), linear-gradient(blue,orange); 
+    /* background -size may only be incuded after the background position */
+
+}
+section:last-of-type h1{
+    font-size: 100px;
+    color: rgb(148, 20, 20);
+    text-align: center;
 }
