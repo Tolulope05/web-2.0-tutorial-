@@ -328,4 +328,34 @@ p::selection {
     border-radius: 10% / 50%;
     
 }
-
+/* New /Nice Hover effect i saw on google font  */
+.nice-hover{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    background-color: #3d886f;
+}
+.hoveff{
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    border: 1px solid #dadce0;
+    background-color: #fff;
+    transition: all .15s ease;
+    padding: 5px;
+    text-align: center;
+    
+}
+.hoveff:hover{
+    transform: scale(1.4);
+    transform: translateY(-5px);
+    box-shadow: 0 0.1em 5px #ced11c;
+    border: #ced11c;
+    text-transform: uppercase;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+    
+}
