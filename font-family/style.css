@@ -1,9 +1,9 @@
 body {
-    /* font-family: 'Crimson Pro', serif; */
-    /* font-size: 1.5em; */
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.5em;
     
 }
-p:nth-child {
+p:nth-child(1n+1) {
     font-family: 'Crimson Pro', serif;
 }
 
