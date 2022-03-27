@@ -1,6 +1,7 @@
 body {
     /* font-family: 'Crimson Pro', serif; */
     /* font-size: 1.5em; */
+    
 }
 p:nth-child {
     font-family: 'Crimson Pro', serif;
@@ -8,4 +9,22 @@ p:nth-child {
 
 p:nth-child(2) {
     font-family: 'Literata’, serif;
+}
+.material-icons {
+    font-family: 'Material Icons';
+    color: lime;
+    background-color: transparent;
+    padding: 5px;
+    border: 1px solid lime;
+    border-radius: 50%;
+    transition: all .3s ease;
+    font-size: 1.5rem
+}
+.material-icons:hover {
+    color: lime;
+    background-color: transparent;
+    border: 1px solid lime;
+    transform: translateY(-5px) scale(1.1); /* Playing around*/
+    font-size: 1em;
+
 }

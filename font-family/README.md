@@ -4,4 +4,4 @@
 > using Google fonts
 > with awesome icons
 > and responsive designs
-> all on googke font
+> all on google font
