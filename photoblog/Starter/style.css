@@ -1,0 +1,22 @@
+nav {
+    font-family: 'Raleway', sans-serif;
+    width: 30%;
+    font-size: 1.5em;
+    margin: calc(10%/6);
+    padding: 1.2em 0;
+    border-bottom:  1px solid #F1F1F1;
+}
+nav:hover {
+    /* background-color: #f1f1f1; */
+    text-transform: uppercase;
+}
+
+img{
+    width: 30%;
+    margin: calc(10%/6);
+    transition: all .2s ease;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
