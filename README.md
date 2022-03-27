@@ -1,2 +1,6 @@
-# Web Tutorial
-<h1> This is just a practice repo</h1>
+# This is just a practice repository for learning html again
+
+> Touched Transformation 
+> Touched Transition
+> Touched Flex Box
+
