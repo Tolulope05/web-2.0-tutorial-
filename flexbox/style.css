@@ -1,4 +1,7 @@
 /* Flex Box Tutorial */
+body {
+    background-color: #f1f1f1;
+}
 .fbox h1{
     text-align: center;
     
@@ -30,7 +33,7 @@
     /* Using cheat set  */
     flex:1 600px;
     /* max-width: 350px; */
-    min-width: 100px;
+    /* min-width: 100px; */
 
 }
 
@@ -46,17 +49,27 @@
 .container div:nth-of-type(5) {
     /* align-self: flex-start; */
     flex-grow: 1;
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
 
 }
 
 .fbox main {
     width: 90%;
-    height: calc(100vh/3);
+    height: 500px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    border: 1px solid #f1f1f1;
-    background: linear-gradient(#f1f1f1, #f3f3f3);
-    
+    border: 2px solid #f1f1f1;
+    /* background: linear-gradient(#f1f1f1, #f3f3f3); */
+
 }
+main .sidebar {
+    background-color: rgba(153, 206, 31, 0.9);
+    flex: 1 2 20%;
+    /* border: 1px solid white; */
+    
+} 
+main .maincontent {
+    background-color: rgba(211, 28, 150, 0.925);
+    flex: 2 1 60%;
+} 
