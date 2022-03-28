@@ -1,0 +1,7 @@
+nav{
+    font-size: 1.5em;
+    padding: 0 auto;
+}
+ul, li {
+    display: inline;
+}
