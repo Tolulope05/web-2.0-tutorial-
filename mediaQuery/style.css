@@ -1,8 +1,34 @@
-h1 {
-    color: red;
+nav {
+    font-size:1.5em;
 }
-@media (max-width: 600px) {
-    h1 {
-        color: blue;
-    }
+
+ul,li{
+    display:inline;
+    
+
+}
+
+h1 {
+    /* color: red; */
+    text-align: center;
+    font-size: 6em;
+
+}
+
+@media (min-width:600px) and (max-width:800px) {
+    h1{
+        font-size: 5em;
+        color: aquamarine;
+        text-transform: uppercase;
+    };
+
+}
+
+@media (max-width:400px) {
+    h1{
+        font-size: 5em;
+        color: rgb(255, 0, 0);
+        text-transform: uppercase;
+    };
+
 }
