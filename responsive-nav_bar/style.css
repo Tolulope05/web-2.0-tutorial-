@@ -1,6 +1,7 @@
 nav{
     font-size: 1.5em;
     padding: 0 auto;
+    margin: 0 0;
 }
 ul, li {
     display: inline;
