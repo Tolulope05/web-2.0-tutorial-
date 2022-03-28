@@ -1,6 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+}
 nav{
     font-size: 1.5em;
-    padding: 0 auto;
+    padding: 0 0;
     margin: 0 0;
 }
 ul, li {
