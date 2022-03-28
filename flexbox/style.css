@@ -25,18 +25,21 @@
     width: 200px;
     height: 200px;
     text-align: center;
-    flex-basis: 600px;
-    flex-grow: 1;
+    /* flex-basis: 600px; */
+    /* flex-grow: 1; */
+    /* Using cheat set  */
+    flex:1 600px;
     /* max-width: 350px; */
     min-width: 100px;
-    
 
 }
 
 .container div:nth-of-type(1) {
     /* align-self: flex-end; */
-    flex-grow: 2;
-    flex-shrink: 2;
+    /* flex-grow: 2; */
+    /* flex-shrink: 2; */
+    /* We are actually using a cheat set for flex grow and shrink  */
+    flex: 2 2;
 
 }
 
@@ -48,12 +51,11 @@
 }
 
 .fbox main {
-    background-color: rgb(247, 242, 242);
     width: 90%;
-    height: 400px;
+    height: calc(100vh/3);
     margin: 0 auto;
-    border: 5px solid #9a9fa1;
     display: flex;
     flex-direction: row;
+    border: 1px solid #f1f1f1;
  
 }
