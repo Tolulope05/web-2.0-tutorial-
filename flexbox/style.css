@@ -1,0 +1,57 @@
+/* Flex Box Tutorial */
+.fbox h1{
+    text-align: center;
+    
+}
+.fbox .container {
+    background-color: #003049;
+    width: 90%;
+    /* height: 500px; */
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border: 5px solid #003049;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    /* align-content: space-around;  */
+    /* align content Only works when we have wrap turned on */
+ 
+    
+}
+
+.fbox .container div {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    flex-basis: 200px;
+    flex-grow: 1;
+    /* max-width: 350px; */
+    min-width: 100px;
+    
+
+}
+
+.container div:nth-of-type(1) {
+    /* align-self: flex-end; */
+    flex-grow: 1;
+
+}
+
+.container div:nth-of-type(5) {
+    /* align-self: flex-start; */
+    flex-grow: 2;
+
+}
+
+.fbox main {
+    background-color: rgb(247, 242, 242);
+    width: 90%;
+    height: 400px;
+    margin: 0 auto;
+    border: 5px solid #9a9fa1;
+    display: flex;
+    flex-direction: row;
+ 
+}
