@@ -1,12 +1,13 @@
 body {
-    margin: 0;
-    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+
 }
 nav{
     font-size: 1.5em;
-    padding: 0 0;
-    margin: 0 0;
+    
 }
 ul, li {
     display: inline;
+    padding: 0 0;
+    margin: 0 0;
 }
