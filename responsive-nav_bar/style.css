@@ -2,15 +2,34 @@ body {
     font-family: 'Open Sans', sans-serif;
 
 }
-nav{
-    font-size: 1.5em;
-    
-}
+
 ul, li {
     display: inline;
     padding: 0;
-    margin: 0;
+    margin: 0; 
+    
 }
+
+nav{
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* justify-content: space-around; */
+    
+}
+
+
+
+ul {
+    /* border: 1px solid #e1b7c3; */
+    flex:1;
+    max-width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
 h1 {
     font-size: 6em;
     text-align: center;
@@ -25,4 +44,11 @@ h1 {
     h1 {
         font-size: 3em;
     }
+}
+@media (max-width:552px) {
+    nav, nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
