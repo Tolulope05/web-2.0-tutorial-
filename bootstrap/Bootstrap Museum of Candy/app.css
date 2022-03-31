@@ -51,9 +51,6 @@ body {
 }
 
 @media (max-width: 996px){
-    body {
-        background: orange;
-    }
     #headingGroup h1 {
         font-weight: 100;
         font-size: 3em;
