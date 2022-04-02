@@ -1,3 +1,4 @@
+let phrase = undefined;
 function getColor(phrase) {
     if (phrase === 'stop') {
         console.log('red')
