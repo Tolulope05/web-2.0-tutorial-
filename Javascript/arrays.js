@@ -45,8 +45,12 @@ console.log(comboAnimal.indexOf('kitty')); // Returns 3 easy way to tell if some
 console.log(comboAnimal.reverse()); // It is a destructive to the origin array
 console.log(comboAnimal) //The value of combo Animal has been reveserved
 
-const Animals = ['dog', 'cat', 'pig', 'bird', 'duck'];
-Animals.slice(); // (5) ['dog', 'cat', 'pig', 'bird', 'duck']
+const Animals = ['dog', 'cat', 'pig', 'bird', 'duck', 'bow'];
+Animals.slice(); // (6) ['dog', 'cat', 'pig', 'bird', 'duck', 'bow']
 
 Animals.slice(3, 5); // (2) ['bird', 'duck']
 
+Animals.splice(1, 1); //Deletes cat
+
+Animals.splice(1, 0, 'NewBreeds', 'American Breed'); //Once splice has a second value of 0
+// It adds a value to it thats passed after the 0
