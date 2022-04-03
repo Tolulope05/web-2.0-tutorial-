@@ -4,9 +4,13 @@
  * Using Days of the week
  * 
  * THE FIRST LOGIC WAS DONE BY USING AN IF STATEMENT
+ * 
+ * sECOND LOGIC WAS FROM SWITCH STATEMENT
+ * whenever there is a mtach the switch start executing it from there 
+ * hence the need to break it
  */
 
-const dayOfWeek = 10;
+const dayOfWeek = 7;
 
 // if (dayOfWeek === 1) {
 //     console.log('MONDAY');
@@ -38,10 +42,15 @@ switch (dayOfWeek) {
         break;
     case 5: value: console.log('FRIDAY');
         break;
-    case 6: value: console.log('SATURDAY');
-        break;
-    case 7: value: console.log('SUNDAY');
-        break;
+    // case 6: value: console.log('SATURDAY');
+    //     break;
+    // case 7: value: console.log('SUNDAY');
+    //     break;
+    // or
+    case 6:
+    case 7:
+        value: console.log('Weekend')
+        break; //We combined case 6 and case 7
     default: value: console.log('WHERE ARE YOU FROM DUDE!! MARS?');
         break;
 } //END OF SWTICH,CASE,BLOCK
