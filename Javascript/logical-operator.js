@@ -20,3 +20,14 @@ if (password.length >= 6 && password.indexOf(' ') === -1) {
  * age 10-65 ADULT $20
  * age 65+ SENIOR $10
  */
+
+const age = 65;
+if (age <= 5) {
+    console.log('FREE')
+} else if (age <= 10) {
+    console.log('$10')
+} else if (age <= 65) {
+    console.log('$20')
+} else if (age >= 65) {
+    console.log('$10')
+}
