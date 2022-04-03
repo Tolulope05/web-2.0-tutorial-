@@ -27,3 +27,7 @@ let comment = {
 } //We can have different types of values in an object
 
 // Accessing data out of an object
+person['firstName'] //'Tolulope'
+comment.commentText //'Tastes like chicken lol'
+
+/** All keys are converted to a string */
