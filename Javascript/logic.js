@@ -37,6 +37,7 @@ if (dayOfWeek === 'Monday') {
  * age 5-10 CHILD $10
  * age 10-65 ADULT $20
  * age 65+ SENIOR $10
+ * Visit logical-operators for a shorter version
  */
 
 const age = '66'

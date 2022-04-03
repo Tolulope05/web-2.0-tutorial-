@@ -29,4 +29,4 @@ if (password.length >= 6) {
 }
 else {
     console.log('password cannot be less than 6 characters')
-} // nested logics 
+} // nested logics please visit logical operator for shorter one
