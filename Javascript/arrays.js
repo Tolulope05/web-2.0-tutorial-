@@ -46,5 +46,7 @@ console.log(comboAnimal.reverse()); // It is a destructive to the origin array
 console.log(comboAnimal) //The value of combo Animal has been reveserved
 
 const Animals = ['dog', 'cat', 'pig', 'bird', 'duck'];
-Animals.slice()
-// (5) ['dog', 'cat', 'pig', 'bird', 'duck']
+Animals.slice(); // (5) ['dog', 'cat', 'pig', 'bird', 'duck']
+
+Animals.slice(3, 5); // (2) ['bird', 'duck']
+
