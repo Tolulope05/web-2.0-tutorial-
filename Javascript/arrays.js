@@ -1,0 +1,33 @@
+// To make an empty array
+let student = [];
+
+// An array of strings
+let colors = ['green', 'blue', 'red', 'yellow', 'pink'];
+colors[0]; //green
+colors[1]; //blue
+colors[2]; //red
+colors[3]; //yellow
+colors[4]; //pink
+colors[4][0]; //p
+
+
+//An array of numbers 
+let luckyNum = [15, 56, 84, 15, 9, 48, 14]
+
+//A Mixed array
+let stuffs = ['cat', 67, true, NaN, null, [5, 7, 8], ""]
+stuffs[5][1] //5
+
+/**
+ * Array Method
+ * Push() - To add a new element to the end of the array elements
+ * Pop() - To remove last element at the end of the array elements
+ * shift() - To remove element at the beginning of the array elements
+ * unshift() - To add a new element to the beginning of the array elements
+ */
+
+let Tee = [5, 6, 4, 7, 4];
+let vee = [45, 6, 43, 76, 43];
+
+let TeeVee = Tee.concat(vee);
+console.log(TeeVee);
