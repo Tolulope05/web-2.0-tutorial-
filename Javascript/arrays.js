@@ -52,5 +52,12 @@ Animals.slice(3, 5); // (2) ['bird', 'duck']
 
 Animals.splice(1, 1); //Deletes cat
 
-Animals.splice(1, 0, 'NewBreeds', 'American Breed'); //Once splice has a second value of 0
-// It adds a value to it thats passed after the 0
+Animals.splice(1, 0, 'NewBreeds', 'American Breed');
+//(7) ['dog', 'NewBreeds', 'American Breed', 'pig', 'bird', 'duck', 'bow']
+
+Animals.splice(1, 2, 'deleted'); // (6) ['dog', 'Deleted', 'pig', 'bird', 'duck', 'bow']
+
+
+Animals.sort(); //(6) ['bird', 'bow', 'deleted', 'dog', 'duck', 'pig']
+
+let scores = [1.57, 48, 38, -47, 8, 4, 3, 45, 1, -34, 93, 345];
