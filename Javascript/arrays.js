@@ -26,8 +26,25 @@ stuffs[5][1] //5
  * unshift() - To add a new element to the beginning of the array elements
  */
 
-let Tee = [5, 6, 4, 7, 4];
-let vee = [45, 6, 43, 76, 43];
+const Tee = [5, 6, 4, 7, 4];
+const vee = [45, 6, 43, 76, 43];
 
-let TeeVee = Tee.concat(vee);
+let TeeVee = Tee.concat(vee); // To combine 2 array
 console.log(TeeVee);
+
+let cat = ['blue', 'kitty'];
+let dog = ['chiwawa', 'dobberman'];
+let comboAnimal = cat.concat(dog)
+console.log(comboAnimal);
+
+cat.includes('blue'); //Returns true or false
+
+console.log(comboAnimal.indexOf('kitty')); // Returns 3 easy way to tell if something is not present..
+// It returns -1
+
+console.log(comboAnimal.reverse()); // It is a destructive to the origin array
+console.log(comboAnimal) //The value of combo Animal has been reveserved
+
+const Animals = ['dog', 'cat', 'pig', 'bird', 'duck'];
+Animals.slice()
+// (5) ['dog', 'cat', 'pig', 'bird', 'duck']
