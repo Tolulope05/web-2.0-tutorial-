@@ -25,3 +25,15 @@
 for (let i = 100; i >= 0; i -= 10) {
     console.log(i)
 } //We can use  *=, /= too
+
+// Always pay attention to how is this loop going to stop
+// DO NOT RUN THIS LOOP
+// INFINITE LOOP!! BAD!!
+// ==================================
+// ==================================
+// for (let i = 1; i >= 0; i += 1)
+// ==================================
+// ==================================
+// DO NOT RUN THIS LOOP
+// INFINITE LOOP!! BAD!!
+
