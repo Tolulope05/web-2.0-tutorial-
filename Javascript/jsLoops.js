@@ -63,17 +63,42 @@ let str = 'LOL';
 // }
 //        or 
 
-for (let i = 0; i <= 4; i++) {
-    console.log('Outer:', i);
-    for (let j = 0; j < str.length; j++) {
-        console.log(`   Inner: ${j}`);
-    }
-}
+// for (let i = 0; i <= 4; i++) {
+//     console.log('Outer:', i);
+//     for (let j = 0; j < str.length; j++) {
+//         console.log(`   Inner: ${j}`);
+//     }
+// }
 
 const seatingChart = [
     ['Krsiten', 'Erick', 'Namita'],
     ['Geofry', 'Juanita', 'Antonio', 'Kevin'],
     ['Yuma', 'Sakura', 'Jack']
 ]
+
+// Print out every student name in Seating chart
+
+
+// ==================================
+// MINE
+// ==================================
+// for (let i = 0; i <= seatingChart.length - 1; i++) {
+//     console.log(`${i} There are ${seatingChart.length} seats which includes `);
+//     for (let j = 0; j <= seatingChart[i].length - 1; j++) {
+//         console.log(`      Rows ${j + 1} ${seatingChart[i][j]}`);
+//     }
+// }
+
+// ==================================
+// TUTORS
+// ==================================
+for (let i = 0; i < seatingChart; i++) {
+    const row = seatingChart[i];
+
+    for (let j = 0; j < row.length; j++) {
+        console.log(row[j])
+    }
+}
+
 
 
