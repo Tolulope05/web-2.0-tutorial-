@@ -215,9 +215,22 @@ for (let sub of subreddits) {
     // console.log(`Visit reddit.com/r/${sub}`);
 }
 
-// Rewriting for of seatingChart 
-for (let row of seatingChart) {
-    for (let student of row) {
-        console.log(student);
-    }
-}
+// Iterating for of seatingChart
+// ==================================
+
+// for (let row of seatingChart) {
+//     for (let student of row) {
+//         console.log(student);
+//     }
+// }
+
+// Iterating for for an array
+// ==================================
+
+// for (let char of 'Hello world') {
+//     console.log(char);
+// } // Each character is being interated over
+
+// Iterating over objects
+// ==================================
+
