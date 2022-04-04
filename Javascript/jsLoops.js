@@ -179,12 +179,18 @@ while (!maximum) {
     maximum = parseInt(prompt('Enter a maximum Number'));
 }
 let maxNum = Math.floor(Math.random() * maximum) + 1;
-console.log(maxNum);
+console.log(maximum);
 
 let guessNum = parseInt(prompt('Enter your first guess!!'));
-while (guessNum !== targetNum) {
+let attempts = 1;
+
+while (parseInt(guessNum) !== targetNum) {
+    if (guess === 'q') break;
+    attempts += 1
     if (guessNum > targetNum) {
-        guessNum = prompt('Too high! Enter a new guess')
+        guessNum = (prompt('Too high! Enter a new guess:'));
+    } else {
+        guessNum = (prompt('Too low! Enter a new guess:'));
     }
 }
-
+console.log(`You got it! It took you ${attempts} guesses`) 
