@@ -83,22 +83,33 @@ const seatingChart = [
 // MINE
 // ==================================
 // for (let i = 0; i <= seatingChart.length - 1; i++) {
-//     console.log(`${i} There are ${seatingChart.length} seats which includes `);
+//     // console.log(`${i} There are ${seatingChart.length} seats which includes `);
 //     for (let j = 0; j <= seatingChart[i].length - 1; j++) {
-//         console.log(`      Rows ${j + 1} ${seatingChart[i][j]}`);
+//         console.log(`    ${seatingChart[i][j]}`);
 //     }
 // }
 
 // ==================================
 // TUTORS
 // ==================================
-for (let i = 0; i < seatingChart; i++) {
-    const row = seatingChart[i];
+// for (let i = 0; i < seatingChart.length; i++) {
+//     const row = seatingChart[i];
+//     console.log(`ROW #${i + 1}`)
+//     for (let j = 0; j < row.length; j++) {
+//         console.log(row[j])
+//     }
+// }
 
-    for (let j = 0; j < row.length; j++) {
-        console.log(row[j])
-    }
+// ==================================
+// WHILE LOOP
+// ==================================
+let num = 0;
+while (num < 10) {
+    console.log(num);
+    num++;
 }
+
+
 
 
 
