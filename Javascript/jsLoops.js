@@ -165,3 +165,26 @@ let guess = Math.floor(Math.random() * 10);
 //         break;
 //     }
 // }
+
+// ==================================
+// Build a Guessing Game
+// ==================================
+/**
+ * Guide you through the process of guessing correct number
+ * press q to quit
+ */
+
+let maximum = parseInt(prompt('Welcome! Enter your max number:'));
+while (!maximum) {
+    maximum = parseInt(prompt('Enter a maximum Number'));
+}
+let maxNum = Math.floor(Math.random() * maximum) + 1;
+console.log(maxNum);
+
+let guessNum = parseInt(prompt('Enter your first guess!!'));
+while (guessNum !== targetNum) {
+    if (guessNum > targetNum) {
+        guessNum = prompt('Too high! Enter a new guess')
+    }
+}
+
