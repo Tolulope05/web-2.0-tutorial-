@@ -241,5 +241,33 @@ let textScores = {
     dwaynw: 77,
     nadia: 83,
     diedre: 81,
-    vonnie: 60
+    vonnie: 60,
+    keenan: 74,
+    bwayne: 89
 }
+
+// for (let person of textScores) {
+//     console.log(person);
+// } //testscores are not iterable
+
+// for (let person in textScores) {
+//     // console.log(person);
+//     console.log(`${person} scored ${textScores[person]}`);
+// } //testscores are iiterable with for....in
+
+// OTHER WAYS
+// ==================================
+
+// Object.keys(textScores)
+// //(9) ['kim', 'shawn', 'micheal', 'dwaynw', 'nadia', 'diedre', 'vonnie', 'keenan', 'bwayne']
+// Object.values(textScores)
+// //(9) [59, 89, 71, 77, 83, 81, 60, 74, 89]
+// Object.entries(textScores)
+// //(9) [Array(2), Array(2), Array(2), Array(2), Array(2), Array(2), Array(2), Array(2), Array(2)]
+
+// To sum up all the values 
+// ==================================
+let total = 0;
+for (let score of Object.values(textScores)) {
+    total += score;
+} // console.log(total) gives 638
