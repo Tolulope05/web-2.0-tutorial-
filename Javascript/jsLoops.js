@@ -52,8 +52,12 @@ const animals = ['dog', 'cat', 'pig', 'bird', 'duck', 'bow'];
 // } //From back
 
 // ==================================
-// Nesting for loops
+// Nesting for loops..
 // ==================================
+// let str = 'LOL';
+// for (let i = 0; i <= 4; i++) {
+//     console.log('Outer:')
 
+// }
 
 
