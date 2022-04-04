@@ -101,15 +101,14 @@ const seatingChart = [
 // }
 
 // ==================================
-// WHILE LOOP
+// WHILE LOOP & FOR LOOP
 // ==================================
 let num = 0;
 while (num < 10) {
-    console.log(num);
     num++;
+    console.log(num);
+} // Check the logic.
+
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
 }
-
-
-
-
-
