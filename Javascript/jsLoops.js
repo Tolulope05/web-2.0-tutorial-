@@ -22,9 +22,9 @@
 // }
 
 // Print out 100 to 0
-for (let i = 100; i >= 0; i -= 10) {
-    console.log(i)
-} //We can use  *=, /= too
+// for (let i = 100; i >= 0; i -= 10) {
+//     console.log(i)
+// } //We can use  *=, /= too
 
 // Always pay attention to how is this loop going to stop
 // DO NOT RUN THIS LOOP
@@ -36,4 +36,24 @@ for (let i = 100; i >= 0; i -= 10) {
 // ==================================
 // DO NOT RUN THIS LOOP
 // INFINITE LOOP!! BAD!!
+
+// Looping over array1
+const animals = ['dog', 'cat', 'pig', 'bird', 'duck', 'bow'];
+
+
+// another way to write this for(let i =0; i <= animals.length)
+
+// for (let i = 0; i < animals.length; i += 1) {
+//     console.log(i, animals[i]);
+// } //0 'dog' 1 'cat' 2 'pig' 3 'bird' 4 'duck' 5 'bow
+
+// for (let i = animals.length - 1; i >= 0; i--) {
+//     console.log(animals[i]);
+// } //From back
+
+// ==================================
+// Nesting for loops
+// ==================================
+
+
 
