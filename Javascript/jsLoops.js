@@ -234,3 +234,12 @@ for (let sub of subreddits) {
 // Iterating over objects
 // ==================================
 
+let textScores = {
+    kim: 59,
+    shawn: 89,
+    micheal: 71,
+    dwaynw: 77,
+    nadia: 83,
+    diedre: 81,
+    vonnie: 60
+}
