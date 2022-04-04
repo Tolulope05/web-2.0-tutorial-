@@ -138,13 +138,23 @@ const secret = 'BabyHippo';
 let targetNum = Math.floor(Math.random() * 10);
 let guess = Math.floor(Math.random() * 10);
 
+// while (true) {
+//     guess = Math.floor(Math.random() * 10);
+//     if (guess === targetNum) {
+//         console.log(`CORRECT! Guessed: ${guess} & target was: ${targetNum}`);
+//         break;
+//     }
+//     else {
+//         console.log(`Guessed ${guess}...incorrect!`);
+//     }
+// }
+
+let input = prompt('Hey, Say something!!');
+
 while (true) {
-    guess = Math.floor(Math.random() * 10);
-    if (guess === targetNum) {
-        console.log(`CORRECT! Guessed: ${guess} & target was: ${targetNum}`);
+    input = prompt(input);
+    if (input.toLowerCase = 'stop copying me') {
         break;
     }
-    else {
-        console.log(`Guessed ${guess}...incorrect!`);
-    }
 }
+console.log('Ok you got me')
