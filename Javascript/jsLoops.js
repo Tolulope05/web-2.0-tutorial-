@@ -54,10 +54,26 @@ const animals = ['dog', 'cat', 'pig', 'bird', 'duck', 'bow'];
 // ==================================
 // Nesting for loops..
 // ==================================
-// let str = 'LOL';
+let str = 'LOL';
 // for (let i = 0; i <= 4; i++) {
-//     console.log('Outer:')
-
+//     console.log('Outer:', i);
+//     for (let j = 0; j < str.length; j++) {
+//         console.log('   Inner:', str[j]);
+//     }
 // }
+//        or 
+
+for (let i = 0; i <= 4; i++) {
+    console.log('Outer:', i);
+    for (let j = 0; j < str.length; j++) {
+        console.log(`   Inner: ${j}`);
+    }
+}
+
+const seatingChart = [
+    ['Krsiten', 'Erick', 'Namita'],
+    ['Geofry', 'Juanita', 'Antonio', 'Kevin'],
+    ['Yuma', 'Sakura', 'Jack']
+]
 
 
