@@ -173,33 +173,36 @@ let guess = Math.floor(Math.random() * 10);
  * Guide you through the process of guessing correct number
  * press q to quit
  */
-
-let maximum = parseInt(prompt('Welcome! Enter your max number:'));
-while (!maximum) {
-    maximum = parseInt(prompt('Enter a maximum Number'));
-}
-let maxNum = Math.floor(Math.random() * maximum) + 1;
-console.log(maximum);
-
-let guessNum = parseInt(prompt('Enter your first guess!!'));
-let attempts = 1;
-
-while (parseInt(guessNum) !== targetNum) {
-    if (guess === 'q') break;
-    attempts += 1
-    if (guessNum > targetNum) {
-        guessNum = (prompt('Too high! Enter a new guess:'));
-    } else {
-        guessNum = (prompt('Too low! Enter a new guess:'));
-    }
-}
-if (guess === 'q') {
-    console.log('OK, You quit! ')
-} else {
-    console.log('Congrats YOU WIN ')
-    console.log(`You got it! It took you ${attempts} guesses`)
-}
+// 
+// let maximum = parseInt(prompt('Welcome! Enter your max number:'));
+// while (!maximum) {
+//     maximum = parseInt(prompt('Enter a maximum Number'));
+// }
+// let maxNum = Math.floor(Math.random() * maximum) + 1;
+// console.log(maximum);
+// 
+// let guessNum = parseInt(prompt('Enter your first guess!!'));
+// let attempts = 1;
+// 
+// while (parseInt(guessNum) !== targetNum) {
+//     if (guess === 'q') break;
+//     attempts += 1
+//     if (guessNum > targetNum) {
+//         guessNum = (prompt('Too high! Enter a new guess:'));
+//     } else {
+//         guessNum = (prompt('Too low! Enter a new guess:'));
+//     }
+// }
+// if (guess === 'q') {
+//     console.log('OK, You quit! ')
+// } else {
+//     console.log('Congrats YOU WIN ')
+//     console.log(`You got it! It took you ${attempts} guesses`)
+// } //End of guessing Game
 
 // ==================================
 // For ...OF
+// A nice new and easy way of iterating over arrays
 // ==================================
+
+const subreddits = ['cringe', 'books', 'chickens', 'funny', 'pics', 'soccers', 'biro']
