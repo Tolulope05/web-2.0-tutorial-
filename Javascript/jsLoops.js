@@ -203,6 +203,21 @@ let guess = Math.floor(Math.random() * 10);
 // ==================================
 // For ...OF
 // A nice new and easy way of iterating over arrays
+// A regular improvement over the normal i
 // ==================================
 
 const subreddits = ['cringe', 'books', 'chickens', 'funny', 'pics', 'soccers', 'biro']
+
+for (let i = 0; i < subreddits.length; i++) {
+    // console.log(`Visit reddit.com/r/${subreddits[i]}`);
+}
+for (let sub of subreddits) {
+    // console.log(`Visit reddit.com/r/${sub}`);
+}
+
+// Rewriting for of seatingChart 
+for (let row of seatingChart) {
+    for (let student of row) {
+        console.log(student);
+    }
+}
