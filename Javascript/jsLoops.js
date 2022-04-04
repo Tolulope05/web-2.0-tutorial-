@@ -149,12 +149,19 @@ let guess = Math.floor(Math.random() * 10);
 //     }
 // }
 
-let input = prompt('Hey, Say something!!');
+// let input = prompt('Hey, Say something!!');
 
-while (true) {
-    input = prompt(input);
-    if (input.toLowerCase = 'stop copying me') {
-        break;
-    }
-}
-console.log('Ok you got me')
+// while (true) {
+//     input = prompt(input);
+//     if (input.toLowerCase() === 'stop copying me') {
+//         break;
+//     }
+// }
+// console.log('Ok you got me')
+
+// for (let i = 1; i <= 1000; i++) {
+//     console.log(i);
+//     if (i === 100) {
+//         break;
+//     }
+// }
