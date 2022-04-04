@@ -104,11 +104,47 @@ const seatingChart = [
 // WHILE LOOP & FOR LOOP
 // ==================================
 let num = 0;
-while (num < 10) {
-    num++;
-    console.log(num);
-} // Check the logic.
+// while (num < 10) {
+//     num++;
+//     console.log(num);
+// } // Check the logic.
 
-for (let i = 1; i <= 10; i++) {
-    console.log(i);
+// for (let i = 1; i <= 10; i++) {
+//     console.log(i);
+// } // The for mate
+
+// while(!gameOver){
+//     //player 1 move
+//     //player 2 move
+// }  
+
+
+// ==================================
+// WHILE LOOP for password
+// ==================================
+const secret = 'BabyHippo';
+// let guess = prompt('Enter your password');
+// while (secret !== guess) {
+//     guess = prompt('Enter your password');
+//     {
+//         console.log('Wrong password');
+//     }
+// }
+// console.log('Congrats');
+
+// ==================================
+// THE BREAK KEYWORD
+// ==================================
+let targetNum = Math.floor(Math.random() * 10);
+let guess = Math.floor(Math.random() * 10);
+
+while (true) {
+    guess = Math.floor(Math.random() * 10);
+    if (guess === targetNum) {
+        console.log(`CORRECT! Guessed: ${guess} & target was: ${targetNum}`);
+        break;
+    }
+    else {
+        console.log(`Guessed ${guess}...incorrect!`);
+    }
 }
