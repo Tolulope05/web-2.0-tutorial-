@@ -199,3 +199,7 @@ if (guess === 'q') {
     console.log('Congrats YOU WIN ')
     console.log(`You got it! It took you ${attempts} guesses`)
 }
+
+// ==================================
+// For ...OF
+// ==================================
