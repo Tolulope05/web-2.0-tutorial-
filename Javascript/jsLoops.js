@@ -255,7 +255,7 @@ let textScores = {
 //     console.log(`${person} scored ${textScores[person]}`);
 // } //testscores are iiterable with for....in
 
-// OTHER WAYS
+// OTHER SPECIAL OBJECTS METHODS
 // ==================================
 
 // Object.keys(textScores)
@@ -265,9 +265,12 @@ let textScores = {
 // Object.entries(textScores)
 // //(9) [Array(2), Array(2), Array(2), Array(2), Array(2), Array(2), Array(2), Array(2), Array(2)]
 
-// To sum up all the values 
+// To sum up all the values and average
 // ==================================
 let total = 0;
+let vals = Object.values(textScores);
 for (let score of Object.values(textScores)) {
     total += score;
 } // console.log(total) gives 638
+console.log(total / vals.length) // Gives average of the students
+
