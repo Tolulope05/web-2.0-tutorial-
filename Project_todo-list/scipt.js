@@ -47,10 +47,19 @@ while (input !== 'quit' && input !== 'q') {
             console.log(`${i}: ${storage[i - 1]}`);
         }
         console.log('* =====================');
+    } else if (input === 'new') {
+        const newTodo = prompt("What is the new todo?");
+        storage.push(newTodo);
+        console.log(`${newTodo} added to the List`)
+    } else if (input === 'delete') {
+        const index = parseInt(prompt('Ok, Enter an index to delete')); // Using splice()
+        if (!Number.isNaN(index)) {
+            const deletedTodo = storage.splice(index, 1);
+            console.log(`Ok, deleted ${deletedTodo[0]}`);
+        } else {
+            console.log('Unknown Number')
+        }
     }
     input = prompt('What would you like to do ?');
 }
 console.log('Ok Quit the app!!!');
-
-
-
