@@ -12,3 +12,8 @@
 // } //rollDie()
 
 
+function greet(firstName) {
+    console.log(`Hi ${firstName}. Its so great to finally meet you.`)
+}
+greet('tolu') //Hi tolu. Its so great to finally meet you./
+greet('nonso') //Hi nonso. Its so great to finally meet you./
