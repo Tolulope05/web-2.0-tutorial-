@@ -6,21 +6,26 @@
  * - we define a chunk of code that we can use later
  * - We can use it anytime
  * - We can pass in arguments into a
- * MB: We pass a *parameter* into a function e.g firstName
+ * MB: We pass a *parameter* into a function (),
+ * - We pass an argument into the parenthesis e.g firstName
  */
 
-// function rollDie() {
-//     let rand = Math.floor(Math.random() * 10) + 1;
-//     console.log(rand)
-// } //rollDie()
+function rollDie() {
+    let rand = Math.floor(Math.random() * 10) + 1;
+    console.log(rand)
+} //rollDie()
 
 
-// function greet(firstName) {
-//     console.log(`Hi ${firstName}. Its so great to finally meet you.`)
-// }
-// greet('tolu') //Hi tolu. Its so great to finally meet you./
-// greet('nonso') //Hi nonso. Its so great to finally meet you./
+function greet(firstName) {
+    console.log(`Hi ${firstName}. Its so great to finally meet you.`)
+}
+greet('tolu') //Hi tolu. Its so great to finally meet you./
+greet('nonso') //Hi nonso. Its so great to finally meet you./
 
+function greet(firstName, lastName) {
+    console.log(`Hey there ${firstName} ${lastName[0]}.`)
+}
+greet('tolulope', 'fakunle') // Hey there tolulope f.
 
 /**
  * =================================
@@ -34,34 +39,46 @@
  */
 
 function sum(a, b) {
-    console.log(a + b)
-} //sum(5,6) //11
-
+    let result = a + b;
+    return result;
+    sum(5, 6) //11
+}
 function subtract(a, b) {
-    console.log(a - b)
-} //sub(6,6) //1
-
+    let result = a - b;
+    return result;
+    sub(6, 6) //1
+}
 function multiply(a, b) {
-    console.log(a * b)
-} //multiply
-
+    let result = a * b;
+    return result;
+    multiply(5, 6) //30
+}
 function divide(a, b) {
-    console.log(a / b)
+    let result = a / b;
+    return result;
 }
-
+divide(6, 5) //1.2
 function power(a, b) {
-    console.log(a ** b)
+    let result = a ** b;
+    return result;
 }
+power(6, 5) //7776
 
-#include _MAIN_H_
-#include stdio.h 
+/** =================================
+ * Function
+ * =================================
+ * A function that accepts a string and repeat that string multiple times
+ */
 
-int a;
-int b;
-
-function power(a, b) {
-    printf(a + b);
-    if 
+function repeat(str, num) {
+    let result = '';
+    for (let i = 0; i <= num; i += 1) {
+        result += str;
+    }
+    console.log(result)
 }
+repeat('hi', 3) // hihihihi
+repeat('hi', 3) // hihihihi
+
 
 
