@@ -195,9 +195,9 @@ try {
 
 function yell(msg) {
     try {
-        console.log(msg.toUpperCase().repeat());
+        console.log(msg.toUpperCase().repeat(3));
     } catch (e) {
-        console.log(e);
+        // console.log(e);
         console.log('Please pass in a string')
     }
-}
+} //yell(454)
