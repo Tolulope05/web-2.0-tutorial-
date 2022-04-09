@@ -11,16 +11,16 @@
  */
 
 function rollDie() {
-    let rand = Math.floor(Math.random() * 10) + 1;
+    let rand = Math.floor(Math.random() * 6) + 1;
     console.log(rand)
 } //rollDie()
 
 
-function greet(firstName) {
-    console.log(`Hi ${firstName}. Its so great to finally meet you.`)
-}
-greet('tolu') //Hi tolu. Its so great to finally meet you./
-greet('nonso') //Hi nonso. Its so great to finally meet you./
+// function greet(firstName) {
+//     console.log(`Hi ${firstName}. Its so great to finally meet you.`)
+// }
+// greet('tolu') //Hi tolu. Its so great to finally meet you./
+// greet('nonso') //Hi nonso. Its so great to finally meet you./
 
 function greet(firstName, lastName) {
     console.log(`Hey there ${firstName} ${lastName[0]}.`)
@@ -64,6 +64,16 @@ function power(a, b) {
 }
 power(6, 5) //7776
 
+// Functon can be passed into a variable 
+/**
+ * bright is a function can be passed into a variable
+ * 
+ */
+
+let bright = function (name) {
+    console.log(`Hey, I am  ${name} a bright software engineer.`)
+} //bright('tolulope') => Hey, I am  tolulope a bright software engineer.
+
 /** =================================
  * Function
  * =================================
@@ -78,7 +88,13 @@ function repeat(str, num) {
     console.log(result)
 }
 repeat('hi', 3) // hihihihi
-repeat('hi', 3) // hihihihi
 
+// Higher order Function 
+// Understand the scope
+function callTwice(twice) {
+    twice();
+    twice();
+}
 
+callTwice(rollDie);
 
