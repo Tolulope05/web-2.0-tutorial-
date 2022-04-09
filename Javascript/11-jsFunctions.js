@@ -144,7 +144,7 @@ function callTentimes(ten) {
  * Every method is a function, but not every function is a method
  */
 
-const math = {
+const myMath = {
     multiply: function (x, y) {
         return x * y;
     },
