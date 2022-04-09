@@ -180,4 +180,5 @@ const person = {
     fullName() {
         return `${this.first} ${this.last}`
     }
-} // person.fullName();
+}
+person.fullName();
