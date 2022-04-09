@@ -10,48 +10,35 @@
  * every
  */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-
-const result = words.filter(word => word.length > 6);
-
-console.log(result);
-// expected output: Array ["exuberant", "destruction", "present"]
-
-
 /**
- * Find all prime numbers in an array
+ * forEach
+ * Acepts a callback function
+ * calls the function once per element in the array
  */
-const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
-function isPrime(num) {
-    for (let i = 2; num > i; i++) {
-        if (num % i == 0) {
-            return false;
-        }
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+
+// function print(element) {
+//     console.log(element);
+// }
+// numbers.forEach(print);
+
+// //Old ways of doing things.
+//=============================
+// numbers.forEach(function (el) {
+//     console.log(el)
+// })
+
+
+numbers.forEach(function (el) {
+    if (el % 2 === 0) {
+        console.log(el)
     }
-    return num > 1;
-}
+})
 
-console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]
+
+// New ways of doing things.
+//============================
+// for (let el of numbers) {
+//     console.log(el);
+// } 
