@@ -129,6 +129,29 @@ function callTentimes(ten) {
  * A function that generates a function based on some inputs
  * Return a function that test whether a value is between min and max
  */
-function makeBetwenFunc(min, max) {
+// function makeBetwenFunc(min, max) {
+//     return function (num) {
+//         return num >= min && num <= max
+//     }
+// }
+// const isChild = makeBetwenFunc(0,18);
+// const isAdult = makeBetwenFunc(19,64);
+// const isSenior =makeBetwenFunc(65,120);
 
+/**
+ * Function Methods
+ * We can add functions as properties on objects
+ * Every method is a function, but not every function is a method
+ */
+
+const math = {
+    multiply: function (x, y) {
+        return x * y;
+    },
+    divide: function (x, y) {
+        return x / y;
+    },
+    power: function (x, y) {
+        return x ** y;
+    },
 }
