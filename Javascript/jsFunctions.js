@@ -64,9 +64,9 @@ function power(a, b) {
 }
 power(6, 5) //7776
 
-// Functon can be passed into a variable 
 /**
- * bright is a function can be passed into a variable
+ * bright is a function can be passed into a variable,
+ * This is to show functon can be passed into a variable 
  * 
  */
 
@@ -89,12 +89,46 @@ function repeat(str, num) {
 }
 repeat('hi', 3) // hihihihi
 
-// Higher order Function 
-// Understand the scope
+/**
+ * CallTwice
+ * Higher order Function 
+ * Functions that operate on/with other functions;
+ * They can accept other functions as an argument
+ * Return a function
+ */
+
 function callTwice(twice) {
     twice();
     twice();
+} //callTwice(rollDie);
+
+function callTentimes(ten) {
+    for (let i = 1; i <= 10; i++) {
+        ten()
+    }
+} //callTentimes(rollDie); 
+
+// function makeMiseryFunc() {
+//     const rand = Math.random();
+//     if (rand > 0.5) {
+//         return function () {
+//             console.log('Congrats, I am a good Number');
+//             console.log('You won a million Dollar');
+//         }
+//     } else if (rand < 0.5) {
+//         return function () {
+//             alert('Oh No, I am a bad Number');
+//             alert('You have been infected by a computer virus');
+//         }
+//     }
+// }
+// // let misery = makeMiseryFunc()
+// // miserty() => gives the log
+
+/**
+ * A function that generates a function based on some inputs
+ * Return a function that test whether a value is between min and max
+ */
+function makeBetwenFunc(min, max) {
+
 }
-
-callTwice(rollDie);
-
