@@ -85,3 +85,17 @@ const doubNum = numbers.map(function (number) {
 const namesMovie = movies.map(function (movie) {
     return movie.title;
 })
+
+/**
+ * Arrow Function 
+ * syntactically compact alternative
+ * to a regular function expression.
+ */
+
+const add = (x, y) => {
+    return x + y;
+}
+
+const square = (x, y) => {
+    return x * y;
+}
