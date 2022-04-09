@@ -30,11 +30,11 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 
 // })
 
 
-numbers.forEach(function (el) {
-    if (el % 2 === 0) {
-        console.log(el)
-    }
-})
+// numbers.forEach(function (el) {
+//     if (el % 2 === 0) {
+//         console.log(el)
+//     }
+// })
 
 
 // New ways of doing things.
@@ -42,3 +42,39 @@ numbers.forEach(function (el) {
 // for (let el of numbers) {
 //     console.log(el);
 // } 
+
+const movies = [
+    {
+        title: 'Amadeus',
+        score: 99
+    },
+    {
+        title: 'stand by me',
+        score: 85
+    },
+    {
+        title: 'Parasite',
+        dcore: 95
+    },
+    {
+        title: 'Alien',
+        score: 90
+    }
+]
+
+// movies.forEach(function (movie) {
+//     console.log(`${movie.title} has a rating of ${movie.score}/100`)
+// }) //Old way
+
+for (let movie of movies) {
+    console.log(`${movie.title} has a rating of ${movie.score}/100`)
+} // New way
+
+
+/**
+ * Map
+ * creates a new array using the result value of a callback
+ */
+const caps = movies.map(function (t) {
+    return t.toUpperCase()
+});
