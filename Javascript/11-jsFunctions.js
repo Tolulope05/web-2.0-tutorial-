@@ -182,3 +182,22 @@ const person = {
     }
 }
 person.fullName();
+
+/**
+ * try and catch method
+ * its used to try a code and catch another code in case the code fials to run
+ */
+try {
+    hello.toUpperCase(); //hello is not defined
+} catch {
+    console.log('error')
+}
+
+function yell(msg) {
+    try {
+        console.log(msg.toUpperCase().repeat());
+    } catch (e) {
+        console.log(e);
+        console.log('Please pass in a string')
+    }
+}
