@@ -8,6 +8,7 @@
  * reduce
  * some 
  * every
+ * Arrow function
  */
 
 /**
@@ -66,15 +67,21 @@ const movies = [
 //     console.log(`${movie.title} has a rating of ${movie.score}/100`)
 // }) //Old way
 
-for (let movie of movies) {
-    console.log(`${movie.title} has a rating of ${movie.score}/100`)
-} // New way
+// for (let movie of movies) {
+//     console.log(`${movie.title} has a rating of ${movie.score}/100`)
+// } // New way
 
 
 /**
  * Map
+ * Takes data from an array and transform/map
+ *  it ito a new array or data
  * creates a new array using the result value of a callback
  */
-const caps = movies.map(function (t) {
-    return t.toUpperCase()
+const doubNum = numbers.map(function (number) {
+    return number * 2;
 });
+
+const namesMovie = movies.map(function (movie) {
+    return movie.title;
+})
