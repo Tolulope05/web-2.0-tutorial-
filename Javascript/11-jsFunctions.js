@@ -155,3 +155,29 @@ const myMath = {
         return x ** y;
     },
 }
+//=====================
+// OR
+//=====================
+const myMath2 = {
+    multiply(x, y) {
+        return x * y;
+    },
+    divide(x, y) {
+        return x / y;
+    },
+    power(x, y) {
+        return x ** y;
+    },
+}
+
+/**
+ * This -- in methods
+ * Used to access other peoprties on the same objects
+ */
+const person = {
+    first: 'Robert',
+    last: 'Herjavec',
+    fullName() {
+        return `${this.first} ${this.last}`
+    }
+} // person.fullName();

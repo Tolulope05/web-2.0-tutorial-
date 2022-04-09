@@ -61,3 +61,5 @@ Animals.splice(1, 2, 'deleted'); // (6) ['dog', 'Deleted', 'pig', 'bird', 'duck
 Animals.sort(); //(6) ['bird', 'bow', 'deleted', 'dog', 'duck', 'pig']
 
 let scores = [1.57, 48, 38, -47, 8, 4, 3, 45, 1, -34, 93, 345];
+let sortedScores = scores.sort((a, b) => a - b)
+console.log(sortedScores);
