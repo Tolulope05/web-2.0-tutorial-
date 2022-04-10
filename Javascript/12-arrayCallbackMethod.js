@@ -243,4 +243,21 @@ const longWords = words.every(n => n.length > 4) //false
 // If people that score more than 75 passed
 const passed = exams.every(score => score >= 75) //false
 
+//Some test if one or more pass the test and return true, it will return true
 
+const someLongWords = words.some(n => n.length > 4) //true
+const somePassed = exams.some(score => score >= 75) //true
+
+
+/**
+ * REDUCE
+ * ======
+ * Executes a reducer functon that each element 
+ * of the array resulting in a single value 
+ * 
+ * Take some array and reduce it to some single value at tbe end of the day
+ */
+
+[3, 5, 7, 9, 11].reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+});
