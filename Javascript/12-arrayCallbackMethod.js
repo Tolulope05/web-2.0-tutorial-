@@ -49,19 +49,43 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 
 const movies = [
     {
         title: 'Amadeus',
-        score: 99
+        score: 99,
+        year: 1984
     },
     {
         title: 'stand by me',
-        score: 85
+        score: 85,
+        year: 2000
     },
     {
         title: 'Parasite',
-        dcore: 95
+        score: 95,
+        year: 1995
     },
     {
         title: 'Alien',
-        score: 90
+        score: 90,
+        year: 2010
+    },
+    {
+        title: 'Sharknado',
+        score: 35,
+        year: 2013
+    },
+    {
+        title: '13 Going on 30',
+        score: 70,
+        year: 2004
+    },
+    {
+        title: 'Jingle All The Way',
+        score: 71,
+        year: 2019
+    },
+    {
+        title: 'Nothing hill',
+        score: 90,
+        year: 1979
     }
 ]
 
@@ -132,7 +156,7 @@ const rolldie3 = () => Math.floor(Math.random() * 6) + 1;
 
 const newMovies = movies.map((mov) => (
     `${mov.title} has rating of ${mov.score / 10}`
-)) //New Method
+)) //New Method Map takes a data from an array and it prints it out one by one
 
 /**
  * You want to wait in between functions
@@ -153,13 +177,32 @@ function executeTime() {
 
     setTimeout(() => {
         console.log('.....Are you still there?')
-    }, 3000)
+    }, 3000) // Prints Are you stil there after 3000millisecs
 
     const id = setInterval(() => {
         console.log(Math.floor(Math.random() * 10) + 1)
-    }, 2000)
+    }, 2000) // repeats the callback after 2000milliseconds
 
     const stopId = setInterval(() => {
         clearInterval(id)
-    }, 10000);
+    }, 10000); //stop passing the setinterval after 10000milliseconds
 } // executeTime()
+
+
+/**
+ * Filter
+ * ========
+ * Creates new array with all elements 
+ * that pass the test implemented by the provided function
+ */
+// With refernece to the numer array set upstream
+const odds = numbers.filter(n => {
+    return n % 2 === 1; //Our callback function returns true or false
+    // if it is true, n is added to the filtered array
+}) // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+
+const smallNums = numbers.filter((num) =>
+    num < 10
+) // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
