@@ -212,11 +212,35 @@ const recentMovies = movies.filter(movie => movie.year > 2018)
 // Instead of getting the whole array we can get just title using map
 const titleRecentMov = recentMovies.map(n => `${n.title}`)
 
+// We can chain them togther in one line
+const lowRatedmoviesTitle = movies.filter(movie => movie.score <= 80).map(m => m.title)
+
 /**
  *  Spread Opertor 
  * =========================
  * ...
- * Spread operator is used to expand or spread an iterable or aan array
+ * - used to expand or spread an iterable or aan array
+ * - used to copy the items
  */
-console.log(titleRecentMov) // ['Sharknado', 'Jingle All The Way', 'Nothing hill']
-console.log(...titleRecentMov) // Sharknado Jingle All The Way Nothing hill
+// console.log(titleRecentMov) // ['Sharknado', 'Jingle All The Way', 'Nothing hill']
+// console.log(...titleRecentMov) // Sharknado Jingle All The Way Nothing hill
+
+const arr1 = ['one', 'two'];
+const arr2 = [...arr1, 'three', 'four', 'five'] //['one', 'two', 'three', 'four', 'five']
+
+/**
+ *  SOME & Every
+ * ======
+ * they are boolean that return t or f unlike map& filter that return new array
+ * returns true if any of the array element pass the test function
+ */
+const exams = [56, 76, 74, 84, 67, 89, 93, 95, 100, 65, 79]
+const words = ['dog', 'jello', 'log', 'cupcake', 'bag', 'wag'];
+
+//Are there words longer than 4 characters
+const longWords = words.every(n => n.length > 4) //false
+
+// If people that score more than 75 passed
+const passed = exams.every(score => score >= 75) //false
+
+
