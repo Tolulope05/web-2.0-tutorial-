@@ -49,12 +49,12 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 
 const movies = [
     {
         title: 'Amadeus',
-        score: 99,
+        score: 95,
         year: 1984
     },
     {
         title: 'stand by me',
-        score: 85,
+        score: 75,
         year: 2000
     },
     {
@@ -64,7 +64,7 @@ const movies = [
     },
     {
         title: 'Alien',
-        score: 90,
+        score: 80,
         year: 2010
     },
     {
@@ -79,7 +79,7 @@ const movies = [
     },
     {
         title: 'Jingle All The Way',
-        score: 71,
+        score: 85,
         year: 2019
     },
     {
@@ -201,8 +201,10 @@ const odds = numbers.filter(n => {
     // if it is true, n is added to the filtered array
 }) // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
-const smallNums = numbers.filter((num) =>
+const smallNums = numbers.filter(num =>
     num < 10
 ) // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-
+const highRatedMovies = movies.filter(movie => movie.score > 80)
+const lowRatedMovies = movies.filter(movie => movie.score <= 80)
+const recentMovies = movies.filter(movie => movie.year > 2018)
