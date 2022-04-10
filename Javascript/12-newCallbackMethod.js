@@ -77,7 +77,7 @@ const movies = [
 /**
  * Map
  * Takes data from an array and transform/map
- *  it ito a new array or data
+ *  it into a new array or data
  * creates a new array using the result value of a callback
  */
 const doubNum = numbers.map(function (number) {
@@ -124,3 +124,12 @@ const rolldie2 = () => (
 
 // One line implicit function
 const rolldie3 = () => Math.floor(Math.random() * 6) + 1;
+
+
+// const newMovies = movies.map(function (mov) {
+//     return `${mov.title} has rating of ${mov.score / 10}`
+// })
+
+const newMovies = movies.map((mov) => (
+    `${mov.title} has rating of ${mov.score / 10}`
+)) //New Method
