@@ -50,7 +50,7 @@ const movies = [
     {
         title: 'Amadeus',
         score: 95,
-        year: 1984
+        year: 2004
     },
     {
         title: 'stand by me',
@@ -70,7 +70,7 @@ const movies = [
     {
         title: 'Sharknado',
         score: 35,
-        year: 2013
+        year: 2019
     },
     {
         title: '13 Going on 30',
@@ -85,7 +85,7 @@ const movies = [
     {
         title: 'Nothing hill',
         score: 90,
-        year: 1979
+        year: 2020
     }
 ]
 
@@ -208,3 +208,15 @@ const smallNums = numbers.filter(num =>
 const highRatedMovies = movies.filter(movie => movie.score > 80)
 const lowRatedMovies = movies.filter(movie => movie.score <= 80)
 const recentMovies = movies.filter(movie => movie.year > 2018)
+//Combining Map and Filter
+// Instead of getting the whole array we can get just title using map
+const titleRecentMov = recentMovies.map(n => `${n.title}`)
+
+/**
+ *  Spread Opertor 
+ * =========================
+ * ...
+ * Spread operator is used to expand or spread an iterable or aan array
+ */
+console.log(titleRecentMov) // ['Sharknado', 'Jingle All The Way', 'Nothing hill']
+console.log(...titleRecentMov) // Sharknado Jingle All The Way Nothing hill
