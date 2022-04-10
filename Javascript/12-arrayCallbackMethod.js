@@ -94,8 +94,13 @@ const namesMovie = movies.map(function (movie) {
 
 const add = (x, y) => {
     return x + y;
+} //add(4,6)
+
+const square = (x) => {
+    return x * x;
+} //sqaure(7,9)
+
+const rollDie = () => {
+    return Math.floor(Math.random() * 6) + 1
 }
 
-const square = (x, y) => {
-    return x * y;
-}
