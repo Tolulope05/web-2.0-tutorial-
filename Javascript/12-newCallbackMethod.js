@@ -108,8 +108,10 @@ const rollDie = () => {
 
 /** 
  * Implicit Return
+ * 
  * It leaves out the return keyword
- * They all do the same thing
+ * They only work if there is one line, 
+ * one statement to be evaluated and returned.
 */
 
 const isEven = num => (
@@ -119,3 +121,6 @@ const isEven = num => (
 const rolldie2 = () => (
     Math.floor(Math.random() * 6) + 1
 )
+
+// One line implicit function
+const rolldie3 = () => Math.floor(Math.random() * 6) + 1;
