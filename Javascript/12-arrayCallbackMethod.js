@@ -258,14 +258,38 @@ const somePassed = exams.some(score => score >= 75) //true
  * Take some array and reduce it to some single value at tbe end of the day
  */
 
-[3, 5, 7, 9, 11].reduce((accumulator, currentValue) => {
+const reduceFormat = [3, 5, 7, 9, 11].reduce((accumulator, currentValue) => {
     return accumulator + currentValue;
-}); //didnt work
+}); //35
 
 const prices = [9.99, 1.50, 19.99, 49.99, 30.50];
 
-let total = 0;
-for (let price of prices) {
-    total += price
-}
-console.log(total)
+// let total = 0
+// for (let i = 0; i < prices.length; i++) {
+//     total += prices[i]
+// } //111.97
+
+// let total = 0;
+// for (let price of prices) {
+//     total += price
+// } //111.97
+
+// const total = prices.reduce((total, price) => {
+//     return total + price
+// }) // 111.97
+
+// const total = prices.reduce((total, price) => total + price) //111.97
+
+/**
+ * =============================================
+ * Find the Maximum and Minimum value in an array
+ * This can be done using the reduce method
+ */
+
+const minPrice = prices.reduce((min, price) => {
+    if (price < min) {
+        return price;
+    }
+    return min;
+})
+
