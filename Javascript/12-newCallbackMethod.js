@@ -104,3 +104,16 @@ const rollDie = () => {
     return Math.floor(Math.random() * 6) + 1
 }
 
+/** 
+ * Implicit Return
+ * It leaves out the return keyword
+ * They all do the same thing
+*/
+
+const isEven = num => (
+    num % 2 === 0
+);
+
+const rolldie2 = () => (
+    Math.floor(Math.random() * 6) + 1
+)
