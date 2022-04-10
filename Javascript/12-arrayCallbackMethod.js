@@ -133,3 +133,30 @@ const rolldie3 = () => Math.floor(Math.random() * 6) + 1;
 const newMovies = movies.map((mov) => (
     `${mov.title} has rating of ${mov.score / 10}`
 )) //New Method
+
+/**
+ * You want to wait in between functions
+ * =====================================
+ * 
+ * SetTimeout
+ * It will call a callback and the number of milliseconds
+ * 
+ * Setinterval
+ * It will call a callback every x numbers of milliseconds
+ * We can repeat something 
+ * 
+ * it can be stopped by passing clearinterval(passing the id)
+ */
+console.log('Hello User :)')
+
+setTimeout(() => {
+    console.log('.....Are you still there?')
+}, 3000)
+
+const id = setInterval(() => {
+    console.log(Math.floor(Math.random() * 10) + 1)
+}, 2000)
+
+const stopId = setInterval(() => {
+    clearInterval(id)
+}, 10000);
