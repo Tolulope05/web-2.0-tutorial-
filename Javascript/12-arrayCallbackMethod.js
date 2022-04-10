@@ -147,16 +147,19 @@ const newMovies = movies.map((mov) => (
  * 
  * it can be stopped by passing clearinterval(passing the id)
  */
-console.log('Hello User :)')
 
-setTimeout(() => {
-    console.log('.....Are you still there?')
-}, 3000)
+function executeTime() {
+    console.log('Hello User :)')
 
-const id = setInterval(() => {
-    console.log(Math.floor(Math.random() * 10) + 1)
-}, 2000)
+    setTimeout(() => {
+        console.log('.....Are you still there?')
+    }, 3000)
 
-const stopId = setInterval(() => {
-    clearInterval(id)
-}, 10000);
+    const id = setInterval(() => {
+        console.log(Math.floor(Math.random() * 10) + 1)
+    }, 2000)
+
+    const stopId = setInterval(() => {
+        clearInterval(id)
+    }, 10000);
+} // executeTime()
