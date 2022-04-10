@@ -260,4 +260,12 @@ const somePassed = exams.some(score => score >= 75) //true
 
 [3, 5, 7, 9, 11].reduce((accumulator, currentValue) => {
     return accumulator + currentValue;
-});
+}); //didnt work
+
+const prices = [9.99, 1.50, 19.99, 49.99, 30.50];
+
+let total = 0;
+for (let price of prices) {
+    total += price
+}
+console.log(total)
