@@ -137,12 +137,36 @@ const runner = {
     first: 'Tolulope',
     last: 'Fakunle',
     country: 'Nigeria',
-    title: 'Tolulope Coder'
+    title: 'Tolulope Coder',
+    born: 1999,
+    died: 3000
 }
 
+const runner2 = {
+    first: 'Stacy',
+    last: 'Flowers',
+    country: 'England',
+    title: 'StachTech',
+    born: 1978,
+    // died: 2005
+}
 // const first = runner.first
 // const last = runner.last
 // const country = runner.country
 
-const { first, last, country } = runner //Making a variable called first, last and country from the object user
+// const { first, last, country } = runner //Making a variable called first, last and country from the object user
 // More concise method
+
+// const { born: birthYear, died: deathYear } = runner //This will make us a varibale called birthyear not born
+// const { first, last, died = 'N/A' } = runner2
+
+/**DESTRUCTING PARAMETERS*/
+const runner3 = {
+    first2: 'Fikemi',
+    last2: 'Ray',
+    country: 'USA'
+}
+const fullName = ({ first2, last2 }) => {
+    return `${first2} ${last2}`
+}
+fullName(runner3); //'Fikemi Ray'
