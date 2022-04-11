@@ -47,7 +47,8 @@ const greet = function (person, msg = 'Hey There', punc = '!') {
 /**
  * SPREAD
  * =======
- * Spread in function call
+ * Spread in function call and array literal
+ * We are taking something and spreading it.
  */
 
 
