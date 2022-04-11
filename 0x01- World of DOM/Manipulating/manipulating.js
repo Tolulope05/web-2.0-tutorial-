@@ -59,3 +59,25 @@ firstLink.getAttribute('id'); // null
 
 // Using Set Attribute
 firstLink.setAttribute('href', 'https://www.google.com');
+
+// const firstInput = document.querySelectorAll('input')[0];
+const firstInput = document.querySelector("input[type='checkbox']") //Same as first one
+
+firstInput.setAttribute('style', 'display:block')
+firstInput.setAttribute('type', 'password')
+
+
+/**
+ * Changing Style
+ * ==============
+ */
+
+const header = document.querySelector('h1');
+header.style.color = 'green';
+header.style.border = '2px solid pink'
+
+// window.getComputedStyle(firstInput).fontSize
+
+const secondHeader = document.querySelector('h2');
+secondHeader.setAttribute('class', 'purple');
+secondHeader.setAttribute('class', 'border');
