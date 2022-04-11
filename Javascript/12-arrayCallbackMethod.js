@@ -300,3 +300,41 @@ const maxPrice = prices.reduce((max, price) => {
     return max;
 }) //MaxPrice 49,99
 
+/**
+ * =======================
+ * This and Arrow Function
+ * =======================
+ */
+
+const studNames =
+{
+    firstName: 'Tolulope',
+    lastName: 'Fakunle',
+
+    // fullName: function () {
+    //     return ` ${this.firstName} ${this.lastName}`
+    // },  // studNames.fullName() // ' Tolulope Fakunle'
+
+    fullName: () => {
+        return ` ${this.firstName} ${this.lastName}`
+    }, //studNames.fullName() // ' undefined undefined'
+    // This in arrow function refers to the scope that which it was created in
+    // In this case it refers to the window object
+
+    // shoutName: function () {
+    //     setTimeout(function () {
+    //         console.log(this.fullName())
+    //     }, 3000) // Display error becuase settimeout has to do with the execution context
+    //     // 
+    // },
+
+    shoutName: function () {
+        setTimeout(() => {
+            console.log(this); //{firstName: 'Tolulope', lastName: 'Fakunle', fullName: ƒ, shoutName: ƒ}
+            console.log(this.fullName());
+        }, 3000)
+
+    }
+    //SUMMARY: keyword this behave differently in an arrow function than a regular function
+    // dont use arrow to define a function in a method 
+}
