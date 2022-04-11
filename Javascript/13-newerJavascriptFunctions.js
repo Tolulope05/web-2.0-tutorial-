@@ -102,8 +102,18 @@ const addedForm = {
 //     return arguments.reduce((total, integer) => total + integer)
 // } //didnt work because argument didnt work
 
-function sum(...nums) {
+function sumAll(...nums) {
     // return (nums)
     return nums.reduce((total, integer) => total + integer)
 } //... is rest i.e Collect the rest of th values
 
+function raceResults(gold, silver, ...everyoneElse) {
+    console.log(`Gold Medal goes to : ${gold}`)
+    console.log(`silver Medal goes to : ${silver}`)
+    console.log(`And thanks to every other participants: ${everyoneElse}`)
+}
+
+/**
+ * DESTRUCTING
+ * ===========
+ */
