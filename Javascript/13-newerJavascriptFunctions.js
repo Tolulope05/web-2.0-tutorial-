@@ -39,10 +39,16 @@ const rollDie = function (num = 6) {
 // } //your default paramter should come second after all the parameter
 // greet("Tolu") // 'Tolu, undefined!'
 
-const greet = function (person, msg = 'Hey There') {
-    return `${msg}, ${person}!`
+const greet = function (person, msg = 'Hey There', punc = '!') {
+    return `${msg}, ${person}${punc}`
 } // greet("Tolu") //'Hey There, Tolu!'
   // greet('Whatsup','Tolulope') //'Tolulope, Whatsup!'
+
+/**
+ * SPREAD
+ * =======
+ * Spread in function call
+ */
 
 
 
