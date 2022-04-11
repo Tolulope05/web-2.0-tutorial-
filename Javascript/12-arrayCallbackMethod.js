@@ -291,5 +291,12 @@ const minPrice = prices.reduce((min, price) => {
         return price;
     }
     return min;
-})
+}) //MinPrice
+
+const maxPrice = prices.reduce((max, price) => {
+    if (price > max) {
+        return price;
+    }
+    return max;
+}) //MaxPrice 49,99
 
