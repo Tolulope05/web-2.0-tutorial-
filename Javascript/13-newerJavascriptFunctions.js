@@ -83,4 +83,27 @@ const datafromForm = {
 
 }
 
-const addedForm = { ...datafromForm, id: 'user4567', isAdmin: false } //{email: 'bluetick@gmail.com', password: 'Nakaroma89', username: 'Bluetick', id: 'user4567', isAdmin: false}
+const addedForm = {
+    ...datafromForm, id: 'user4567', isAdmin: false
+} //{email: 'bluetick@gmail.com', password: 'Nakaroma89', username: 'Bluetick', id: 'user4567', isAdmin: false}
+
+
+/**
+ * REST 
+ * =======
+ * uses ... same as Spread
+ */
+
+// const demoArg = function () {
+//     console.log(arguments)
+// }
+
+// const sum = function () {
+//     return arguments.reduce((total, integer) => total + integer)
+// } //didnt work because argument didnt work
+
+function sum(...nums) {
+    // return (nums)
+    return nums.reduce((total, integer) => total + integer)
+} //... is rest i.e Collect the rest of th values
+
