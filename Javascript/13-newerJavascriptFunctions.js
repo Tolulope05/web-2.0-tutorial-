@@ -123,7 +123,26 @@ function raceResults(gold, silver, ...everyoneElse) {
  */
 
 const ballScores = [98567, 89563, 75890, 83000, 68499, 93000];
+
+/**DESTRUCTING FROM AN ARRAY */
 const [gold, silver, bronze, ...everyoneElse2] = ballScores;
 gold //98567
 silver //89563
 bronze //75890
+everyoneElse2 //[83000, 68499, 93000]
+
+/**DESTRUCTING FROM AN OBJECT*/
+
+const runner = {
+    first: 'Tolulope',
+    last: 'Fakunle',
+    country: 'Nigeria',
+    title: 'Tolulope Coder'
+}
+
+// const first = runner.first
+// const last = runner.last
+// const country = runner.country
+
+const { first, last, country } = runner //Making a variable called first, last and country from the object user
+// More concise method
