@@ -11,7 +11,8 @@
  * getElementById() => get any element by its id
  * GetElementByClassName() => get any element by its class name
  * GetElementByTagName() => get any element by its tag name
- * querySelector() => can get any element by its id (#) or class (.) or tagname or attribute
+ * querySelector() => can get any element by its id (#) or class (.) or tagname or attribute.
+ * querySelectorAll() => same idea, but returns a collection of all matching element.
  */
 
 // const allImages = document.getElementsByTagName('img');
@@ -22,16 +23,15 @@
 
 
 const squareImg = document.getElementsByClassName('square');
-for (let img of squareImg) {
-    console.log(img.src)
-}
+// for (let img of squareImg) {
+//     console.log(img.src)
+// }
 
 const allLinks = document.querySelectorAll('a');
 
 // for (let link of allLinks) {
 //     link.innerText = 'I AM A LINK!!!!'
 // }
-
 
 for (let link of allLinks) {
     link.style.color = 'rgb(0, 108, 134)';
@@ -40,3 +40,11 @@ for (let link of allLinks) {
 }
 
 const anchorJava = document.querySelector("a[title = 'Java']") //Get element by attribute
+const links = document.querySelectorAll('p a');
+// for (let link of links) {
+//     console.log(link.href)
+// }
+
+
+
+
