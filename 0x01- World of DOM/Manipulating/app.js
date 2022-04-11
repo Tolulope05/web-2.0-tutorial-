@@ -10,3 +10,9 @@ for (let link of allLinks) {
     link.style.textDecorationColor = 'magenta';
     link.style.textDecorationStyle = 'wavy'
 }
+
+// const allImages = document.getElementsByTagName('img');
+// for (let img of allImages) {
+//     console.log(img.src);
+//     img.src = 'any img dir';
+// }
