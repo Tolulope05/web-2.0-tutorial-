@@ -27,18 +27,6 @@ const squareImg = document.getElementsByClassName('square');
 //     console.log(img.src)
 // }
 
-const allLinks = document.querySelectorAll('a');
-
-// for (let link of allLinks) {
-//     link.innerText = 'I AM A LINK!!!!'
-// }
-
-for (let link of allLinks) {
-    link.style.color = 'rgb(0, 108, 134)';
-    link.style.textDecorationColor = 'magenta';
-    link.style.textDecorationStyle = 'wavy'
-}
-
 const anchorJava = document.querySelector("a[title = 'Java']") //Get element by attribute
 const links = document.querySelectorAll('p a');
 // for (let link of links) {
