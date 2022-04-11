@@ -116,4 +116,14 @@ function raceResults(gold, silver, ...everyoneElse) {
 /**
  * DESTRUCTING
  * ===========
+ * A short or clean syntax to unpack:
+ * - Values from an array
+ * - properties from an objects
+ * into distinct variables.
  */
+
+const ballScores = [98567, 89563, 75890, 83000, 68499, 93000];
+const [gold, silver, bronze, ...everyoneElse2] = ballScores;
+gold //98567
+silver //89563
+bronze //75890
