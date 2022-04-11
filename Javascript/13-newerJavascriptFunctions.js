@@ -42,7 +42,7 @@ const rollDie = function (num = 6) {
 const greet = function (person, msg = 'Hey There', punc = '!') {
     return `${msg}, ${person}${punc}`
 } // greet("Tolu") //'Hey There, Tolu!'
-  // greet('Whatsup','Tolulope') //'Tolulope, Whatsup!'
+// greet('Whatsup','Tolulope') //'Tolulope, Whatsup!'
 
 /**
  * SPREAD
@@ -52,5 +52,16 @@ const greet = function (person, msg = 'Hey There', punc = '!') {
  * used by ...
  */
 
+//We can spread an array
+const dogFam = ['wolves', 'coyotes', 'foxes', 'jackals', 'wild dogs'];
+const catFam = ['cheetah', 'puma', 'jaguar', 'leopard', 'lion', 'lynx', 'tiger', 'domestic cat'];
 
+const allPets = [...dogFam, ...catFam]; //['wolves', 'coyotes', 'foxes', 'jackals', 'wild dogs', 'cheetah', 'puma', 'jaguar', 'leopard', 'lion', 'lynx', 'tiger', 'domestic cat']
 
+//We can spread string too
+const demoString = 'Tolulope'
+const spreadString = [...demoString] //['T', 'o', 'l', 'u', 'l', 'o', 'p', 'e']
+
+//We can spread Objects too
+const feline = { leg: 4, family: 'felidea' };
+const canine = { family: 'candea', fury: true };
