@@ -63,5 +63,24 @@ const demoString = 'Tolulope'
 const spreadString = [...demoString] //['T', 'o', 'l', 'u', 'l', 'o', 'p', 'e']
 
 //We can spread Objects too
+// - copy properties from one object to another object literals
 const feline = { leg: 4, family: 'felidea' };
 const canine = { family: 'candea', fury: true };
+
+const dog = { ...canine, ispet: true }; //{family: 'candea', fury: true, ispet: true}
+const lion = { ...feline, order: 'Panthera' }; //{family: 'candea', fury: true, ispet: true}
+const catDog = { ...canine, ...feline } //{family: 'felidea', fury: true, leg: 4}
+// catDog both have a family property, therefore order matters as it callbacks the one that comes last
+
+
+// USES OF SPREAD
+//+++++
+
+const datafromForm = {
+    email: 'bluetick@gmail.com',
+    password: 'Nakaroma89',
+    username: 'Bluetick'
+
+}
+
+const addedForm = { ...datafromForm, id: 'user4567', isAdmin: false } //{email: 'bluetick@gmail.com', password: 'Nakaroma89', username: 'Bluetick', id: 'user4567', isAdmin: false}
