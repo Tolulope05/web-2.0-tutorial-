@@ -1,0 +1,13 @@
+button {
+    color: darkslategray;
+    background-color: rgb(255, 254, 254);
+    border: 2px solid darkslategray;
+    padding: 10px;
+    transition: all .3s ease-in-out;
+    display: inline-block;
+}
+
+button:hover {
+    transform: scaleY(.9);
+
+}
