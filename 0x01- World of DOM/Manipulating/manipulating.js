@@ -139,3 +139,21 @@ const newH2 = document.createElement('h2');
 newH2.append('The chilken smells so good!!! LOL');
 
 header.insertAdjacentElement("afterend", newH2); //Element.before() //Element.after() does same thing
+
+
+/**
+ * Removing element
+ * ================
+ * - remove && removeChild
+ */
+const listItems = document.querySelector('ul');
+const firstLi = document.querySelector('li');
+const thirdLi = document.querySelectorAll('li')[4];
+// listItems.removeChild(firstLi); //1 History gone in content list
+// thirdLi.parentElement.removeChild(thirdLi) // 3 In cuisine gone
+
+/**
+ * REMOVE -New method
+ */
+const firstImage = document.querySelector('img');
+// firstImage.remove() //Removes first image.
