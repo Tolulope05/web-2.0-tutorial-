@@ -20,3 +20,22 @@
 //     pokemon.appendChild(label);
 //     container.appendChild(pokemon)
 // }
+
+/**
+ * MY OWN
+ */
+// https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
+
+const container = document.querySelector('#container');
+const baseUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
+
+for (let i = 1; i <= 150; i++) {
+    const pokeman = document.createElement('div');
+    const label = dcument.createElement('span');
+    label.innerText = ` Pokeman ${i}`;
+    const newImg = document.createElement('img');
+    newImg.src = `${baseUrl}${i}.png`;
+    pokeman.appendChild(newImg);
+    pokeman.appendChild(label);
+    container.appendChild(pokeman);
+}
