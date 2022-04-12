@@ -79,5 +79,14 @@ header.style.border = '2px solid pink'
 // window.getComputedStyle(firstInput).fontSize
 
 const secondHeader = document.querySelector('h2');
-secondHeader.setAttribute('class', 'purple');
-secondHeader.setAttribute('class', 'border');
+// secondHeader.setAttribute('class', 'purple');
+// secondHeader.setAttribute('class', 'border');
+// secondHeader.setAttribute('class', 'border purple');
+
+// ClassList - An object that can control,retrive and manipulate the classes of an element
+secondHeader.classList.add('border');
+secondHeader.classList.add('purple');
+secondHeader.classList.remove('border');
+secondHeader.classList.remove('purple');
+secondHeader.classList.contains('border'); //false
+secondHeader.classList.toggle('border'); 
