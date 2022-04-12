@@ -29,9 +29,10 @@
 const container = document.querySelector('#container');
 const baseUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
 
-for (let i = 1; i <= 150; i++) {
+for (let i = 1; i <= 200; i++) {
     const pokemon = document.createElement('div');
     const label = document.createElement('span');
+    pokemon.classList.add('pokemon');
     label.innerText = ` pokemon ${i}`;
     const newImg = document.createElement('img');
     newImg.src = `${baseUrl}${i}.png`;
@@ -39,4 +40,3 @@ for (let i = 1; i <= 150; i++) {
     pokemon.appendChild(label);
     container.appendChild(pokemon);
 }
-// container.classList.add('pokemon')
