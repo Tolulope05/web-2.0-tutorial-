@@ -89,4 +89,53 @@ secondHeader.classList.add('purple');
 secondHeader.classList.remove('border');
 secondHeader.classList.remove('purple');
 secondHeader.classList.contains('border'); //false
-secondHeader.classList.toggle('border'); 
+secondHeader.classList.toggle('border');
+
+/**
+ * TRansversing parents-Child-siblings
+ * ================================
+ */
+
+const firstBold = document.querySelector('b');
+firstBold.parentElement; // <p>
+firstBold.firstChild; // Silkie
+firstBold.nextElementSibling // <b>Silky</b>
+firstBold.parentElement.parentElement //Body
+firstBold.parentElement.parentElement.children // HTMLCollection(12)
+
+const firstChilken = document.querySelector('.square');
+firstChilken.nextSibling // Gives a nodeValue with text '/n' node that is a whitespace.
+firstChilken.nextElementSibling // <div class="square">
+firstChilken.previousSibling //Gives a nodeValue with text '\n\n' node that is a whitespace. 
+firstChilken.previousElementSibling // <p>....</p>
+
+/**
+ * CREATING NEW DOM ELEMENTS
+ */
+
+const newImg = document.createElement('img'); // <div></div>
+newImg.src = 'https://picsum.photos/536/354';
+document.body.appendChild(newImg); //This append this as the last child of the image
+newImg.classList.add('border');
+
+// New H3
+const newH3 = document.createElement('h3');
+newH3.innerText = 'I am a new H3';
+document.body.appendChild(newH3);
+
+
+// New B at the beginning of the parapgraph
+const newB = document.createElement('b');
+newB.append("ToluCoder ToluCoder ToluCoder");
+const firstParagraph = document.querySelector('p');
+firstParagraph.prepend(newB);
+
+/**
+ * Insert adjacent element method
+ * -e.g Insert an Element between SideChickens snd the first Image.
+ * 
+*/
+const newH2 = document.createElement('h2');
+newH2.append('The chilken smells so good!!! LOL');
+
+header.insertAdjacentElement("afterend", newH2); //Element.before() //Element.after() does same thing
