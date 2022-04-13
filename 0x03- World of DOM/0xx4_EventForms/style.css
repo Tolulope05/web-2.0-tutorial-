@@ -6,3 +6,7 @@ button {
 hr {
     width: 75%;
 }
+
+.hide {
+    display: 'none';
+}
