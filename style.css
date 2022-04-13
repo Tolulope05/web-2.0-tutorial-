@@ -9,11 +9,12 @@ header.page-header {
     text-shadow: #000 0 0 .2em;
 }
 
-header.page-header > h1 {
+header.page-header>h1 {
     font: bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script', cursive,
         fantasy;
     margin: 2%;
 }
+
 
 main {
     font: 1rem 'Fira Sans', sans-serif;
@@ -36,6 +37,7 @@ main {
     font: small-caps bold 1.2rem sans-serif;
     text-align: center;
 }
+
 /*Intimidating leopard style end*/
 
 /*weather forecast*/
@@ -47,7 +49,7 @@ main {
     width: fit-content;
 }
 
-.forecast > h1,
+.forecast>h1,
 .day-forecast {
     margin: .5rem;
     padding: .3rem;
@@ -55,20 +57,20 @@ main {
 }
 
 .day-forecast {
-    background: right/contain content-box border-box no-repeat
-        url('/media/examples/rain.svg') white;
+    background: right/contain content-box border-box no-repeat url('/media/examples/rain.svg') white;
 }
 
-.day-forecast > h2,
-.day-forecast > p {
+.day-forecast>h2,
+.day-forecast>p {
     margin: .2rem;
     font-size: 1rem;
 }
 
 /* Aside div  */
-.aside{
-    width:300px;
+.aside {
+    width: 300px;
 }
+
 aside {
     width: 40%;
     padding-left: .5rem;
@@ -79,7 +81,7 @@ aside {
     color: #29627e;
 }
 
-aside > p {
+aside>p {
     margin: .5rem;
 }
 
@@ -95,14 +97,14 @@ p {
 
 /* PSEUDO ELEMENT  */
 p::selection {
-    text-transform:capitalize;
+    text-transform: capitalize;
     font-size: 110%;
 }
 
 
 
 /* New Section on RGBA */
-.new-section{
+.new-section {
     /* background-color: #2a9942; */
     width: 90%;
     margin: 10px auto;
@@ -110,13 +112,13 @@ p::selection {
     border: 5px solid #003049;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    align-content: space-around;  
+    align-content: space-around;
 }
 
-.one{
+.one {
     background-color: rgba(0, 48, 73, 0.5);
     width: 100px;
     height: 100px;
@@ -130,7 +132,7 @@ p::selection {
     height: 100px;
     border: 5px solid #cdd6db;
     border-radius: 10% / 50%;
-    
+
 }
 
 .three {
@@ -139,10 +141,11 @@ p::selection {
     height: 100px;
     border: 5px solid #cfd6da;
     border-radius: 10% / 50%;
-    
+
 }
+
 /* New /Nice Hover effect i saw on google font  */
-.nice-hover{
+.nice-hover {
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -152,7 +155,8 @@ p::selection {
     width: 150px;
     background-color: #3d886f;
 }
-.hoveff{
+
+.hoveff {
     width: 100px;
     height: 100px;
     border-radius: 8px;
@@ -161,14 +165,15 @@ p::selection {
     transition: all .15s ease;
     padding: 5px;
     text-align: center;
-    
+
 }
-.hoveff:hover{
+
+.hoveff:hover {
     transform: scale(1.4);
     transform: translateY(-5px);
     box-shadow: 0 0.1em 5px #ced11c;
     border: #ced11c;
     text-transform: uppercase;
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
-    
+
 }
