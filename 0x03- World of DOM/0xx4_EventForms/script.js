@@ -70,7 +70,21 @@ button.addEventListener('click', function (e) {
  * Event Delegation
  * ================
  * Using form event from above
+ * We want to delete a tweet too
+ * Add eventlistener to even the element that will be added after the event is created
  */
+
+// const lis = document.querySelectorAll('li');
+// for (let li of lis) {
+//     li.addEventListener('clcik', function () {
+//         li.remove();
+//     }) // didnt work for the new li but worked for declared lis in the html 
+// }
+
+textField.addEventListener('click', function (e) {
+    // console.log(e); //Print event object and check target
+
+})
 
 
 
