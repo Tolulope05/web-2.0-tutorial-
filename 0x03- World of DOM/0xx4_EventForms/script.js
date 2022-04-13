@@ -82,8 +82,8 @@ button.addEventListener('click', function (e) {
 // }
 
 textField.addEventListener('click', function (e) {
-    // console.log(e); //Print event object and check target
-
+    // console.log(e); //Print event object and check target and nodeName
+    e.target.nodeName === 'LI' && e.target.remove();
 })
 
 
