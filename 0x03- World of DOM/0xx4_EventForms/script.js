@@ -49,14 +49,28 @@ textInput.addEventListener('input', function (e) {
 const button = document.querySelector('#btn');
 const container = document.querySelector('#container');
 
-button.addEventListener('click', function () {
-    container.style.backgroundColor = randomColor();
-}); // Didnt work
-
 const randomColor = () => {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
     return `rgb(${r},${g},${b})`;
 };
+
+container.addEventListener('click', function () {
+    container.classList.toggle('hide')
+});
+
+button.addEventListener('click', function (e) {
+    container.style.backgroundColor = randomColor();
+    e.stopPropagation();
+    //This method prevents event from reaching any objects other than the current object.
+});
+
+/**
+ * Event Delegation
+ * ================
+ * Using form event from above
+ */
+
+
 

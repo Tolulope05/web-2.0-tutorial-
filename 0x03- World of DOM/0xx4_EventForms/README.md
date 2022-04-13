@@ -13,4 +13,6 @@ e.g Making a tweet chat app
 # Event Bubbling
 > When an event occurs on an element, it is first fired on that element.
 > Then, if the event is not stopped, it is fired on the parent of that element.
+> e.stopPropagation()-This method prevents event from reaching any objects other than the current object.
 
+# Event Delegation
