@@ -1,3 +1,6 @@
+/**
+ * Form Event
+ */
 const tweetForm = document.querySelector('#tweetForm');
 const textField = document.querySelector('#textField');
 
@@ -24,3 +27,31 @@ tweetForm.addEventListener('submit', function (e) {
     userTweet.value = ''; //reset
 });
 
+/**
+ * Input & Change Event
+ */
+
+const textInput = document.querySelector('#txtinpt');
+const changeHeader = document.querySelector('#changeHeading')
+
+// textInput.addEventListener('change', function (e) {
+//     const textValue = textInput.value;
+//     console.log(textValue);
+// }) // change input only fires when you blur the input i.e leave it
+
+textInput.addEventListener('input', function (e) {
+    changeHeader.innerText = textInput.value;
+}) // Changes input as you are typing
+
+/**
+ * Event bubbling
+ */
+const btn = document.querySelector('#btn');
+const container = document.querySelector('#container');
+
+const randomColor = () => {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r},${g},${b})`;
+}

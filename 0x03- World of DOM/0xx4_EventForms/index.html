@@ -27,10 +27,24 @@
     </ul>
 
     <hr>
-    <h1>Change and Input</h1>
+
+    <h1 id="changeHeading">Change and Input</h1>
     <h2>Type Below:</h2>
     <input type="text" name="txtinput" id="txtinpt">
     <script src="./script.js"></script>
+
+    <hr>
+    <h1>Event bubbling</h1>
+    <section onclick="alert('Section clicked!')">
+        <p onclick="alert('Paragragh clicked!')">
+            I am a paragragh
+            <button onclick="alert('Button clicked!!')">Click Me!</button>
+        </p>
+    </section>
+
+    <div id="container">Click to Hide
+        <button id="btn">Change color</button>
+    </div>
 </body>
 
 </html>
