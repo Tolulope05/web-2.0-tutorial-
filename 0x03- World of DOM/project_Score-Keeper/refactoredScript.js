@@ -29,9 +29,6 @@ function updateScore(player, opponent) {
     }
 }
 
-
-
-
 p1.button.addEventListener('click', function () {
     updateScore(p1, p2)
 });
