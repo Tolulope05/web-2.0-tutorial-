@@ -22,8 +22,8 @@ function updateScore(player, opponent) {
             isGameOver = true;
             player.display.classList.add('winner');
             opponent.classList.add('loser');
-            player.disabled = true;
-            opponent.disabled = true;
+            player.button.disabled = true;
+            opponent.button.disabled = true;
         }
         player.display.textContent = player.score;
     }
