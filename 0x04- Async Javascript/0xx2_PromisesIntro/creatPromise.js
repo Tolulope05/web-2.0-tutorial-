@@ -14,3 +14,6 @@ fakeRequest('/tolu/tech/1')
         console.log('Done with Request')
         // console.log(data)
     })
+    .catch(() => {
+        console.log('hi juli')
+    })
