@@ -7,3 +7,8 @@ const fakeRequest = (url) => {
         }, 1500)
     })
 }
+
+fakeRequest('/tolu/tech/1')
+    .then((data) => {
+        console.log('Done with Request')
+    })
