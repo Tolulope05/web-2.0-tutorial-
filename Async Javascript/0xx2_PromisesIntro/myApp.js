@@ -73,6 +73,7 @@ const fakeRequestCallback = (url, success, failure) => {
  * - an object representing the eventual completion 
  * or failure of an asynchronous operation.
  * Promises have 3 states: - pending - resolved - rejected
+ * -- Promises are resolved and rejected with values.
  */
 
 // THE PROMISE VERSION 
@@ -89,73 +90,76 @@ const fakeRequestPromise = (url) => {
     })
 }
 
-fakeRequestPromise('tolutech.com/api/coder/page1')
-    .then(() => {
-        console.log('It Worked (Page1)')
-        fakeRequestPromise('tolutech.com/api/coder/page2')
-            .then(() => {
-                console.log('It Worked (Page2)')
-                fakeRequestPromise('tolutech.com/api/coder/page3')
-                    .then(() => {
-                        console.log('It Worked (Page3)')
-                        fakeRequestPromise('tolutech.com/api/coder/page4')
-                            .then(() => {
-                                console.log('It Worked (Page4)')
-                                fakeRequestPromise('tolutech.com/api/coder/page5')
-                                    .then(() => {
-                                        console.log('It Worked (Page 5)')
-                                        fakeRequestPromise('tolutech.com/api/coder/page6')
-                                            .then(() => {
-                                                console.log('It Worked (Page 6)')
-                                            })
-                                            .catch(() => {
-                                                console.log('Promise Rejected (6) !!')
-                                                console.log('Oh No...Error promise!')
-                                            })
-                                    })
-                                    .catch(() => {
-                                        console.log('Promise Rejected (5) !!')
-                                        console.log('Oh No...Error promise!')
-                                    })
-                            })
-                            .catch(() => {
-                                console.log('Promise Rejected (4) !!')
-                                console.log('Oh No...Error promise!')
-                            })
-                    })
-                    .catch(() => {
-                        console.log('Promise Rejected (3) !!')
-                        console.log('Oh No...Error promise!')
-                    })
-            })
-            .catch(() => {
-                console.log('Promise Rejected (2) !!')
-                console.log('Oh No...Error promise!')
-            })
-    }) // Runs if promise is resolved.
-    .catch(() => {
-        console.log('Promise Rejected !!')
-        console.log('Oh No...Error promise!')
-    }) // Runs if promise is rejected.
+// fakeRequestPromise('tolutech.com/api/coder/page1')
+//     .then(() => {
+//         console.log('It Worked (Page1)')
+//         fakeRequestPromise('tolutech.com/api/coder/page2')
+//             .then(() => {
+//                 console.log('It Worked (Page2)')
+//                 fakeRequestPromise('tolutech.com/api/coder/page3')
+//                     .then(() => {
+//                         console.log('It Worked (Page3)')
+//                         fakeRequestPromise('tolutech.com/api/coder/page4')
+//                             .then(() => {
+//                                 console.log('It Worked (Page4)')
+//                                 fakeRequestPromise('tolutech.com/api/coder/page5')
+//                                     .then(() => {
+//                                         console.log('It Worked (Page 5)')
+//                                         fakeRequestPromise('tolutech.com/api/coder/page6')
+//                                             .then(() => {
+//                                                 console.log('It Worked (Page 6)')
+//                                             })
+//                                             .catch(() => {
+//                                                 console.log('Promise Rejected (6) !!')
+//                                                 console.log('Oh No...Error promise!')
+//                                             })
+//                                     })
+//                                     .catch(() => {
+//                                         console.log('Promise Rejected (5) !!')
+//                                         console.log('Oh No...Error promise!')
+//                                     })
+//                             })
+//                             .catch(() => {
+//                                 console.log('Promise Rejected (4) !!')
+//                                 console.log('Oh No...Error promise!')
+//                             })
+//                     })
+//                     .catch(() => {
+//                         console.log('Promise Rejected (3) !!')
+//                         console.log('Oh No...Error promise!')
+//                     })
+//             })
+//             .catch(() => {
+//                 console.log('Promise Rejected (2) !!')
+//                 console.log('Oh No...Error promise!')
+//             })
+//     }) // Runs if promise is resolved.
+//     .catch(() => {
+//         console.log('Promise Rejected !!')
+//         console.log('Oh No...Error promise!')
+//     }) // Runs if promise is rejected.
 
 
 // THE CLEANEST OPTION WITH THEN/CATCH
 fakeRequestPromise('tolutech.com/api/coder/page1')
-    .then(() => {
+    .then((data) => {
         console.log('It Worked (Page1)')
+        console.log(data)
         return fakeRequestPromise('tolutech.com/api/coder/page1')
     })
-    .then(() => {
+    .then((data) => {
         console.log('It Worked (Page2)')
+        console.log(data)
         return fakeRequestPromise('tolutech.com/api/coder/page2')
     })
-    .then(() => {
+    .then((data) => {
         console.log('It worked(Page3)')
+        console.log(data)
         return fakeRequestPromise('tolutech.com/api/coder/page2')
     })
-    .catch(() => {
-        console.log('Promise Rejected (6) !!')
-        console.log('Oh No...Error promise!')
-    })
+    .catch((err) => {
+        console.log('OH NO,REQUEST FAILED !!')
+        console.log(err)
+    }) // We can use a single .catch
 
 
