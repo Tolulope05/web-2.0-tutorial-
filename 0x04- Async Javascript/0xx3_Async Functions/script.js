@@ -83,7 +83,53 @@ const delayedColorChange = (newColor, delay) => {
 //     .then(() => delayedColorChange('violet', 1000))
 
 
-// Function Decoration
+// Await keyword makes the delayed color change to wait for each other
 async function rainbow() {
-    delayedColorChange('red', 1000)
+    await delayedColorChange('red', 1000)
+    await delayedColorChange('green', 1000)
+    await delayedColorChange('blue', 1000)
+    await delayedColorChange('orange', 1000)
+    await delayedColorChange('indigo', 1000)
+    await delayedColorChange('violet', 1000)
+} // rainbow() in console.
+
+/**
+ * Handling error in Async Functions.
+ */
+
+
+// Using this Promise 
+const fakeRequest = (url) => {
+    return new Promise((resolve, reject) => {
+        const delay = Math.floor(Math.random() * (4500)) + 500 //0-9
+        setTimeout(() => {
+            if (delay > 2000) {
+                resolve('Connection Timeout :(')
+            } else {
+                reject(`Here is your fake data from ${url}`)
+            }
+        }, delay)
+    })
 }
+
+// fakeRequest('/tolu/tech/1')
+//     .then((data) => {
+//         console.log('Done with REQUEST:')
+//         console.log('Data is:', data)
+//     })
+//     .catch((err) => {
+//         console.log('Oh NO!!', err)
+//     }) // Old way using Promise.
+
+async function makeTwoRequest() {
+    try {
+        let data1 = await fakeRequest('/page1')
+        console.log(data1)
+        let data2 = await fakeRequest('/page2')
+        console.log(data2)
+    } catch (e) {
+        console.log('Caught an error')
+        console.log('Error is: ', e)
+    }
+} // makeTwoRequest()
+
