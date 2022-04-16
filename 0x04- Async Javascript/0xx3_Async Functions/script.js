@@ -1,5 +1,5 @@
 /**
- * ASync 
+ * ASync
  * =====
  * keyword: async
  * Keyword: await
@@ -21,7 +21,7 @@
 //     return 'LA LA LA'
 //     /**
 //      * If you throw an eror in aync, The promise is rejected
-//      * If we throw a valur, Promise is accepted. 
+//      * If we throw a valur, Promise is accepted.
 //      */
 // } //fulfiled 'la la la'
 
@@ -29,17 +29,61 @@
 //     .then((data) => console.log('Promise resolved eith:', data))
 //     .catch((err) => console.log('Oh no, Promise rejected:', err))
 
-const login = async function (username, password) {
-    if (!username || !password) throw 'Missing Credentials'
-    if (password === 'tolulope') return 'WELCOME!'
-    throw 'Invalid Password!'
+
+/**
+ *
+ * @param {tee} username
+ * @param {tolulope} password
+ * @returns
+ */
+// const login = async function (username, password) {
+//     if (!username || !password) throw 'Missing Credentials'
+//     if (password === 'tolulope') return 'WELCOME!'
+//     throw 'Invalid Password!'
+// }
+
+// login('Tolu', 'tolulope')
+//     .then(msg => {
+//         console.log('Logged in!')
+//         console.log(msg)
+//     })
+//     .catch(err => {
+//         console.log('Invalid Username & Password: ', err)
+//     })
+
+
+
+// THE AWAIT KEYWORD
+/**
+ * AWAIT KEYWORD
+ * - It allows us to write asynchronous code that looks like is synchronous
+ * - We can only use the await keyword inside of function declared with async
+ * - Await will pause the execution of the function
+ * - waiting for the promise to be resolved.
+ */
+
+// A Change Background Function
+
+const delayedColorChange = (newColor, delay) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            document.body.style.backgroundColor = newColor;
+            resolve();
+        }, delay)
+    })
 }
 
-login('username', 'tolul')
-    .then(msg => {
-        console.log('Logged in!')
-        console.log(msg)
-    })
-    .catch(err => {
-        console.log('Invalid Username & Password: ', err)
-    })
+// delayedColorChange('red', 1000)
+//     .then(() => delayedColorChange('red', 1000))
+//     .then(() => delayedColorChange('green', 1000))
+//     .then(() => delayedColorChange('blue', 1000))
+//     .then(() => delayedColorChange('orange', 1000))
+//     .then(() => delayedColorChange('yellow', 1000))
+//     .then(() => delayedColorChange('indigo', 1000))
+//     .then(() => delayedColorChange('violet', 1000))
+
+
+// Function Decoration
+async function rainbow() {
+    delayedColorChange('red', 1000)
+}
