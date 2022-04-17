@@ -113,6 +113,50 @@ JSON.stringify(dog) // '{"breed":"Lab","color":"black","isAlive":true,"tag":null
 // } // moviesList()
 // If any of the promises is returning an error, We wrap them in a try and a catch.
 
+/**
+ * IMPROVEMENT UPON FETCH
+ * ======================
+ * Library that is extremely popular
+ * AXIOS LIBRARY
+ * - gives us useful method to make HTTP request
+ * 
+ */
+/**!st Option */
+// const jokes = document.getElementById('jokes');
+// const getDadJoke = async () => {
+//     const config = { headers: { Accept: 'application/json' } }
+//     const res = await axios.get('https://icanhazdadjoke.com/', config)
+//     // console.log(res.data.joke)
+//     const newLi = document.createElement('li');
+//     newLi.append(res.data.joke)
+//     jokes.append(newLi)
+// } 
+// const clickButton = document.querySelector('button');
+// clickButton.addEventListener('click', getDadJoke)
+
+/**WORKED ON Option */
+const clickButton = document.querySelector('button');
+const jokes = document.getElementById('jokes');
+
+async function getDadJoke() {
+    const config = { headers: { Accept: 'application/json' } }
+    const res = await axios.get('https://icanhazdadjoke.com/', config)
+    // console.log(res.data.joke)
+    return res.data.joke
+
+}
+const addNewJoke = async () => {
+    const jokeText = await getDadJoke();
+    // console.log(jokeText);
+    const newLi = document.createElement('li');
+    newLi.append(jokeText)
+    jokes.append(newLi)
+}
+clickButton.addEventListener('click', addNewJoke)
+
+
+
+
 
 
 
