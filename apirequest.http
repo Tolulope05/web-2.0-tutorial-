@@ -15,3 +15,12 @@ https://api.cryptonator.com/api/full/btc-usd
 
 ###
 openweathermap.org/api
+
+###
+https://www.tvmaze.com/api#full-schedule
+
+###
+icanhazdadjoke.com/api 
+
+###
+curl -H "Accept: application/json" https://icanhazdadjoke.com/
