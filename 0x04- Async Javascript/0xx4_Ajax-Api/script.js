@@ -76,22 +76,43 @@ JSON.stringify(dog) // '{"breed":"Lab","color":"black","isAlive":true,"tag":null
 /**
  * The new Fetch api
  * - making request asycyronously as the page is loading
- * - support promises 
+ * - support promises
  */
 
-fetch('https://yts.mx/api/v2/list_movies.json') //Returns Promise
-    .then(res => {
-        console.log('RESPONSE, WAITING TO PARSE...', res) // We dont have the data just yet
-        //It resolve the promise as soon as the header comes it, There is no body guarantee
-        return res.json() //json method repsonse a promise that contains the body
-    })
-    .then(data => {
-        console.log('DATA PARSED...')
-        console.log(data) // Real Data containing the body
-        console.log(data.data.movies)
-    })
-    .catch(err => {
-        console.log('Oh No!!:', err)
-    })
+// fetch('https://yts.mx/api/v2/list_movies.json') //Returns Promise
+//     .then(res => {
+//         console.log('RESPONSE, WAITING TO PARSE...', res) // We dont have the data just yet
+//         //It resolve the promise as soon as the header comes it, There is no body guarantee
+//         return res.json() //json method repsonse a promise that contains the body
+//     })
+//     .then(data => {
+//         console.log('DATA PARSED...')
+//         console.log(data) // Real Data containing the body
+//         console.log(data.data.movies)
+//         /**
+//          * To request another api,We can do this without nesting
+//          * - should be another api
+//          */
+//         // return fetch('https://yts.mx/api/v2/list_movies.json')
+//     })
+//     .catch(error => {
+//         console.log('Oh No!!:', error)
+//     })
+
+// The async version
+
+// const moviesList = async () => {
+//     try {
+//         const res = await fetch('https://yts.mx/api/v2/list_movies.json');
+//         console.log(res)
+//         const data = await res.json()
+//         console.log(data) // Real Data containing the body
+//     } catch (error) {
+//         console.log('Oh No!!:', error)
+//     }
+// } // moviesList()
+// If any of the promises is returning an error, We wrap them in a try and a catch.
+
+
 
 
