@@ -139,11 +139,14 @@ const clickButton = document.querySelector('button');
 const jokes = document.getElementById('jokes');
 
 async function getDadJoke() {
-    const config = { headers: { Accept: 'application/json' } }
-    const res = await axios.get('https://icanhazdadjoke.com/', config)
-    // console.log(res.data.joke)
-    return res.data.joke
-
+    try {
+        const config = { headers: { Accept: 'application/json' } }
+        const res = await axios.get('https://icanhazdadjoke.com/', config)
+        // console.log(res.data.joke)
+        return res.data.joke
+    } catch (error) {
+        return 'No JOKES, Try Again', error
+    }
 }
 const addNewJoke = async () => {
     const jokeText = await getDadJoke();
