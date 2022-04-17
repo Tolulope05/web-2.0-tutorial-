@@ -32,4 +32,54 @@ JSON.stringify(dog) // '{"breed":"Lab","color":"black","isAlive":true,"tag":null
 
 /**
  * Anatomy of HTTP Request
+ * =======================
+ * - Old XML Method
+ * - New Fetch Method
  */
+// XML HttpRequest {Old way}
+
+// const myReq = new XMLHttpRequest();
+// myReq.onload = function () {
+//     const data = JSON.parse(this.responseText);
+//     console.log(data);
+// };
+// myReq.onerror = function (err) {
+//     console.log('Error:', err)
+// };
+// myReq.open('get', 'https://icanhazdadjoke.com/', true);
+// myReq.setRequestHeader('Accept', 'applicationn/json');
+// myReq.send()
+
+// const req = new XMLHttpRequest();
+// req.onload = function () {
+//     console.log('All done with Request!!!')
+//     // console.log(this) // The raw Json data
+//     // console.log(this.responseText) //Raw data Json Response
+//     const reqData = (JSON.parse(this.responseText)) //Object format
+//     console.log(reqData.data.movies[0]);
+//     console.log(reqData.data.movies[0].title_long);
+//     const coverImg = reqData.data.movies[0].medium_cover_image;
+//     const title = reqData.data.movies[0].title_long;
+
+//     const img = document.querySelector('img')
+//     img.src = coverImg
+//     img.nextElementSibling.innerHTML = title
+
+// }
+// req.onerror = (err) => {
+//     console.log('Error:', err)
+//     console.log(this)
+// }
+// req.open('GET', 'https://yts.mx/api/v2/list_movies.json');
+// req.send()
+
+/**
+ * The new Fetch api
+ * - making request asycyronously as the page is loading
+ * - support promises 
+ */
+
+fetch('https://yts.mx/api/v2/list_movies.json') //Returns Promise
+
+
+
