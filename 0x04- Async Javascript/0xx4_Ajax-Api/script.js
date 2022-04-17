@@ -80,6 +80,18 @@ JSON.stringify(dog) // '{"breed":"Lab","color":"black","isAlive":true,"tag":null
  */
 
 fetch('https://yts.mx/api/v2/list_movies.json') //Returns Promise
-
+    .then(res => {
+        console.log('RESPONSE, WAITING TO PARSE...', res) // We dont have the data just yet
+        //It resolve the promise as soon as the header comes it, There is no body guarantee
+        return res.json() //json method repsonse a promise that contains the body
+    })
+    .then(data => {
+        console.log('DATA PARSED...')
+        console.log(data) // Real Data containing the body
+        console.log(data.data.movies)
+    })
+    .catch(err => {
+        console.log('Oh No!!:', err)
+    })
 
 
