@@ -23,4 +23,4 @@ const makeImages = function (shows) {
     }
 }
 
-// Wrtie a function that clearn images on new key press
+// Write a function that clearn images on new key press
