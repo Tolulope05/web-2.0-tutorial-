@@ -47,47 +47,77 @@
 
 /** 2. Constructor Function {Better Alternative}
  * =============================================
+ * NB: We capitalize the first letter of classes or constructor functions.
  * - CREATE A BLANK, PLAIN OBJECT
  * - PASSES THE NEWLY CREATED OBJECT FROM STEP 1 AS THIS CONTEXT
  * - PASSES THE NEWLY CREATED OBJECT AS THIS CONTEXT
  * - RETURNS THIS IF THE FUNCTION DOESNT RETURN ITS OWN FUNCTION.
  *   
  */
-/** WILL GET BACK TO THIS LATER */
-// class Color {
-//     constructor(r, g, b) {
-//         this.r = r
-//         this.g = g
-//         this.b = b
-//     }
-// } // new Color(45,34,34)
 
+// function Color(r, g, b) {
+//     this.r = r
+//     this.g = g
+//     this.b = b
 
-function Color(r, g, b) {
-    this.r = r
-    this.g = g
-    this.b = b
+// } // Constructor function for color
 
-} // Constructor function for color
+// Color.prototype.rgb = function () {
+//     const { r, g, b } = this;
+//     return `rgb(${r}, ${g}, ${b})`
+// };
 
-Color.prototype.rgb = function () {
-    const { r, g, b } = this;
-    return `rgb(${r}, ${g}, ${b})`
-};
+// Color.prototype.hex = function () {
+//     const { r, g, b } = this;
+//     return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1); //Converts Rgb to hexacedimal values
 
-Color.prototype.hex = function () {
-    const { r, g, b } = this;
-    return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1); //Converts Rgb to hexacedimal values
+// }
 
-}
+// Color.prototype.rgba = function (a = 1.0) {
+//     const { r, g, b } = this;
+//     return `grba(${r},${g},${b},${a})`;
 
-Color.prototype.rgba = function (a = 1.0) {
-    const { r, g, b } = this;
-    return `grba(${r},${g},${b},${a})`;
+// }
 
-}
-
-const color1 = new Color(40, 50, 60);
-const color2 = new Color(55, 67, 98);
+// const color1 = new Color(40, 50, 60);
+// const color2 = new Color(55, 67, 98);
 // color1.hex === color2.hex //true becuase they are pointing to the same prototype
 
+
+/**
+ * *******************
+ * JAVASCRIPT CLASSES
+ * *******************
+ * - /a better alternative
+ */
+
+class Color {
+    constructor(r, g, b, name) {
+        this.r = r;
+        this.g = g;
+        this.b = b;
+        this.name = name;
+    } // A construction is a function that will execute immediately whenever this new class is called
+
+    greet() {
+        return `Hello from ${this.name}!!!`
+    }// To define a method, similar to prototype above
+
+    rgb() {
+
+        return `rgb(${this.r}, ${this.g}, ${this.b})`;
+        /**OR USE */
+        const { r, g, b } = this
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    hex() {
+        const { r, g, b } = this;
+        return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1); //Converts Rgb to hexacedimal values
+    }
+
+}
+
+const c1 = new Color(255, 67, 89, 'tomato')
+c1.greet() // 'Hello from tomato!!!'
+c1.hex() // '#ff4359'
