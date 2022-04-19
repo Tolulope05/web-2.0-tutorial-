@@ -116,8 +116,89 @@ class Color {
         return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1); //Converts Rgb to hexacedimal values
     }
 
+    rgba(a = 1.0) {
+        const { r, g, b } = this;
+        return `rgba(${r}, ${g}, ${b}, ${a})`;
+    }
+
+    /**
+     * How to call a method/function from another method
+     */
+    innerRGB() {
+        const { r, g, b } = this;
+        return `${r},${g},${b}`;
+    }
+
+    rgb() {
+        return `rgb(${this.innerRGB()})`
+
+    } // Same result
+
+    rgba(a = 1.0) {
+        return `rgba(${this.innerRGB()},${a})`;
+    }
+
 }
 
-const c1 = new Color(255, 67, 89, 'tomato')
-c1.greet() // 'Hello from tomato!!!'
-c1.hex() // '#ff4359'
+const red = new Color(255, 67, 89, 'tomato');
+const white = new Color(255, 255, 255, 'white');
+red.greet() // 'Hello from tomato!!!'
+red.hex() // '#ff4359'
+
+white.greet() //Hello from white!!!
+white.hex() //'#ffffff'
+
+red.rgba(.5) //'rgb(255, 67, 89, 0.5)'
+
+
+/**
+ * **************************
+ * More Practice with classes
+ * **************************
+ * Write a function that converts RGB Color
+ * system to HSL color system
+ * - hue saturation and lightness
+ * - hsl(0-360,1-100%,1-100%)
+ * NB: Dont bother about knowing the function.
+*/
+function calcHSL(r, g, b) {
+    // Make r,g,b fraction of 1
+    r /= 255;
+    g /= 255;
+    b /= 255;
+
+    // Find greatest and smallest channel values
+    let cmin = Math.min(r, g, b),
+        cmax = Math.max(r, g, b),
+        delta = cmax - cmin,
+        h = 0,
+        s = 0,
+        l = 0;
+    if (delta == 0) h = 0;
+    else if (cmax == r)
+        // Red is max
+        h = ((g - b) / delta) % 6;
+    else if (cmax == g)
+        // Green is max
+        h = ((b - r) / delta) + 2;
+    else
+        // Blue is max
+        h = (r - g) / delta + 4;
+
+    h = Math.round(h * 60);
+
+    // Make negative hues positive behind 360 
+    if (h < 0) h += 360;
+    // Calculate lightness
+    l = (cmax + cmin) / 2;
+
+    // Calculate saturation
+    s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+
+    // Multiply l and s by 100
+    s = +(s * 100).toFixed(1);
+    l = +(l * 100).toFixed(1);
+
+    // Return value of h, s and l as an array
+    return [h, s, l]
+}
