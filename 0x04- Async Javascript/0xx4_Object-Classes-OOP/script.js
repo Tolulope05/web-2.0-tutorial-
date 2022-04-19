@@ -81,5 +81,13 @@ Color.prototype.hex = function () {
 
 }
 
+Color.prototype.rgba = function (a = 1.0) {
+    const { r, g, b } = this;
+    return `grba(${r},${g},${b},${a})`;
+
+}
+
 const color1 = new Color(40, 50, 60);
 const color2 = new Color(55, 67, 98);
+// color1.hex === color2.hex //true becuase they are pointing to the same prototype
+
