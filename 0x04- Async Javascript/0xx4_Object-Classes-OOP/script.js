@@ -45,14 +45,14 @@
 // black.rgb();
 
 
-// 2. Constructor Function {Better Alternative}
-
-function Color(r, g, b) {
-    this.r = r
-    this.g = g
-    this.b = b
-}
-
+/** 2. Constructor Function {Better Alternative}
+ * =============================================
+ * - CREATE A BLANK, PLAIN OBJECT
+ * - PASSES THE NEWLY CREATED OBJECT FROM STEP 1 AS THIS CONTEXT
+ * - PASSES THE NEWLY CREATED OBJECT AS THIS CONTEXT
+ * - RETURNS THIS IF THE FUNCTION DOESNT RETURN ITS OWN FUNCTION.
+ *   
+ */
 /** WILL GET BACK TO THIS LATER */
 // class Color {
 //     constructor(r, g, b) {
@@ -61,3 +61,12 @@ function Color(r, g, b) {
 //         this.b = b
 //     }
 // } // new Color(45,34,34)
+
+
+function Color(r, g, b) {
+    this.r = r
+    this.g = g
+    this.b = b
+}
+
+
