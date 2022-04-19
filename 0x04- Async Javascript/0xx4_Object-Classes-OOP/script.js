@@ -97,6 +97,7 @@ class Color {
         this.g = g;
         this.b = b;
         this.name = name;
+        this.calcHSL();
     } // A construction is a function that will execute immediately whenever this new class is called
 
     greet() {
@@ -138,9 +139,24 @@ class Color {
         return `rgba(${this.innerRGB()},${a})`;
     }
 
+    hsl() {
+        const { h, s, l } = this;
+        return `hsl(${h}, ${s}%, ${l}%) `;
+    }
+
+    fullSaturation() {
+        const { h, s, l } = this;
+        return `hsl(${h},100%, ${l}%) `;
+    }
+
+    // Function that generate opposite color
+    opposite() {
+        const { h, s, l } = this;
+        const newHue = (h + 180) % 360;
+        return `hsl(${newHue}, ${s}%, ${l}%) `;
+    }
     calcHSL() {
-        const { r, g, b } = this;
-        return `${r},${g},${b}`;
+        let { r, g, b } = this;
 
         // Make r,g,b fraction of 1
         r /= 255;
@@ -179,8 +195,10 @@ class Color {
         s = +(s * 100).toFixed(1);
         l = +(l * 100).toFixed(1);
 
-        // Return value of h, s and l as an array
-        return [h, s, l]
+        this.h = h;
+        this.s = s;
+        this.l = l;
+
     }
 }
 
@@ -189,12 +207,31 @@ const white = new Color(255, 255, 255, 'white');
 red.greet() // 'Hello from tomato!!!'
 red.hex() // '#ff4359'
 
-white.greet() //Hello from white!!!
-white.hex() //'#ffffff'
+white.greet() // Hello from white!!!
+white.hex() // '#ffffff'
 
-red.rgba(.5) //'rgb(255, 67, 89, 0.5)'
+red.rgba(.5) // 'rgb(255, 67, 89, 0.5)'
+red.hsl() // 'hsl(353, 100%, 63.1%) '
+red.opposite() // 'hsl(173, 100%, 63.1%) '
+red.fullSaturation() // 'hsl(353,100%, 63.1%) '
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Dont Bother
 /**
  * **************************
  * More Practice with classes
@@ -205,44 +242,44 @@ red.rgba(.5) //'rgb(255, 67, 89, 0.5)'
  * - hsl(0-360,1-100%,1-100%)
  * NB: Dont bother about knowing the function.
 */
-function calcHSL(r, g, b) {
-    // Make r,g,b fraction of 1
-    r /= 255;
-    g /= 255;
-    b /= 255;
+// function calcHSL(r, g, b) {
+//     // Make r,g,b fraction of 1
+//     r /= 255;
+//     g /= 255;
+//     b /= 255;
 
-    // Find greatest and smallest channel values
-    let cmin = Math.min(r, g, b),
-        cmax = Math.max(r, g, b),
-        delta = cmax - cmin,
-        h = 0,
-        s = 0,
-        l = 0;
-    if (delta == 0) h = 0;
-    else if (cmax == r)
-        // Red is max
-        h = ((g - b) / delta) % 6;
-    else if (cmax == g)
-        // Green is max
-        h = ((b - r) / delta) + 2;
-    else
-        // Blue is max
-        h = (r - g) / delta + 4;
+//     // Find greatest and smallest channel values
+//     let cmin = Math.min(r, g, b),
+//         cmax = Math.max(r, g, b),
+//         delta = cmax - cmin,
+//         h = 0,
+//         s = 0,
+//         l = 0;
+//     if (delta == 0) h = 0;
+//     else if (cmax == r)
+//         // Red is max
+//         h = ((g - b) / delta) % 6;
+//     else if (cmax == g)
+//         // Green is max
+//         h = ((b - r) / delta) + 2;
+//     else
+//         // Blue is max
+//         h = (r - g) / delta + 4;
 
-    h = Math.round(h * 60);
+//     h = Math.round(h * 60);
 
-    // Make negative hues positive behind 360 
-    if (h < 0) h += 360;
-    // Calculate lightness
-    l = (cmax + cmin) / 2;
+//     // Make negative hues positive behind 360
+//     if (h < 0) h += 360;
+//     // Calculate lightness
+//     l = (cmax + cmin) / 2;
 
-    // Calculate saturation
-    s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+//     // Calculate saturation
+//     s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
 
-    // Multiply l and s by 100
-    s = +(s * 100).toFixed(1);
-    l = +(l * 100).toFixed(1);
+//     // Multiply l and s by 100
+//     s = +(s * 100).toFixed(1);
+//     l = +(l * 100).toFixed(1);
 
-    // Return value of h, s and l as an array
-    return [h, s, l]
-}
+//     // Return value of h, s and l as an array
+//     return [h, s, l]
+// }
