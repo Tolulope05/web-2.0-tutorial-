@@ -2,6 +2,8 @@
 
 |Basics: |
 -------------------------------
+type nul > app.js  - Creates a file called app.js
+copy con testfile.txt - creates a file that you can type something into
 call	calls a batch file from another one
 cd	change directory
 cls	clear screen
@@ -184,3 +186,14 @@ VERIFY         Tells Windows whether to verify that your files are written
 VOL            Displays a disk volume label and serial number.
 XCOPY          Copies files and directory trees.
 WMIC           Displays WMI information inside interactive command shell.
+
+--------------------------------------------------------------
+
+Create a file containing certain text.
+
+Type copy con testfile.txt
+Press Enter.
+Type some text. This is a rudimentary text editor, but it's good for quick notes or code. You can use the Enter key to go to the next line.
+Press Control + Z when you're finished editing the file.
+Press the Enter key. You'll see "1 file(s) copied," which means your file is now saved with the name you created.
+Another way to do this is to run this command: echo enter your text here > filename.txt.
