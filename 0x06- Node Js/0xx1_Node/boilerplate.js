@@ -20,7 +20,14 @@ const fs = require('fs'); // To use the module
 
 const folderName = process.argv[2] || 'Project';
 
-fs.mkdirSync(`\\Users\\fakun\\Documents\\Tolutech\\CodeTutorial\\web-2.0-tutorial-\\0x06- Node Js\\0xx1_Node\\${folderName}`);
+fs.mkdirSync(`/Users/fakun/Documents/Tolutech/CodeTutorial/web-2.0-tutorial-/0x06- Node Js/0xx1_Node/${folderName}`);
 // node boilerplate.js Tolu - Make an empty file called Tolu
-fs.writefileSync(`\\Users\\fakun\\Documents\\Tolutech\\CodeTutorial\\web-2.0-tutorial-\\0x06- Node Js\\0xx1_Node\\${folderName}/index.html`)
+try {
+    fs.writeFileSync(`/Users/fakun/Documents/Tolutech/CodeTutorial/web-2.0-tutorial-/0x06- Node Js/0xx1_Node/${folderName}/index.html`, '') // Creates index.html and passes empty string inside
+    fs.writeFileSync(`/Users/fakun/Documents/Tolutech/CodeTutorial/web-2.0-tutorial-/0x06- Node Js/0xx1_Node/${folderName}/style.css`, '') // Creates style.css and passes empty string inside
+    fs.writeFileSync(`/Users/fakun/Documents/Tolutech/CodeTutorial/web-2.0-tutorial-/0x06- Node Js/0xx1_Node/${folderName}/script.js`, '') // Creates script.js and passes empty string inside
+
+} catch (error) {
+    console.log(error)
+}
 
