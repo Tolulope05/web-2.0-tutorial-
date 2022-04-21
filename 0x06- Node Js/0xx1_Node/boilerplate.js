@@ -28,6 +28,8 @@ try {
     fs.writeFileSync(`/Users/fakun/Documents/Tolutech/CodeTutorial/web-2.0-tutorial-/0x06- Node Js/0xx1_Node/${folderName}/script.js`, '') // Creates script.js and passes empty string inside
 
 } catch (error) {
+    console.log('SOMETHING WENT WRONG')
     console.log(error)
 }
 
+// node .\boilerplate.js Portfolio
