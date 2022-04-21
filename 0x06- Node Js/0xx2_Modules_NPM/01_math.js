@@ -9,9 +9,9 @@ const square = (x) => x * x;
 
 // module.exports.add = add;
 // module.exports.pi = pi;
-// module.exports.square = square;
+// module.exports.square = square; //or
 
-// module.exports = { add, pi, square };
+// module.exports = { add, pi, square }; //or
 
 const math = {
     add: add,
@@ -19,4 +19,4 @@ const math = {
     square: square
 }
 
-module.exports = math;
+module.exports = math; //or
