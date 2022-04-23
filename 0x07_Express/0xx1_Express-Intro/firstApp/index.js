@@ -45,8 +45,8 @@ createApplication.get('/', (req, res) => {
     res.send('<h1>Hi, We got your request, This is our Home Directory<h1>\n<h2>How are you?</h2>');
 }) // routing / endpoint
 
-// Matching Generic Response aside for the omes up here, We use 
-// Routes are matched in order so the star should be the last thing to put
+// Matching Generic Response aside for the ones up here, We use 
+// Routes are matched in order so the star should be the last thing to put in any 
 
 // createApplication.get("*", (req, res) => {
 //     console.log('WE GOT A REQUEST THAT DIDNT MATCH ANY ENDPOINT');
@@ -74,3 +74,27 @@ createApplication.get('/r/:subreddit/:matchId', (req, res) => {
     const { subreddit, matchId } = req.params
     res.send(`<h1>Browsing the ${subreddit} subreddit at the ${matchId} sub-id</h1>`);
 })
+
+/**
+ * WORKING WITH QUERY STRINGS
+ * ==========================
+ */
+
+createApplication.get('/search', (req, res) => {
+    // console.log(req.query); // localhost:8080/search?color=red&q=dogs => { color: 'red', q: 'dogs' } 
+
+    const { q } = req.query
+    if (!q) {
+        res.send('Nothing Found if nothing searched!!')
+    } else {
+        res.send(`Hi there,You just made a query search for ${q}`)
+    }
+})
+
+/**
+ * How to automatically restart the server when we change the content of the index file page
+ * - We use a package called nodemon
+ * - nodeman is a tool that helps node.js bassed applications by restarting the node application 
+ * when file changes in the directory are detected.
+ */
+
