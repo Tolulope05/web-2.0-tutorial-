@@ -1,6 +1,5 @@
-# This is just a practice repository for learning html again
+# Full Stack Development Roadmap
 
-> My name is Fakunle Tolulope
-> I am a software developer
->
+> ```My name is Fakunle Tolulope```
+> I am a full stack developer
 > I was tutored by Colt Stee.
