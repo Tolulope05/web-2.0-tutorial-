@@ -1,3 +1,27 @@
 import { franc, francAll } from 'franc'
+import langs from 'langs'
+const input = process.argv[2]
 
-console.log(franc('Alle menslike wesens word vry'))
+const langCode = franc(input)
+const language = langs.where("3", langCode)
+
+// try {
+//     console.log(language.name);
+// } catch (error) {
+//     console.log('OPPPS,COULDN'T FIGURE IT OUT, TRY WITH MORE SAMPLE TEXT.')
+//     console.log(error)
+// } // Method 1
+
+// if (language === undefined) {
+//     console.log("Sorrry, Couldn'tOULDN'T FIGURE IT OUT, TRY WITH MORE SAMPLE TEXT!")
+// } else {
+//     console.log(language.name);
+// } // Method 2
+
+if (langCode === 'und') {
+    console.log("Sorrry, Couldn'tOULDN'T FIGURE IT OUT, TRY WITH MORE SAMPLE TEXT!")
+} else {
+    console.log(`OUR BEST GUESS IS: ${language.name}`);
+} // Method 3
+
+
