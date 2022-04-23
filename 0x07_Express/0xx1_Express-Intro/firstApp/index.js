@@ -47,8 +47,30 @@ createApplication.get('/', (req, res) => {
 
 // Matching Generic Response aside for the omes up here, We use 
 // Routes are matched in order so the star should be the last thing to put
-createApplication.get("*", (req, res) => {
-    console.log('WE GOT A REQUEST THAT DIDNT MATCH ANY ENDPOINT');
-    res.send(`<h1>I DONT KNOW THE ROUTE TO THAT PATH!</h1>`);
-}) // routing all other endpoints
 
+// createApplication.get("*", (req, res) => {
+//     console.log('WE GOT A REQUEST THAT DIDNT MATCH ANY ENDPOINT');
+//     res.send(`<h1>I DONT KNOW THE ROUTE TO THAT PATH!</h1>`);
+// }) // routing all other endpoints
+
+/**
+ * ========================
+ * PATH PARAMETERS
+ * ========================
+ * DEFINING GENERIC PATTERNS
+ * - PATTERNS THAT FIT INTO THINGS THAT ARE SEARCHED FOR
+ */
+
+// /r/SOMETHINGHERE
+createApplication.get('/r/:subreddit', (req, res) => {
+    // console.log(req.params) // http://localhost:8080/r/fikemi => { subreddit: 'fikemi' }
+    const { subreddit } = req.params
+    res.send(`<h1>Browsing the ${subreddit} subreddit</h1>`);
+})
+
+// /r/SOMETHINGHERE/Somewhere2
+createApplication.get('/r/:subreddit/:matchId', (req, res) => {
+    // console.log(req.params) // http://localhost:8080/r/fikemi => { subreddit: 'fikemi'}
+    const { subreddit, matchId } = req.params
+    res.send(`<h1>Browsing the ${subreddit} subreddit at the ${matchId} sub-id</h1>`);
+})
