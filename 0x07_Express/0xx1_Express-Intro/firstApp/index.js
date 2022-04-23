@@ -99,5 +99,6 @@ createApplication.get('/search', (req, res) => {
  * 
  * -REOMMENDED TO INSTALL IT GLOBALLY 
  * npm install -g nodemon
+ * nodeman index.js
  */
 
