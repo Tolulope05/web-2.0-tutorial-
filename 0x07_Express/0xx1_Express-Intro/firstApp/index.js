@@ -96,5 +96,8 @@ createApplication.get('/search', (req, res) => {
  * - We use a package called nodemon
  * - nodeman is a tool that helps node.js bassed applications by restarting the node application 
  * when file changes in the directory are detected.
+ * 
+ * -REOMMENDED TO INSTALL IT GLOBALLY 
+ * npm install -g nodemon
  */
 
