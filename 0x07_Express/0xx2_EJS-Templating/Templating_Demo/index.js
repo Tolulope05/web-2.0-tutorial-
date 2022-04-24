@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+var colors = require('colors'); // for console colors
 const path = require('path') // A module built into Express
 
 const port = 3000;
@@ -16,12 +17,21 @@ app.set('views', path.join(__dirname, '/views')) // to be able to run index.js o
 
 // => Root Route
 app.get('/', (req, res) => {
-    console.log('New get request on /')
+    console.log('New get request on /'.green)
     res.render('home')
 });
 
 app.get('/rand', (req, res) => {
-    const rand = Math.floor(Math.random() * 100) + 1
+    console.log('New get request on /rand'.green)
+    const number = Math.floor(Math.random() * 100) + 1;
+    const text = 'Hello Tolu Coder'
+    // res.render('random', { rand: number, word: text }) // Whatver number is will be available on the template under rand variable
+    res.render('random', { number, text }) // or <=
+})
 
-    res.render('random')
+//Subreddit Template Demo
+app.get('/r/:subreddit', (req, res) => {
+    console.log(`New get request on /r/`.green);
+    const { subreddit } = req.params;
+    res.render('subreddit', { subreddit })
 })
