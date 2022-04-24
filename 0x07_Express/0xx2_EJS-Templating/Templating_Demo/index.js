@@ -20,3 +20,8 @@ app.get('/', (req, res) => {
     res.render('home')
 });
 
+app.get('/rand', (req, res) => {
+    const rand = Math.floor(Math.random() * 100) + 1
+
+    res.render('random')
+})
