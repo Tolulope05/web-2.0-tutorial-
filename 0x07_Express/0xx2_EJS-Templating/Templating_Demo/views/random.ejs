@@ -7,19 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random</title>
 </head>
-<h1>Hello Random</h1>
-<p>
-    Your Random Number is : <%= number %>
-</p>
-<p>
-    Todays Date is <%= new Date() %>
-</p>
-<h2>
-    <%= text %>
-</h2>
 
 <body>
+    <h1>Hello <%= text %></h1>
+    <p>Todays Date is <%= new Date() %></p>
+    <p>Your Random Number is : <%= num %></p>
 
+    <!-- CONDITIONALS IN EJS-->
+    <% if (num % 2===0) { %>
+    <h2>That is an Even number!</h2>
+    <% } else { %>
+    <h2>That is an Odd number!</h2>
+    <% } //end of if else statement %>
+
+    <!-- CONDITIONALS IN EJS USING TENARY OPERATOR-->
+
+    <h3>
+        <%  %>
+    </h3>
 </body>
 
 </html>
