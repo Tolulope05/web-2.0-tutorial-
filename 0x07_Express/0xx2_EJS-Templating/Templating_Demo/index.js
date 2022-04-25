@@ -21,17 +21,28 @@ app.get('/', (req, res) => {
     res.render('home')
 });
 
+//Subreddit Template Demo
+app.get('/r/:subreddit', (req, res) => {
+    console.log(`New get request on /r/`.green);
+    const { subreddit } = req.params;
+    res.render('subreddit', { subreddit })
+});
+
+// => Rand Route // Conditions in Ejs
 app.get('/rand', (req, res) => {
     console.log('New get request on /rand'.green)
     const num = Math.floor(Math.random() * 100) + 1;
     const text = 'Hello Tolu Coder'
     // res.render('random', { rand: num, word: text }) // Whatver number is will be available on the template under rand variable
     res.render('random', { num, text }) // or <=
+});
+
+// => Cats Route // Loop in Ejs
+app.get('/cats', (req, res) => {
+    console.log('New request on /xats '.green)
+    const cats = [
+        'Blue', 'Rocket', 'Monty', 'Stephanie', 'Winston'
+    ]
+    res.render('cats', { Allcats: cats })
 })
 
-//Subreddit Template Demo
-app.get('/r/:subreddit', (req, res) => {
-    console.log(`New get request on /r/`.green);
-    const { subreddit } = req.params;
-    res.render('subreddit', { subreddit })
-})
