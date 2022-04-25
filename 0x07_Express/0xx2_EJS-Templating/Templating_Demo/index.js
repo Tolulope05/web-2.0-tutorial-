@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 var colors = require('colors'); // for console colors
 const path = require('path') // A module built into Express
+const redditData = require('./data.json');
 
 const port = 3000;
 app.listen(port, () => {
@@ -21,11 +22,25 @@ app.get('/', (req, res) => {
     res.render('home')
 });
 
-//Subreddit Template Demo
+// //Subreddit Template Demo
+// app.get('/r/:subreddit', (req, res) => {
+//     console.log(`New get request on /r/`.green);
+//     const { subreddit } = req.params;
+//     res.render('subreddit', { subreddit })
+// });
+
+//More complex Subreddit Demo
 app.get('/r/:subreddit', (req, res) => {
     console.log(`New get request on /r/`.green);
     const { subreddit } = req.params;
-    res.render('subreddit', { subreddit })
+    const data = redditData[subreddit];
+    if (data) {
+        res.render('subreddit', { ...data }) // To access individual property
+        // We spread the data so instead of doing data.name, we will do name
+    } else {
+        res.render('notfound', { subreddit })
+    }
+
 });
 
 // => Rand Route // Conditions in Ejs
@@ -46,3 +61,4 @@ app.get('/cats', (req, res) => {
     res.render('cats', { Allcats: cats })
 })
 
+// => To mimic what we might get bck from a database using data.json
