@@ -29,20 +29,6 @@ app.get('/', (req, res) => {
 //     res.render('subreddit', { subreddit })
 // });
 
-//More complex Subreddit Demo
-app.get('/r/:subreddit', (req, res) => {
-    console.log(`New get request on /r/`.green);
-    const { subreddit } = req.params;
-    const data = redditData[subreddit];
-    if (data) {
-        res.render('subreddit', { ...data }) // To access individual property
-        // We spread the data so instead of doing data.name, we will do name
-    } else {
-        res.render('notfound', { subreddit })
-    }
-
-});
-
 // => Rand Route // Conditions in Ejs
 app.get('/rand', (req, res) => {
     console.log('New get request on /rand'.green)
@@ -62,3 +48,19 @@ app.get('/cats', (req, res) => {
 })
 
 // => To mimic what we might get bck from a database using data.json
+//More complex Subreddit Demo
+app.get('/r/:subreddit', (req, res) => {
+    console.log(`New get request on /r/`.green);
+    const { subreddit } = req.params;
+    const data = redditData[subreddit];
+    if (data) {
+        res.render('subreddit', { ...data }) // To access individual property
+        // We spread the data so instead of doing data.name, we will do name
+    } else {
+        res.render('notfound', { subreddit })
+    }
+
+});
+
+// => Serving Static Assets in Express
+app.use(express.static(path.join(__dirname, 'public'))); // A public directory served
