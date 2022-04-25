@@ -25,7 +25,7 @@ app.get('/rand', (req, res) => {
     console.log('New get request on /rand'.green)
     const num = Math.floor(Math.random() * 100) + 1;
     const text = 'Hello Tolu Coder'
-    // res.render('random', { rand: number, word: text }) // Whatver number is will be available on the template under rand variable
+    // res.render('random', { rand: num, word: text }) // Whatver number is will be available on the template under rand variable
     res.render('random', { num, text }) // or <=
 })
 
