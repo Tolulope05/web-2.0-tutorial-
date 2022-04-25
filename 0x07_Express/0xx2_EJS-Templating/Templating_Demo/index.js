@@ -63,4 +63,4 @@ app.get('/r/:subreddit', (req, res) => {
 });
 
 // => Serving Static Assets in Express
-app.use(express.static(path.join(__dirname, 'public'))); // A public directory served
+app.use(express.static(path.join(__dirname, 'public'))); // A public directory contents are served
