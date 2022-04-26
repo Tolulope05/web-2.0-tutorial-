@@ -1,61 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/head')%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= name %></title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="/js/bootstrap.min.js"></script>
-</head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="#">Express Demo</a>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/rand">Random</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/r/chickens">Chickens</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/r/soccer">Soccer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/r/mightyharvest">Mighty Harvest</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    <h1>You are browsing the <%= name %> subreddit</h1>
-    <h2><%= description %> </h2>
-    <p>Total Subscribers is: <%= subscribers %> </p>
-    <% for (let post of posts){ %>
-    <p> <%= post.title %> <b>by <%= post.author%></b></p>
-    <%  if(post.img){ %>
-    <img src="<%= post.img %> " alt="">
-    <%}%> 
+<%- include('partials/navbar')%>
+
+<h1>You are browsing the <%= name %> subreddit</h1>
+<h2><%= description %> </h2>
+<p>Total Subscribers is: <%= subscribers %> </p>
+<% for (let post of posts){ %>
+<p> <%= post.title %> <b>by <%= post.author%></b></p>
+<%  if(post.img){ %>
+<img src="<%= post.img %> " alt="">
+<%}%> 
     <% } %>
 
 
-
-</body>
-
-</html>
+<%- include('partials/footer')%>

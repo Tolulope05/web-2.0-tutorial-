@@ -19,7 +19,7 @@ app.set('views', path.join(__dirname, '/views')) // to be able to run index.js o
 // => Root Route
 app.get('/', (req, res) => {
     console.log('New get request on /'.green)
-    res.render('home')
+    res.render('home', { name: 'Home' })
 });
 
 // //Subreddit Template Demo
@@ -35,7 +35,7 @@ app.get('/rand', (req, res) => {
     const num = Math.floor(Math.random() * 100) + 1;
     const text = 'Hello Tolu Coder'
     // res.render('random', { rand: num, word: text }) // Whatver number is will be available on the template under rand variable
-    res.render('random', { num, text }) // or <=
+    res.render('random', { num, text, name: 'random' }) // or <=
 });
 
 // => Cats Route // Loop in Ejs
@@ -44,7 +44,7 @@ app.get('/cats', (req, res) => {
     const cats = [
         'Blue', 'Rocket', 'Monty', 'Stephanie', 'Winston'
     ]
-    res.render('cats', { Allcats: cats })
+    res.render('cats', { Allcats: cats, name: 'random' })
 })
 
 // => To mimic what we might get bck from a database using data.json
@@ -57,8 +57,8 @@ app.get('/r/:subreddit', (req, res) => {
         res.render('subreddit', { ...data }) // To access individual property
         // We spread the data so instead of doing data.name, we will do name
     } else {
-        res.render('notfound', { subreddit })
-    }
+        res.render('notfound', { subreddit, name: 'Ops!,Not Found' })
+    } // Didnt get this all thou with the compiling
 
 });
 
