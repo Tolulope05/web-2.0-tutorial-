@@ -4,4 +4,4 @@
 *.swp
 node_modules/
 # logs/
-# !example.log
+# !example.log:
