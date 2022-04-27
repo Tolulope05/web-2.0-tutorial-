@@ -14,3 +14,4 @@
 > ## GETTING RANDOM ID'S
 
 ```npm i uuid```
+```npm i method-override```
