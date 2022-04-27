@@ -12,3 +12,5 @@
 
 
 > ## GETTING RANDOM ID'S
+
+```npm i uuid```

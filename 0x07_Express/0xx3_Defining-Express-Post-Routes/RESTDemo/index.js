@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
-const path = require("path")
+const path = require("path");
+const { v4: uuidv4 } = require('uuid');
+
 
 /**
  * CRUD FUNCTIONALITY WITH RESTFUL APIS
@@ -36,32 +38,32 @@ app.post("/tacos", (req, res) => {
 
 const comments = [
     {
-        id: 1,
+        id: uuidv4(),
         username: "Tolulope",
         comment: "What kind of exercise do lazy people do? Diddly-squats"
     },
     {
-        id: 2,
+        id: uuidv4(),
         username: "Oluwayomi",
         comment: "What do you call a pony with a cough? A little horse!"
     },
     {
-        id: 3,
+        id: uuidv4(),
         username: "Uniben",
         comment: "Why did the M&M go to school? He wanted to be a Smartie."
     },
     {
-        id: 4,
+        id: uuidv4(),
         username: "Caleb George",
         comment: "What do you call bears with no ears? B"
     },
     {
-        id: 5,
+        id: uuidv4(),
         username: "French Bishop",
         comment: "Why do French people eat snails? They don't like fast food"
     },
     {
-        id: 6,
+        id: uuidv4(),
         username: "Genuis Boy",
         comment: "I invented a new word today: Plagiarism."
     }
@@ -78,13 +80,23 @@ app.get("/comments/new", (req, res) => {
 app.post("/comments", (req, res) => {
     // console.log(req.body);
     const { username, comment } = req.body;
-    comments.push({ username, comment });
+    comments.push({ username, comment, id: uuidv4() });
     res.redirect("/comments");
 }) // Create a new comment
 
 /**RESTFUL COMMENT SHOW */
 app.get("/comments/:id", (req, res) => {
     const { id } = req.params;
-    const comment = comments.find(c => c.id === parseInt(id));
+    const comment = comments.find(c => c.id === id);
     res.render('comments/show', { comment });
 }) // Read one comment
+
+/**RESTFUL COMMENT UPDATE */
+app.patch("/comments/:id", (req, res) => {
+    const { id } = req.params;
+    const newCommentText = req.body.comment
+    const foundComment = comments.find(c => c.id === id);
+    foundComment.comment = newCommentText;
+    res.redirect("/comments");
+}); //update successfully
+
