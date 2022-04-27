@@ -63,6 +63,15 @@ const comments = [
 
 app.get("/comments", (req, res) => {
     res.render('comments/index', { comments });
-}); // Getting all comments
+}); // read all comments 
 
-app.post("/new")
+app.get("/comments/new", (req, res) => {
+    res.render('comments/new.ejs');
+}) // Serves the form to create a new comment
+
+app.post("/comments", (req, res) => {
+    // console.log(req.body);
+    const { username, comment } = req.body;
+    comments.push({ username, comment });
+    res.send("POST /comments response Sucess!!");
+}) // Create a new comment
