@@ -10,4 +10,9 @@ app.listen(port, () => {
 app.get("/tarcos", (req, res) => {
     res.send("GET /tarcos response");
 })
+app.post("/tarcos", (req, res) => {
+    res.send("GET /tarcos post response");
+})
+
+app.set
 
