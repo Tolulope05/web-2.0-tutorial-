@@ -36,26 +36,32 @@ app.post("/tacos", (req, res) => {
 
 const comments = [
     {
+        id: 1,
         username: "Tolulope",
         comment: "What kind of exercise do lazy people do? Diddly-squats"
     },
     {
+        id: 2,
         username: "Oluwayomi",
         comment: "What do you call a pony with a cough? A little horse!"
     },
     {
+        id: 3,
         username: "Uniben",
         comment: "Why did the M&M go to school? He wanted to be a Smartie."
     },
     {
+        id: 4,
         username: "Caleb George",
         comment: "What do you call bears with no ears? B"
     },
     {
+        id: 5,
         username: "French Bishop",
         comment: "Why do French people eat snails? They don't like fast food"
     },
     {
+        id: 6,
         username: "Genuis Boy",
         comment: "I invented a new word today: Plagiarism."
     }
@@ -75,3 +81,10 @@ app.post("/comments", (req, res) => {
     comments.push({ username, comment });
     res.redirect("/comments");
 }) // Create a new comment
+
+/**RESTFUL COMMENT SHOW */
+app.get("/comments/:id", (req, res) => {
+    const { id } = req.params;
+    const comment = comments.find(c => c.id === parseInt(id));
+    res.render('comments/show', { comment });
+}) // Read one comment
