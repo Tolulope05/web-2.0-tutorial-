@@ -23,13 +23,46 @@ app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 });
 
+/**TO ILLUSTRATE DIFFERENCE BETWEEN POST AND GET REQUEST USING GETPOST.HTML  */
 app.get("/tacos", (req, res) => {
     res.send("GET /tarcos response");
 })
 app.post("/tacos", (req, res) => {
     res.send("GET /tarcos post response");
-    console.log(req.body)
+    console.log(req.body);
 })
 
-app.set
+/* An array to represent data that we will be fetchinf from */
 
+const comments = [
+    {
+        username: "Tolulope",
+        comment: "What kind of exercise do lazy people do? Diddly-squats"
+    },
+    {
+        username: "Oluwayomi",
+        comment: "What do you call a pony with a cough? A little horse!"
+    },
+    {
+        username: "Uniben",
+        comment: "Why did the M&M go to school? He wanted to be a Smartie."
+    },
+    {
+        username: "Caleb George",
+        comment: "What do you call bears with no ears? B"
+    },
+    {
+        username: "French Bishop",
+        comment: "Why do French people eat snails? They don't like fast food"
+    },
+    {
+        username: "Genuis Boy",
+        comment: "I invented a new word today: Plagiarism."
+    }
+]
+
+app.get("/comments", (req, res) => {
+    res.render('comments/index', { comments });
+}); // Getting all comments
+
+app.post("/new")
