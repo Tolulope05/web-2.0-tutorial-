@@ -38,7 +38,7 @@ app.post("/tacos", (req, res) => {
 
 /* An array to represent data that we will be fetchinf from */
 
-const comments = [
+let comments = [
     {
         id: uuidv4(),
         username: "Tolulope",
@@ -69,7 +69,7 @@ const comments = [
         username: "Genuis Boy",
         comment: "I invented a new word today: Plagiarism."
     }
-]
+] //const comment was changed to let because comments was reassigned in delete route
 
 app.get("/comments", (req, res) => {
     res.render('comments/index', { comments });
@@ -108,5 +108,10 @@ app.get("/comments/:id/edit", (req, res) => {
     res.render('comments/edit', { comment });
 }); //edit form success
 
+app.delete("/comments/:id", (req, res) => {
+    const { id } = req.params;
+    comments = comments.filter(c => c.id !== id);
+    res.redirect("/comments");
+});
 
 
