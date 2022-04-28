@@ -9,7 +9,7 @@
   "author": "Tolulope Fakunle",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^2.6.1",
+    "ejs": "^3.1.7",
     "express": "^4.16.4",
     "socket.io": "^4.4.1"
   }
