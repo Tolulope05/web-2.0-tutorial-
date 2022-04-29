@@ -96,4 +96,11 @@ const Movie = mongoose.model('Movie', movieSchema); // Model created and Movie w
  * Model.findOneAndRemove()
  * Model.findOneAndReplace()
  * Model.findOneAndUpdate()
+ * =====================================
+ * NB: Always include .then(d => console.log(d)) because it is a promise.
+ * Movie.find({rating:'PG-13'}).then(d => console.log(d))
+ * Movie.find({year:{$gte:2015}}).then(d => console.log(d))
+ * Movie.findOne({id:'626c18fcb3844889149a406b'}).then() => Returns pending promise without data
+ * Movie.findOne({id:'626c18fcb3844889149a406b'}).then(d => console.log(d)) Returns pending promise with data resolved.
+ * Movie.findById('626c18fcb3844889149a406b').then(d => console.log(d))
 */
