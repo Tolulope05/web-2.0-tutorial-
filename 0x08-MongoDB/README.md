@@ -20,9 +20,20 @@
 
 ## To know whuch database is used
 > Press db
+> Press show databases
 
 ## To create collection
 > Press use databsename
 > Press create collection
 
+## to know which collection is used
+> Press show collections
+
 # Inserting Data in MongoDB
+> Press db.collectionname.insertOne({"name":"John","age":30})
+> Press db.collectionname.insert({"name":"John","age":30})
+
+# To see all colection items
+> Press db.collectionname.find()
+
+
