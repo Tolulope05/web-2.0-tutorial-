@@ -1,0 +1,14 @@
+{
+  "name": "0xx2-mongoose",
+  "version": "1.0.0",
+  "description": "'MongooseBasics'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "'Tolulope Fakunle'",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^6.3.1"
+  }
+}
