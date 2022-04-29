@@ -35,6 +35,25 @@
 > Press db.collectionname.insertMany([{"name":"John","age":30},{"name":"John","age":30}])
 
 # To see all colection items
-> Press db.collectionname.find()
+> Press db.collectionname.find() //It returns a cursor
+> Press db.collectionname.find({breed:"corgi"}) // to find the breed corgi in the collection name 
+
+# To find one item in the collection
+> Press db.collectionname.findOne() // to find one item in the collection, it returns the query result
+> Press db.collectionname.findOne({breed:"corgi"}) // to find one breed corgi in the collection name 
+> We can also pass different method in the query search to nget the result we want.
+
+# Updating items in th collections
+>Press db.collectionname.updateOne({breed:"corgi"},{$set:{"breed":"pug"}}) // to update the breed corgi to pug
+>Press db.collectionname.updateMany({breed:"corgi"},{$set:{"breed":"pug"}}) // to update the breed corgi to pug
+
+# Last change Modification in the collection
+> Press  db.collectionname.updateOne({age: 6}, {$set: {age:7}, $currentDate: {lastChanged: true}} ) // to update the age to 7 and add the last change date
+
+# Replacing items in the collection
+> Press db.collectionname.replaceOne({breed:"corgi"},{$set:{"breed":"pug"}}) // to replace the breed corgi to pug
 
 
+# Delete items in the collection
+> Press db.collectionname.deleteOne({breed:"corgi"}) // to delete the breed corgi
+> Press db.collectionname.deleteMany({breed:"corgi"}) // to delete the breed corgi
