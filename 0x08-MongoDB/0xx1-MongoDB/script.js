@@ -12,3 +12,9 @@ const dogs = [
         name: "Dodger", breed: "Corgi", age: 12, weight: 15, size: "large", personality: { catFriendly: false, dogFriendly: true, kidFriendly: true, petFriendly: false }
     }
 ] //Object used for Mono Db Operational function
+
+/**
+ * I used animalShelter in the database
+ * ===================================
+ * NB: incase of me revisiting.
+ */

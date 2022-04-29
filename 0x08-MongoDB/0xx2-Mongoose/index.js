@@ -1,7 +1,99 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/test');
+mongoose.connect('mongodb://localhost:27017/movieApp') // Creates a database called movieApp
+    .then(() => {
+        console.log('Connection OPEN')
+    })
+    .catch((err) => {
+        console.log("OPPS..connection Failed!!")
+        console.log(err)
+    }) //It returns a promise and we can use try and catch to chek its status
 
-const Cat = mongoose.model('Cat', { name: String });
+/**MONGOOSE CONNECTIONS */
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+    console.log('Connection OPEN!!!') // We are onnected 
+})
 
-const kitty = new Cat({ name: 'Zildjian' });
-kitty.save().then(() => console.log('meow'));
+/**
+ * MONGOOSE MODELS
+ * ================
+ * Models are just Classes, Js classes that we make with the assistance of Mongoose
+ * that represent information in a mongose database
+ * - specifically they represent information in some collections.
+ * > Lets make a movie model
+ * > To define a model, We first define a Schema
+*/
+
+/**MONGOOSE SCHEMAS */
+const { Schema } = mongoose; //I destructured Schema from monodose.Schema
+const movieSchema = new Schema({
+    title: String, // String is shorthand for {type: String}
+    year: Number,
+    score: Number,
+    rating: String
+
+}); // define a schema for {title:'Amadeus',year:1986,score:9.2,rating:'R'}
+
+/**THE MODEL */
+const Movie = mongoose.model('Movie', movieSchema); // Model created and Movie will changed to movies in db, (s will be added and M will be m)
+
+/**INSETING A SINGLE MOVIE */
+// const amadeus = new Movie({
+//     title: 'Amadeus',
+//     year: 1986,
+//     score: 9.2,
+//     rating: 'R'
+// });
+
+/**
+ * > open node
+ * > Press .load index.js
+ * > Press amadeus
+ * > Press amadeus.save() => amadeus is already saved to mongodb and returns a promise we can decide or not to try and catch
+ * > We can also update the object amadeus and give it new values and we can save it again as we wish.
+ */
+
+/**
+ * TO INSERT BUNCHES OF MOViES
+ * ===========================
+ * we can use const blah = new Movie(...)
+ * blah.save()
+ * OR
+ */
+
+// Movie.insertMany([
+//     {
+//         title: 'Amalie', year: 2021, score: 8.3, rating: 'R'
+//     },
+//     {
+//         title: 'Alien', year: 1979, score: 8.1, rating: 'R'
+//     },
+//     {
+//         title: 'The Iron Giant', year: 1999, score: 7.5, rating: 'PG'
+//     },
+//     {
+//         title: 'Stand By Me', year: 1986, score: 8.6, rating: 'R'
+//     },
+//     {
+//         title: 'Moonrise Kingdom', year: 2012, score: 7.3, rating: 'PG-13'
+//     }
+// ])
+//     .then(data => {
+//         console.log("It Worked");
+//         console.log(data)
+//     }) //Press node index.js and check Mongo db //Not commonly used tho
+
+/**QUERYING/FINDING INFORMATION/DOCUMENT IN DATABASE ALREADY
+ * ==========================================================
+ * Model.find()
+ * Model.findById()
+ * Model.findByIdAndDelete()
+ * Model.findByIdAndRemove()
+ * Model.findByIdAndUpdate()
+ * Model.findOne()
+ * Model.findOneAndDelete()
+ * Model.findOneAndRemove()
+ * Model.findOneAndReplace()
+ * Model.findOneAndUpdate()
+*/
