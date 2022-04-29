@@ -61,6 +61,7 @@
 > Press db.collectionname.deleteMany({breed:"corgi"}) // to delete the breed corgi
 
 # Fancier Operators in MongoDb
+> Press db.collectionname.find({'property.nestedProperty':'value'}) // to find the property.nestedProperty value
 > Press db.collectionname.find({age:{$gt:5}}) // to find the age greater than 5
 > Press db.collectionname.find({age:{$lt:5}}) // to find the age less than 5
 > Press db.collectionname.find({age:{$gte:5}}) // to find the age greater than or equal to 5
@@ -76,4 +77,7 @@
 > Press db.collectionname.find({age:{$options:"i"}}) // to find the age options i
 > Press db.collectionname.find({age:{$elemMatch:{$gt:5,$lt:10}}}) // to find the age elemMatch $gt:5,$lt:10
 > Press db.collectionname.find({age:{$all:[5,6,7]}}) // to find the age all 5,6,7
-
+> Press db.collectionname.find({$or:[{age:5},{age:6}]}) // to find the age or 5 or 6
+> Press db.collectionname.find({$and:[{age:5},{age:6}]}) // to find the age and 5 and 6
+> Press db.collectionname.find({$nor:[{age:5},{age:6}]}) // to find the age nor 5 nor 6
+> Press db.collectionname.find({$xor:[{age:5},{age:6}]}) // to find the age xor 5 xor 6
