@@ -32,6 +32,7 @@
 # Inserting Data in MongoDB
 > Press db.collectionname.insertOne({"name":"John","age":30})
 > Press db.collectionname.insert({"name":"John","age":30})
+> Press db.collectionname.insertMany([{"name":"John","age":30},{"name":"John","age":30}])
 
 # To see all colection items
 > Press db.collectionname.find()
