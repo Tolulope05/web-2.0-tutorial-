@@ -56,4 +56,6 @@
 
 # Delete items in the collection
 > Press db.collectionname.deleteOne({breed:"corgi"}) // to delete the breed corgi
+
+> Press db.collectionname.deleteMany({}) // to delete all the collectionname items
 > Press db.collectionname.deleteMany({breed:"corgi"}) // to delete the breed corgi
