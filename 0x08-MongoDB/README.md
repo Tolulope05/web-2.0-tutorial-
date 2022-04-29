@@ -59,3 +59,21 @@
 
 > Press db.collectionname.deleteMany({}) // to delete all the collectionname items
 > Press db.collectionname.deleteMany({breed:"corgi"}) // to delete the breed corgi
+
+# Fancier Operators in MongoDb
+> Press db.collectionname.find({age:{$gt:5}}) // to find the age greater than 5
+> Press db.collectionname.find({age:{$lt:5}}) // to find the age less than 5
+> Press db.collectionname.find({age:{$gte:5}}) // to find the age greater than or equal to 5
+> Press db.collectionname.find({age:{$lte:5}}) // to find the age less than or equal to 5
+> Press db.collectionname.find({age:{$ne:5}}) // to find the age not equal to 5
+> Press db.collectionname.find({age:{$in:[5,6,7]}}) // to find the age in the array 5,6,7
+> Press db.collectionname.find({age:{$nin:[5,6,7]}}) // to find the age not in the array 5,6,7
+> Press db.collectionname.find({age:{$mod:[5,0]}}) // to find the age mod 5
+> Press db.collectionname.find({age:{$exists:true}}) // to find the age exists
+> Press db.collectionname.find({age:{$type:"int"}}) // to find the age type int
+> Press db.collectionname.find({age:{$size:5}}) // to find the age size 5
+> Press db.collectionname.find({age:{$regex:"^[0-9]+$"}}) // to find the age regex ^[0-9]+$
+> Press db.collectionname.find({age:{$options:"i"}}) // to find the age options i
+> Press db.collectionname.find({age:{$elemMatch:{$gt:5,$lt:10}}}) // to find the age elemMatch $gt:5,$lt:10
+> Press db.collectionname.find({age:{$all:[5,6,7]}}) // to find the age all 5,6,7
+
