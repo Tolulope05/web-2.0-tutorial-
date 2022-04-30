@@ -82,12 +82,14 @@ productSchema.methods.addCategory = function (newCat) {
 
 /**STATIC METHODS
  * ==============
+ * Static method are fancy ways of creating thigs, finding things, updating things and deleting things
  * > We are trying to set all products to onsale and price of all products to be 0
+ * > not one product unlike the dynamuc method.
  */
 
 productSchema.statics.fireSale = function () {
     return this.updateMany({}, { onSale: true, price: 0 })
-} //this refers to Product and not individual instances in static method
+} //this refers to entire model i.e All Products and not individual instances in static method
 
 const Product = mongoose.model('Product', productSchema);
 
@@ -108,4 +110,6 @@ const findProduct = async function () {
 
 //Static mthod calling
 Product.fireSale().then(res => console.log(res)) // {acknowledged: true, modifiedCount: 2,  upsertedId: null, upsertedCount: 0, matchedCount: 2 }  
+// All Products updated
+
 
