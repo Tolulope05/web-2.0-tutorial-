@@ -42,20 +42,21 @@ const productSchema = new Schema({
         type: String,
         enum: ['small', 'medium', 'large']
     }
-}); //
-
-const Product = mongoose.model('Product', productSchema);
-
-
+});
 
 /**
  * model Instance Methods
  * =======================
  * - A way of adding functionality to the model in addition to whatever Mangoose already have
  * - We want to define our own instance method
- */
+*/
 
 productSchema.methods.greet = function () {
     console.log(`Hello how are you today?`)
     // console.log(`Hello ${this.name}`)
 }
+
+const Product = mongoose.model('Product', productSchema);
+
+
+
