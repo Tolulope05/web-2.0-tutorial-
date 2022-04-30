@@ -81,3 +81,7 @@
 > Press db.collectionname.find({$and:[{age:5},{age:6}]}) // to find the age and 5 and 6
 > Press db.collectionname.find({$nor:[{age:5},{age:6}]}) // to find the age nor 5 nor 6
 > Press db.collectionname.find({$xor:[{age:5},{age:6}]}) // to find the age xor 5 xor 6
+
+# To delete a collection in mongo
+> Press db.collectionname.drop() //It returns true when it is successful
+> To delete a MongoDB Collection, use db.collection.drop() command

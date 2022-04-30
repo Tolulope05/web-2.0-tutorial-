@@ -96,6 +96,7 @@ const Movie = mongoose.model('Movie', movieSchema); // Model created and Movie w
  * Model.findOneAndRemove()
  * Model.findOneAndReplace()
  * Model.findOneAndUpdate()
+ * 
  * =====================================
  * NB: Always include .then(d => console.log(d)) because it is a promise.
  * Movie.find({rating:'PG-13'}).then(d => console.log(d))
@@ -104,9 +105,13 @@ const Movie = mongoose.model('Movie', movieSchema); // Model created and Movie w
  * Movie.findOne({id:'626c18fcb3844889149a406b'}).then(d => console.log(d)) // Returns pending promise with data resolved.
  * Movie.findById('626c18fcb3844889149a406b').then(d => console.log(d))
  * Movie.updateOne({title:'Amalie'},{title: 'Amadeus', year: 1984}).then(d=>console.log(d))
+ * 
  * LETS GIVE AMADEUS AND STAND BY ME 10/10 SCORE
  * Movie.updateMany({title:{$in:['Amadeus','Stand By Me']}},{score:10}).then(d=>console.log(d))
  * Movie.findOneAndUpdate({title: 'The Iron Giant'},{score: 7.0}).then(d=>console.log(d)) // Returns the Old document
  * We can pass a third option and we can specify the new option to be true, It is false by default
  * Movie.findOneAndUpdate({title: 'The Iron Giant'},{score: 7.5},{new:true}).then(d=>console.log(d)) // Returns the new document
+ * 
+ * LETS DELETE ALIEN
+ * Movie.deleteOne({title:'Alien'}).then(d=>console.log(d)) //{ acknowledged: true, deletedCount: 1 }
 */
