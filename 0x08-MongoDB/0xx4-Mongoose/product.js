@@ -58,5 +58,8 @@ productSchema.methods.greet = function () {
 
 const Product = mongoose.model('Product', productSchema);
 
+const findProduct = async function () {
+    const foundProduct = await Product.findOne({ name: "Mountain Bike" })
+}
 
 
