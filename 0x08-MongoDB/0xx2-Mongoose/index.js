@@ -38,7 +38,7 @@ const movieSchema = new Schema({
 /**THE MODEL */
 const Movie = mongoose.model('Movie', movieSchema); // Model created and Movie will changed to movies in db, (s will be added and M will be m)
 
-/**INSETING A SINGLE MOVIE */
+/**INSERTING A SINGLE MOVIE */
 // const amadeus = new Movie({
 //     title: 'Amadeus',
 //     year: 1986,
@@ -114,4 +114,9 @@ const Movie = mongoose.model('Movie', movieSchema); // Model created and Movie w
  * 
  * LETS DELETE ALIEN
  * Movie.deleteOne({title:'Alien'}).then(d=>console.log(d)) //{ acknowledged: true, deletedCount: 1 }
+ * LETS DELETE WHEN YEAR IS LESS THAN 2000.
+ * Movie.deleteMany({year:{$lt:2000}}).then(d=>console.log(d)) //{ acknowledged: true, deletedCount: 3 }
+ * Movie.findOneAndDelete({title:'Uncharted'}).then(d => console.log(d)) // Returns the deleted document
 */
+
+
