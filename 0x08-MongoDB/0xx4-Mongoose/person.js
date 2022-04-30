@@ -40,5 +40,25 @@ const temmy = new Person({ firstName: 'Tolulope', lastName: 'Fakunle' })
  * are passed control during execution of asynchronous functions. 
  * > Middleware is specified on the schema level and is useful for writing plugins.
  * > Gives us ability to run codes before and after certains things are being executed.
+ * > e.g Deleting a user from and app which includes deleting his comments, 
+ * twwets and photoes and all other things.
+ * >> .pre middleware will execute before the method is executed
+ * >> .post middleware will execute after the method is executed.
+ * check documentation for better understanding;
+ * .. This is useful when we update a review and we are able to update and manage the average review for our products.
+ * https://mongoosejs.com/docs/middleware.html#middleware
  */
+
+personSchema.pre('save', async function () {
+    this.firstName = 'Yo MAMA';
+    this.lastName = 'Yo Papa'
+
+    console.log('About to save!!!')
+}); // It didnt work for me tho
+personSchema.post('save', async function () {
+    console.log('Just Saved Successfully!!!')
+});
+
+
+
 
