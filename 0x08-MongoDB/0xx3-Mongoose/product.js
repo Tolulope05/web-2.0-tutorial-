@@ -17,17 +17,48 @@ const productSchema = new Schema({
     },
     price: {
         type: Number,
-    }
+        required: true,
+        min: 0
+    },
+    onSale: {
+        type: Boolean,
+        default: false
+    },
+    category: {
+        type: [String],
+        default: ['cycling', 'safety']
+    },
+    qty: {
+        online: {
+            type: Number,
+            default: 0
+        },
+        inStore: {
+            type: Number,
+            default: 0
+        }
+    } // Object
 }); //
 
 const Product = mongoose.model('Product', productSchema);
 
-const bike = new Product({
-    // name: 'Mountain Bike',
-    price: 599
-});
+// const bike = new Product({
+//     name: 'tire Pump',
+//     price: 20,
+//     category: ['cycling'],
+// });
 
-bike.save()
+// bike.save()
+//     .then((d) => {
+//         console.log('Product saved')
+//         console.log(d)
+//     })
+//     .catch((err) => {
+//         console.log('Error saving product')
+//         console.log(err)
+//     });
+
+Product.findOneAndUpdate({ name: 'tire Pump' }, { $set: { price: -200 } }, { new: true, runValidators: true })
     .then((d) => {
         console.log('Product saved')
         console.log(d)
@@ -35,4 +66,4 @@ bike.save()
     .catch((err) => {
         console.log('Error saving product')
         console.log(err)
-    });
+    }); // runvalidator helps make sure the updated value reponds to the standards of the schema
