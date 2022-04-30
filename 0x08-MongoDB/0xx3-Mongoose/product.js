@@ -11,12 +11,28 @@ mongoose.connect('mongodb://localhost:27017/shopApp') // Creates a database call
 const { Schema } = mongoose;
 
 const productSchema = new Schema({
-    name: String,
-    price: Number,
-    category: String,
-    image: String,
-    description: String,
-    stock: Number
-});
+    name: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number,
+    }
+}); //
 
 const Product = mongoose.model('Product', productSchema);
+
+const bike = new Product({
+    // name: 'Mountain Bike',
+    price: 599
+});
+
+bike.save()
+    .then((d) => {
+        console.log('Product saved')
+        console.log(d)
+    })
+    .catch((err) => {
+        console.log('Error saving product')
+        console.log(err)
+    });
