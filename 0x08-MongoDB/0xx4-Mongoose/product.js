@@ -80,10 +80,14 @@ productSchema.methods.addCategory = function (newCat) {
     return this.save()
 } // this refers to individual instances
 
-// STATIC METHODS
+/**STATIC METHODS
+ * ==============
+ * > We are trying to set all products to onsale and price of all products to be 0
+ */
 
-
-
+productSchema.statics.fireSale = function () {
+    return this.updateMany({}, { onSale: true, price: 0 })
+} //this refers to Product and not individual instances in static method
 
 const Product = mongoose.model('Product', productSchema);
 
@@ -100,5 +104,8 @@ const findProduct = async function () {
     console.log(foundProduct)
 
 } // Succesfully toggle product OnSale //Successfully added category
+// findProduct()
 
-findProduct()
+//Static mthod calling
+Product.fireSale().then(res => console.log(res)) // {acknowledged: true, modifiedCount: 2,  upsertedId: null, upsertedCount: 0, matchedCount: 2 }  
+
