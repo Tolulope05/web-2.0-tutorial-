@@ -58,6 +58,11 @@ const Product = mongoose.model('Product', productSchema);
 //         console.log(err)
 //     });
 
+
+/** 
+ * Validation applies automatically when something is being created, but we need to specify it when something is being updated.
+ * => runvalidator helps make sure the updated value reponds to the standards of the schema
+ */
 Product.findOneAndUpdate({ name: 'tire Pump' }, { $set: { price: -200 } }, { new: true, runValidators: true })
     .then((d) => {
         console.log('Product saved')
@@ -66,4 +71,8 @@ Product.findOneAndUpdate({ name: 'tire Pump' }, { $set: { price: -200 } }, { new
     .catch((err) => {
         console.log('Error saving product')
         console.log(err)
-    }); // runvalidator helps make sure the updated value reponds to the standards of the schema
+    });
+
+/**
+ * CUSTOM VALIDATION
+ */
