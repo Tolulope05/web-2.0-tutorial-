@@ -51,15 +51,54 @@ const productSchema = new Schema({
  * - We want to define our own instance method
 */
 
-productSchema.methods.greet = function () {
-    console.log(`Hello how are you today?`)
-    // console.log(`Hello ${this.name}`)
-}
+// productSchema.methods.greet = function () {
+//     console.log(`Hello how are you today?`)
+//     console.log(`Hello from ${this.name}`)
+// }
+
+/**IF YOU HAVE A PRODUCT ON A DASH BOARD 
+ * AND YOU WANT TO TOGGLE OR QUICKLY DISPLAY A PRODUCT 
+ * ON DASHBOARD ADMIST THOUSANDS OF PRODUCTS
+ * - TO FIND A PRODUCT AND QUICKLY MAKE IT GO ON SALE
+ * - WE CAN DEFINE A METHOD FOR IT
+ * ==============================================
+ * - We can mthods to increment values or decrement values 
+ * - We can also set properties to update the values of
+ *  some properties of some prodcts instead of having to write the logic over and over again
+ * 
+*/
+
+productSchema.methods.toggleOnSale = function () {
+    this.onSale = !this.onSale
+    return this.save()
+} // this refers to individual instances 
+
+// We can define a method to Add category
+
+productSchema.methods.addCategory = function (newCat) {
+    this.category.push(newCat)
+    return this.save()
+} // this refers to individual instances
+
+// STATIC METHODS
+
+
+
 
 const Product = mongoose.model('Product', productSchema);
 
 const findProduct = async function () {
     const foundProduct = await Product.findOne({ name: "Mountain Bike" })
-}
+    // foundProduct.greet();
 
+    // console.log(foundProduct)
+    // await foundProduct.toggleOnSale()
+    // console.log(foundProduct)
 
+    console.log(foundProduct)
+    await foundProduct.addCategory('outdoor')
+    console.log(foundProduct)
+
+} // Succesfully toggle product OnSale //Successfully added category
+
+findProduct()
