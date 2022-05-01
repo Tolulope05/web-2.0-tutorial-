@@ -28,7 +28,7 @@ app.get('/product/:id', async (req, res) => {
     const { id } = req.params;
     const product = await Product.findById(id);
     console.log('new request on port/:id');
-    res.render('producst/show', product);
+    res.render('products/show', { product });
 });
 
 const port = 3000;
