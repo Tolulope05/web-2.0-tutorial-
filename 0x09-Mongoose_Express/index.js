@@ -20,8 +20,16 @@ app.set('view engine', 'ejs');
 app.get('/product', async (req, res) => {
     const products = await Product.find({})
     res.render('products/index', { products });
-    console.log('Rendered file success')
-})
+    console.log(products)
+    console.log('New request on product/index');
+});
+
+app.get('/product/:id', async (req, res) => {
+    const { id } = req.params;
+    const product = await Product.findById(id);
+    console.log('new request on port/:id');
+    res.render('producst/show', product);
+});
 
 const port = 3000;
 app.listen(port, () => {
