@@ -17,8 +17,9 @@ mongoose.connect('mongodb://localhost:27017/farmStand') // Creates a database ca
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.get('/dogs', (req, res) => {
-    res.send('Woof!!')
+app.get('/product', (req, res) => {
+    Product.find({}) =
+        res.send('Woof!!')
 })
 const port = 3000;
 app.listen(port, () => {
