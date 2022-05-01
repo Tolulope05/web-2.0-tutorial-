@@ -47,10 +47,10 @@ const seedProducts = [
     {
         name: 'Chocolate Whole Milk',
         price: 2.69,
-        category: 'diary'
+        category: 'dairy'
 
     }
-]
+] // All items in this array needs to be validated before the insertMany will work
 
 
 Product.insertMany(seedProducts)
