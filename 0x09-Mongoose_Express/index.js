@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 app.get('/product', async (req, res) => {
     const products = await Product.find({})
     console.log(products)
-    res.send(`All prodcust will be here`)
+    res.render('products/index');
 })
 
 const port = 3000;
