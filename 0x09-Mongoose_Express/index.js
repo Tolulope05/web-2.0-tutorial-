@@ -27,11 +27,14 @@ app.get('/product', async (req, res) => {
 
 /**CREATING NEW PRODUCT */
 app.get('/product/new', (req, res) => {
-    res.render('products/new')
+    res.render('products/new');
+    console.log('New  request on Product page')
 })
-app.post('products', (req, res) => {
-    console.log(req.body);
-    res.send('making your products');
+app.post('/products', async (req, res) => {
+    // console.log(req.body);
+    const newProduct = new Product(req.body); // Saves the new product to the database
+    await newProduct.save()
+    console.log(newProduct);
 }) // reason we use app.use urlencoded
 
 app.get('/product/:id', async (req, res) => {
@@ -45,4 +48,3 @@ const port = 3000;
 app.listen(port, () => {
     console.log(`App is listening on port: ${port}`)
 });
-

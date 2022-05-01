@@ -57,3 +57,4 @@ Product.insertMany(seedProducts)
     .then(res => console.log(res))
     .catch(err => console.log(err))
 
+// NB: We only use this script to seed the database, Its not part of the APP Operation
