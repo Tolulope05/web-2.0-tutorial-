@@ -6,7 +6,7 @@ var methodOverride = require('method-override')
 
 const Product = require('./models/product')
 
-mongoose.connect('mongodb://localhost:27017/farmStand') // Creates a database called movieApp
+mongoose.connect('mongodb://localhost:27017/farmStand') // Creates a database called farmStand
     .then(() => {
         console.log('Mongo Connection OPEN')
     })
