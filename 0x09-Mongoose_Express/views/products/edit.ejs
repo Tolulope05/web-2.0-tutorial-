@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> EDIT <%= product.name %> </title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>EDIT <%= product.name %></h1>
+    <form action="/products/<%= product._id %>?_method=PUT " method="post">
+        <div>
+            <label for="name">PRODUCT NAME:</label>
+            <input type="text" name="name" placeholder="Product Name" id="name" value="<%= product.name %>" required>
+        </div>
+        <div>
+            <label for="price">PRODUCT PRICE:</label>
+            <input type="text" name="price" placeholder="Product Price" id="price" value="<%= product.price %>"
+                required>
+        </div>
+        <div>
+            <label for=" category">PRODUCT CATEGORY:</label>
+            <select name="category" id="category" value="<%= product.category %>" required>
+                <option value=" " disabled>--select--</option>
+                <option value="fruit">FRUIT</option>
+                <option value="vegetable">VEGETABLE</option>
+                <option value="dairy">DAIRY</option>
+            </select>
+        </div>
+        <button type="submit">SUBMIT</button>
+
+    </form>
+
+    <a class="cancel" href="/products/<%= product._id %>"><button>CANCEL</button></a>
+
+
+</body>
+
+</html>
