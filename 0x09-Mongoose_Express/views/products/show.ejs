@@ -18,7 +18,9 @@
     </ul>
     <a href="/product"><button>GO BACK TO ALL PRODUCTS</button></a>
     <a href="/products/<%= product._id %>/edit"><button>Edit <%= product.name %> </button></a>
-
+    <form action="/products/<%= product._id %>?_method=DELETE" method="post">
+        <button>DELETE</button>
+    </form>e
 </body>
 
 </html>
