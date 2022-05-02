@@ -24,8 +24,16 @@ app.use(methodOverride('_method')); // override with POST having ?_method=PUT
 const categories = ['fruit', 'vegetable', 'dairy'] // Added options
 
 app.get('/products', async (req, res) => {
+    const { category } = req.query;
+    if (category) {
+        const products = await Product.find({ category });
+        res.render('products/index', { products, category });
+
+    } else {
+        const products = await Product.find({});
+        res.render('products/index', { products, category: 'All' })
+    }
     const products = await Product.find({})
-    res.render('products/index', { products });
     // console.log(products)
     console.log('New request on products/index');
 });
@@ -70,7 +78,7 @@ app.delete('/products/:id', async (req, res) => {
     const { id } = req.params;
     const deletedProduct = await Product.findByIdAndDelete(id);
     console.log(deletedProduct);
-    res.redirect('/product')
+    res.redirect('/products')
 })
 
 
