@@ -14,13 +14,13 @@
         <li>ID: <%= product._id %></li>
         <li>NAME: <%= product.name %></li>
         <li>PRICE: $<%= product.price %></li>
-        <li>CATEGORY: <%= product.category %></li>
+        <li>CATEGORY: <a href="/products?category=<%= product.category %>"><%= product.category %></a></li>
     </ul>
-    <a href="/product"><button>GO BACK TO ALL PRODUCTS</button></a>
+    <a href="/products"><button>GO BACK TO ALL PRODUCTS</button></a>
     <a href="/products/<%= product._id %>/edit"><button>Edit <%= product.name %> </button></a>
     <form action="/products/<%= product._id %>?_method=DELETE" method="post">
         <button>DELETE</button>
-    </form>e
+    </form>
 </body>
 
 </html>
