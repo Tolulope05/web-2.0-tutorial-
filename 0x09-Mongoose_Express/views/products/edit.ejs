@@ -13,6 +13,10 @@
             align-items: flex-start;
             gap: 1em;
         }
+
+        button {
+            margin-top: 1em;
+        }
     </style>
 </head>
 
@@ -30,11 +34,12 @@
         </div>
         <div>
             <label for=" category">PRODUCT CATEGORY:</label>
-            <select name="category" id="category" value="<%= product.category %>" required>
-                <option value=" " disabled>--select--</option>
-                <option value="fruit">FRUIT</option>
-                <option value="vegetable">VEGETABLE</option>
-                <option value="dairy">DAIRY</option>
+
+            <select name="category" id="category" required>
+                <% for (let category of categories){ %>
+                <option value="<%= category %>" <%= product.category === category ? 'selected' : ''  %>>
+                    <%= category.toUpperCase()%> </option>
+                <% } %>
             </select>
         </div>
         <button type="submit">SUBMIT</button>
@@ -47,3 +52,15 @@
 </body>
 
 </html>
+<!-- TANGENT ON CATEGORY SELECTOR
+    ===============================
+    I applied a logic that will automatically check 
+    If product.category is a particular option,
+    It will automatically selected.
+    I used TENERY operator to check if is product category is equal to the option.
+    If it is, it will be selected.
+    If not, it will not be selected.
+    => EJS ON OPTIONS=> product.category === 'fruit' ? 'selected' : ''     
+    I USE A LOOP TO CHECK IF THE OPTION IS EQUAL TO THE PRODUCT CATEGORY
+    AND AN ARRAY TO HOLD THE CATEGORIES IN MY INDEX
+-->

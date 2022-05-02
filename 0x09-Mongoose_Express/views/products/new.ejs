@@ -44,10 +44,9 @@
         <div>
             <label for="category">PRODUCT CATEGORY:</label>
             <select name="category" id="category" required>
-                <option value=" " disabled selected>--select--</option>
-                <option value="fruit">FRUIT</option>
-                <option value="vegetable">VEGETABLE</option>
-                <option value="dairy">DAIRY</option>
+                <% for (let category of categories){ %>
+                <option value="<%= category %>"> <%= category.toUpperCase()%> </option>
+                <% } %>
             </select>
         </div>
         <button type="submit">SUBMIT</button>
