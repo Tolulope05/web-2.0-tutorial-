@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
     console.log(`REQUEST DATE: ${req.requestTime}`);
     res.send('HOME PAGE!');
-})
+});
 
 app.get('/dogs', (req, res) => {
     console.log(`REQUEST DATE: ${req.requestTime}`);
