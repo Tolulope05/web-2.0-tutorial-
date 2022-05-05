@@ -45,9 +45,15 @@ app.get('/secret', verifyPassword, (req, res, next) => {
     res.send('YOUR SECRET IS YOU TOO LIKE TO DEY CODE')
 })
 
+app.get('/admin', (req, res) => {
+    throw new AppError('You are not an Admin', 403);
+})
+
 app.use((req, res) => {
     res.status(404).send('NOT FOUND!')
 })
+
+
 
 // app.use((err, req, res, next) => {
 //     console.log('************************************');
