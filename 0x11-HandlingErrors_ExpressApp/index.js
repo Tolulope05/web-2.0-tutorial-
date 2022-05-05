@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 
+const AppError = require('./AppError')
+
 app.use(morgan('tiny'));
 
 app.use((req, res, next) => {
@@ -22,8 +24,8 @@ const verifyPassword = (req, res, next) => {
         next();
     }
     // res.send('Sorry You Need a Correct Password to access this link, \n Append ?password=YOURPASSWORD into the query string.')
-
-    throw new Error('Password Required!!!')
+    // res.status(401)
+    throw new AppError('Password Required', 401);
 }
 app.get('/', (req, res) => {
     console.log(`REQUEST DATE: ${req.requestTime}`);
@@ -47,14 +49,19 @@ app.use((req, res) => {
     res.status(404).send('NOT FOUND!')
 })
 
+// app.use((err, req, res, next) => {
+//     console.log('************************************');
+//     console.log('***************ERROR****************');
+//     console.log('************************************');
+//     // console.log(err); // Default Error.
+//     // res.status(505).send('OH BOY, ERROR FOUND!');
+//     next(err); //Tigger the next Error Handlind Middleware, The One I passed in.
+// })
+
 app.use((err, req, res, next) => {
-    console.log('************************************');
-    console.log('***************ERROR****************');
-    console.log('************************************');
-    // console.log(err); // Default Error.
-    // res.status(505).send('OH BOY, ERROR FOUND!');
-    next(err); //Tigger the next Error Handlind Middleware, The One I passed in.
-})
+    const { status = 500, message = 'Something went wrong' } = err;
+    res.status(status).send(message)
+});
 
 app.listen(3000, () => {
     console.log('App is running on localhost');
