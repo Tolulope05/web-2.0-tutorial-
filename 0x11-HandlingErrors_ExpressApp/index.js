@@ -20,14 +20,19 @@ const verifyPassword = (req, res, next) => {
     const { password } = req.query;
     if (password === 'tolulope') {
         next();
-    } else {
-        res.send('Sorry You Need a Correct Password to access this link, \n Append ?password=YOURPASSWORD into the query string.')
     }
+    // res.send('Sorry You Need a Correct Password to access this link, \n Append ?password=YOURPASSWORD into the query string.')
+
+    throw new Error('Password Required!!!')
 }
 app.get('/', (req, res) => {
     console.log(`REQUEST DATE: ${req.requestTime}`);
     res.send('HOME PAGE!');
 });
+
+app.get('/error', (req, res) => {
+    chicken.fly();
+})
 
 app.get('/dogs', (req, res) => {
     console.log(`REQUEST DATE: ${req.requestTime}`);
@@ -40,6 +45,15 @@ app.get('/secret', verifyPassword, (req, res, next) => {
 
 app.use((req, res) => {
     res.status(404).send('NOT FOUND!')
+})
+
+app.use((err, req, res, next) => {
+    console.log('************************************');
+    console.log('***************ERROR****************');
+    console.log('************************************');
+    // console.log(err); // Default Error.
+    // res.status(505).send('OH BOY, ERROR FOUND!');
+    next(err); //Tigger the next Error Handlind Middleware, The One I passed in.
 })
 
 app.listen(3000, () => {
