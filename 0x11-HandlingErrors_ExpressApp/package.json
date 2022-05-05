@@ -1,5 +1,5 @@
 {
-  "name": "0x10-middleware_intro",
+  "name": "0x11- Handling Errors in Express app",
   "version": "1.0.0",
   "description": "morgan - Logger middleware",
   "main": "index.js",
