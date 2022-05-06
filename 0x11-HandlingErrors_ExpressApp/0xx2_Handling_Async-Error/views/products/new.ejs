@@ -35,15 +35,15 @@
     <form action="/products" method="post">
         <div>
             <label for="name">PRODUCT NAME:</label>
-            <input type="text" name="name" placeholder="Product Name" id="name" required>
+            <input type="text" name="name" placeholder="Product Name" id="name">
         </div>
         <div>
             <label for="price">PRODUCT PRICE:</label>
-            <input type="number" name="price" placeholder="Product Price" id="price" required>
+            <input type="number" name="price" placeholder="Product Price" id="price">
         </div>
         <div>
             <label for="category">PRODUCT CATEGORY:</label>
-            <select name="category" id="category" required>
+            <select name="category" id="category">
                 <% for (let category of categories){ %>
                 <option value="<%= category %>"> <%= category.toUpperCase()%> </option>
                 <% } %>

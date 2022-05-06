@@ -25,17 +25,16 @@
     <form action="/products/<%= product._id %>?_method=PUT " method="post">
         <div>
             <label for="name">PRODUCT NAME:</label>
-            <input type="text" name="name" placeholder="Product Name" id="name" value="<%= product.name %>" required>
+            <input type="text" name="name" placeholder="Product Name" id="name" value="<%= product.name %>">
         </div>
         <div>
             <label for="price">PRODUCT PRICE:</label>
-            <input type="number" name="price" placeholder="Product Price" id="price" value="<%= product.price %>"
-                required>
+            <input type="number" name="price" placeholder="Product Price" id="price" value="<%= product.price %>">
         </div>
         <div>
             <label for=" category">PRODUCT CATEGORY:</label>
 
-            <select name="category" id="category" required>
+            <select name="category" id="category">
                 <% for (let category of categories){ %>
                 <option value="<%= category %>" <%= product.category === category ? 'selected' : ''  %>>
                     <%= category.toUpperCase()%> </option>
