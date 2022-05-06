@@ -23,21 +23,22 @@ app.use(methodOverride('_method')); // override with POST having ?_method=PUT
 
 const categories = ['fruit', 'vegetable', 'dairy'] // Added options
 
-app.get('/products', async (req, res, next) => {
-    try {
-        const { category } = req.query;
-        if (category) {
-            const products = await Product.find({ category });
-            res.render('products/index', { products, category });
-        } else {
-            const products = await Product.find({});
-            res.render('products/index', { products, category: 'All' })
-        }
-    } catch (error) {
-        next(error)
+/**DEFINING THE ASYNC UTILITY */
+function wrapAsync(fn) {
+    return function (req, res, next) {
+        fn(req, res, next).catch(e => next(e))
     }
+} // End of Async Utility.
 
-});
+app.get('/products', wrapAsync(async (req, res, next) => {
+    const { category } = req.query;
+    if (category) {
+        const products = await Product.find({ category });
+        res.render('products/index', { products, category });
+    }
+    const products = await Product.find({});
+    res.render('products/index', { products, category: 'All' })
+}));
 
 /**CREATING NEW PRODUCT */
 app.get('/product/new', (req, res) => {
@@ -46,67 +47,46 @@ app.get('/product/new', (req, res) => {
     console.log('New request on Product page')
 });
 
-app.post('/products', async (req, res, next) => {
-    try {
-        const newProduct = new Product(req.body);
-        await newProduct.save();
-        res.redirect(`/products/${newProduct._id}`)
-    } catch (e) {
-        next(e)
-    }
-});
+app.post('/products', wrapAsync(async (req, res, next) => {
+    const newProduct = new Product(req.body);
+    await newProduct.save();
+    res.redirect(`/products/${newProduct._id}`)
+}));
 
-app.get('/products/:id', async (req, res, next) => {
-    try {
-        const { id } = req.params;
-        const product = await Product.findById(id);
-        if (!product) {
-            return next(new AppError('Product Not Found', 404));
-        }
-        res.render('products/show', { product });
-    } catch (error) {
-        next(error)
+app.get('/products/:id', wrapAsync(async (req, res, next) => {
+    const { id } = req.params;
+    const product = await Product.findById(id);
+    if (!product) {
+        return next(new AppError('Product Not Found', 404));
     }
-});
+    res.render('products/show', { product });
+}));
 
 /**UPDATING A PRODUCT */
 // This requires a package called method override so as to chamge a post request to a put request
-app.get('/products/:id/edit', async (req, res, next) => {
-    try {
-        const { id } = req.params
-        const product = await Product.findByIdAndUpdate(id);
-        if (!product) {
-            throw new AppError('Product Not Found', 404);
-        }
-        res.render('products/edit', { product, categories });
-        console.log(`new request to edit ${product.name} `)
-    } catch (error) {
-        next(error)
+app.get('/products/:id/edit', wrapAsync(async (req, res, next) => {
+    const { id } = req.params
+    const product = await Product.findByIdAndUpdate(id);
+    if (!product) {
+        throw new AppError('Product Not Found', 404);
     }
-});
+    res.render('products/edit', { product, categories });
+    console.log(`new request to edit ${product.name} `)
+}));
 
-app.put('/products/:id', async (req, res, next) => {
-    try {
-        const { id } = req.params;
-        const product = await Product.findByIdAndUpdate(id, req.body, { runValidators: true, new: true }); //Arguments: id | how we want to update | options
-        res.redirect(`/products/${product._id}`)
-    } catch (error) {
-        next(error)
-    }
-});
+app.put('/products/:id', wrapAsync(async (req, res, next) => {
+    const { id } = req.params;
+    const product = await Product.findByIdAndUpdate(id, req.body, { runValidators: true, new: true }); //Arguments: id | how we want to update | options
+    res.redirect(`/products/${product._id}`)
+}));
 
 /** DELETING A PRODUCT */
-app.delete('/products/:id', async (req, res, next) => {
-    try {
-        const { id } = req.params;
-        const deletedProduct = await Product.findByIdAndDelete(id);
-        console.log(deletedProduct);
-        res.redirect('/products')
-    } catch (error) {
-        next(error)
-    }
-
-});
+app.delete('/products/:id', wrapAsync(async (req, res, next) => {
+    const { id } = req.params;
+    const deletedProduct = await Product.findByIdAndDelete(id);
+    console.log(deletedProduct);
+    res.redirect('/products')
+}));
 
 /** ERROR HANDLING MIDDLEWARE */
 app.use((err, req, res, next) => {
