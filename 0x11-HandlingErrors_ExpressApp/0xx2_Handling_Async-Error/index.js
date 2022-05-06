@@ -89,6 +89,19 @@ app.delete('/products/:id', wrapAsync(async (req, res, next) => {
 }));
 
 /** ERROR HANDLING MIDDLEWARE */
+
+const handleValidationErr = err => {
+    console.dir(err);
+    // return err;
+    return new AppError(`Validation Failed...${err.message}`, 400)
+}
+
+app.use((err, req, res, next) => {
+    console.log(err.name); // CastError CastError Error ValidationError
+    if (err.name === 'ValidationError') err = handleValidationErr(err)
+    next(err)
+})
+
 app.use((err, req, res, next) => {
     const { status = 500, message = 'Something went wrong!' } = err;
     res.status(status).send(message);
