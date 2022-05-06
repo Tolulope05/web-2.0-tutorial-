@@ -2,6 +2,9 @@
 
 |Basics: |
 -------------------------------
+`ni filename.extesion to create a file `
+`ni filename1, filename2, filename3 to create multiple files`
+
 type nul > app.js  - Creates a file called app.js
 copy con testfile.txt - creates a file that you can type something into
 call	calls a batch file from another one
