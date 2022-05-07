@@ -38,10 +38,9 @@ app.post('/farms', async (req, res) => {
 });
 
 app.delete('/farms/:id', async (req, res) => {
-    console.log('Deleting!!!!!!!!!!!');
-    // const farm = await Farm.findByIdAndDelete(req.params.id)
+    const farm = await Farm.findByIdAndDelete(req.params.id)
     res.redirect('/farms');
-})
+});
 
 app.get('/farms/:id', async (req, res) => {
     const farm = await Farm.findById(req.params.id)

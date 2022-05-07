@@ -8,6 +8,15 @@ const farmSchema = Schema({
     products: [{ type: Schema.Types.ObjectId, ref: 'Product' }]
 })
 
+farmSchema.pre('findOneAndDelete', async function (data) {
+    console.log('PRE MIDDLEWARE')
+    console.log(data)
+})
+farmSchema.post('findOneAndDelete', async function (data) {
+    console.log('POST MIDDLEWARE')
+    console.log(data)
+})
+
 const Farm = mongoose.model('Farm', farmSchema);
 
 module.exports = Farm;
