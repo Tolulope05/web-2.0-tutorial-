@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Product = require('./product');
 const { Schema } = mongoose;
 
 const farmSchema = Schema({
@@ -8,13 +9,24 @@ const farmSchema = Schema({
     products: [{ type: Schema.Types.ObjectId, ref: 'Product' }]
 })
 
-farmSchema.pre('findOneAndDelete', async function (data) {
-    console.log('PRE MIDDLEWARE')
-    console.log(data)
-})
-farmSchema.post('findOneAndDelete', async function (data) {
-    console.log('POST MIDDLEWARE')
-    console.log(data)
+/**DELETING MONOOSE MIDDLEWARE
+ * > Make a fake farm and delete
+ * > concluded on using post
+ */
+// farmSchema.pre('findOneAndDelete', async function (data) {
+//     console.log('PRE MIDDLEWARE')
+//     console.log(data)
+// }) // This ran but the Data that was passed wasnt real Data.
+// farmSchema.post('findOneAndDelete', async function (data) {
+//     console.log('POST MIDDLEWARE')
+//     console.log(data)
+// }) // This came out with the real Data.
+
+farmSchema.post('findOneAndDelete', async function (farm) {
+    if (farm.products.length) {
+        const res = await Product.deleteMany({ _id: { $in: farm.products } });
+        console.log(res)
+    }
 })
 
 const Farm = mongoose.model('Farm', farmSchema);
