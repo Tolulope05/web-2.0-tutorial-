@@ -32,12 +32,20 @@ const Tweet = mongoose.model('Tweet', tweetSchema);
 //     user.save();
 //     tweet1.save();
 // } // First Tweet
-const makeTweets = async () => {
-    // const user = new User({ username: 'chickenfan99', age: 99 })
-    const user = await User.findOne({ username: 'chickenfan99' })
-    const tweet1 = new Tweet({ text: 'kukuruku kukuruku wakeup dokie dokie', likes: 0 })
-    tweet1.user = user;
-    user.save();
-    tweet1.save();
-} // Second Tweet
-makeTweets();
+// const makeTweets = async () => {
+//     // const user = new User({ username: 'chickenfan99', age: 99 })
+//     const user = await User.findOne({ username: 'chickenfan99' })
+//     const tweet2 = new Tweet({ text: 'kukuruku kukuruku wakeup dokie dokie', likes: 500 })
+//     tweet2.user = user;
+//     tweet2.save();
+// } // Second Tweet
+// makeTweets();
+
+
+/**QUERYING TWEET */
+const findTweet = async () => {
+    const t = await Tweet.find({}).populate('user', 'username') // Populate user but only give me username
+    console.log(t)
+}
+
+findTweet()
