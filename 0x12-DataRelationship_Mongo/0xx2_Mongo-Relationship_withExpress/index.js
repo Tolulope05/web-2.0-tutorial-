@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 var methodOverride = require('method-override')
 
 const Product = require('./models/product')
+const Farm = require('./models/farm')
 
 mongoose.connect('mongodb://localhost:27017/farmStandTake2') // Creates a database called farmStand
     .then(() => {
@@ -21,6 +22,25 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method')); // override with POST having ?_method=PUT
 
+// FARM ROUTE
+app.get('/farms', async (req, res) => {
+    const farms = await Farm.find({})
+    res.render('farms/index', { farms })
+});
+
+app.get('/farms/new', (req, res) => {
+    res.render('farms/new')
+});
+app.post('/farms', async (req, res) => {
+    const farm = new Farm(req.body)
+    await farm.save();
+    res.redirect('/farms')
+});
+
+
+
+
+// PRODUCT ROUTE
 const categories = ['fruit', 'vegetable', 'dairy'] // Added options
 
 app.get('/products', async (req, res) => {
@@ -80,7 +100,6 @@ app.delete('/products/:id', async (req, res) => {
     console.log(deletedProduct);
     res.redirect('/products')
 })
-
 
 const port = 3000;
 app.listen(port, () => {

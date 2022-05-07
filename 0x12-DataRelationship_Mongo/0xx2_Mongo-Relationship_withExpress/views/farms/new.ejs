@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Farm</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1em;
+        }
+
+        .btn-clone {
+            display: inline;
+        }
+
+        .btn-clone a {
+            text-decoration: none;
+            color: black;
+            border: 1px solid #000;
+            padding: 3px;
+            border-radius: 3px;
+            font-size: 14px;
+            background-color: #E5E5E5;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Add A Farm</h1>
+    <form action="/farms" method="post">
+        <div>
+            <label for="name">FARM NAME:</label>
+            <input type="text" name="name" placeholder="farm Name" id="name" required>
+        </div>
+        <div>
+            <label for="city">CITY:</label>
+            <input type="text" name="city" placeholder="farm City" id="city" required>
+        </div>
+        <div>
+            <label for="email">EMAIL:</label>
+            <input type="email" name="email" placeholder="Email Address" id="email" required>
+        </div>
+        <button type="submit">SUBMIT</button>
+        <div class="btn-clone"><a href="/products">CANCEL</a></div>
+    </form>
+</body>
+
+</html>
