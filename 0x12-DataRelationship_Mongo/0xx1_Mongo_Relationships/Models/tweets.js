@@ -22,9 +22,22 @@ const tweetSchema = new Schema({
     user: { type: Schema.Types.ObjectId, ref: 'User' }
 })
 
-const productSchema = new Schema({
-    name: String,
-    city: String,
-    products: [{ type: Schema.Types.ObjectId, ref: 'Product' }]
-})
+const User = mongoose.model('User', userSchema);
+const Tweet = mongoose.model('Tweet', tweetSchema);
 
+// const makeTweets = async () => {
+//     const user = new User({ username: 'chickenfan99', age: 99 })
+//     const tweet1 = new Tweet({ text: 'omg I love my chicken family', likes: 0 })
+//     tweet1.user = user; // This is seen as an Id that can later be refrenced in the db
+//     user.save();
+//     tweet1.save();
+// } // First Tweet
+const makeTweets = async () => {
+    // const user = new User({ username: 'chickenfan99', age: 99 })
+    const user = await User.findOne({ username: 'chickenfan99' })
+    const tweet1 = new Tweet({ text: 'kukuruku kukuruku wakeup dokie dokie', likes: 0 })
+    tweet1.user = user;
+    user.save();
+    tweet1.save();
+} // Second Tweet
+makeTweets();
