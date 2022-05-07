@@ -10,6 +10,8 @@ mongoose.connect('mongodb://localhost:27017/relationshipDemo', { useNewUrlParser
         console.log(err)
     })
 
+/**ONE TO MANY */
+
 const productSchema = new Schema({
     name: String,
     price: Number,
@@ -34,10 +36,33 @@ const Farm = mongoose.model('Farm', farmSchema);
 //     { name: 'Asparagus', price: 3.99, season: 'Spring' }
 // ]);
 
-const makeFarm = async () => {
-    const farm = new Farm({ name: 'Full Belly Farms', city: 'Guinea, CA' })
-    const melon = await Product.findOne({ name: "goddess Melon" });
-    farm.products.push(melon)
-    console.log(farm);
-}
-makeFarm()
+// const makeFarm = async () => {
+//     const farm = new Farm({ name: 'Full Belly Farms', city: 'Guinea, CA' })
+//     const melon = await Product.findOne({ name: "goddess Melon" });
+//     farm.products.push(melon)
+//     await farm.save()
+//     console.log(farm);
+// } // Farms is showing it saved products ID and all the other object key parameters 
+// // But Mongo DB is only showing the object ID in the DB.
+// makeFarm()
+
+// const addProduct = async () => {
+//     const farm = await Farm.findOne({ name: 'Full Belly Farms' });
+//     const watermelon = await Product.findOne({ name: "Sugar Baby WaterMelon" });
+//     farm.products.push(watermelon);
+//     await farm.save();
+//     console.log(farm);
+// }
+// addProduct()
+
+
+/** MONGOOSE POPULATE */
+Farm.findOne({ name: 'Full Belly Farms' })
+    .populate('products') // This chanhes products from object id to its actual reference products
+    .then(farm => console.log(farm))
+
+/**ONE TO BAJILLION RELATIONSHIP
+ * ==============================
+ * > when you have more documents embeded to a document
+ * > tweets.js
+*/
