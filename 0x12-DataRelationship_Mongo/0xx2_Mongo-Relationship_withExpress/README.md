@@ -1,0 +1,13 @@
+## Mongo Relationship extends Integrating Mongoose with Express
+
+INITIAL > 
+Full CRUD with Express and Mongoose that is connected to Html Css and Js files.
++
+Filering by Category
+
+Application to manage the inventory in a Farm Stead
+> How many things are sold out
+> How many things are left
+> How many things are in stock
+> How many things are in the warehouse
+
