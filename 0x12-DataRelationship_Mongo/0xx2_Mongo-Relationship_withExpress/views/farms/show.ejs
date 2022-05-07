@@ -9,15 +9,22 @@
 </head>
 
 <body>
-    <h1><%= farm.name %> </h1>
+    <h1> <%= farm.name %> </h1>
     <ul>
-        <li>ID: <%= farm._id %></li>
-        <li>NAME: <%= farm.name %></li>
-        <li>CITY: <%= farm.city%></li>
+        <li>CITY: <%= farm.city %> </li>
         <li>EMAIL: <%= farm.email %> </li>
     </ul>
-    <a href="/farms"><button>GO BACK TO ALL FARM</button></a>
-
+    <h2>Products</h2>
+    <ul>
+        <% for( let product of farm.products) { %>
+        <li><a href="/products/<%= product._id %>"><%= product.name %></a></li>
+        <% } %>
+    </ul>
+    <a href="/farms/<%= farm._id %>/products/new">Add Product</a>
+    <a href="/farms">GO BACK TO ALL FARM</a>
+    <form method="post" action="/farm/<%= farm._id %>?_method=DELETE">
+        <button>Delete</button>
+    </form>
 </body>
 
 </html>

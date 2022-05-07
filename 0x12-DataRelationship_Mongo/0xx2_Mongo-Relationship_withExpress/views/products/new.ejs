@@ -31,8 +31,9 @@
 </head>
 
 <body>
-    <h1>Enter New PRODUCT</h1>
-    <form action="/products" method="post">
+    <h1><%= farm.name %> </h1>
+    <h1>Add New Product</h1>
+    <form action="/farms/<%= farm._id %>/products " method="post">
         <div>
             <label for="name">PRODUCT NAME:</label>
             <input type="text" name="name" placeholder="Product Name" id="name" required>
@@ -50,7 +51,7 @@
             </select>
         </div>
         <button type="submit">SUBMIT</button>
-        <div class="btn-clone"><a href="/products">CANCEL</a></div>
+        <div class="btn-clone"><a href="/farms/<%= farm._id %>">CANCEL</a></div>
     </form>
 
 </body>

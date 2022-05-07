@@ -11,3 +11,8 @@ Application to manage the inventory in a Farm Stead
 > How many things are in stock
 > How many things are in the warehouse
 
+FINAL>
+## Related Models with Reltionships with Full integration
+
+> Farm and Proucts Exist and Farm links to prodicts and Products leads to Farm in form of a relationship as a form of Data relationship in my model 
+> Fully exressing Mongo Relationship with express

@@ -11,10 +11,9 @@
 <body>
     <h1><%= product.name %> </h1>
     <ul>
-        <li>ID: <%= product._id %></li>
-        <li>NAME: <%= product.name %></li>
         <li>PRICE: $<%= product.price %></li>
         <li>CATEGORY: <a href="/products?category=<%= product.category %>"><%= product.category %></a></li>
+        <li>FARM: <a href="/farms/<%= product.farm._id %> "><%= product.farm.name%></a></li>
     </ul>
     <a href="/products"><button>GO BACK TO ALL PRODUCTS</button></a>
     <a href="/products/<%= product._id %>/edit"><button>Edit <%= product.name %> </button></a>
