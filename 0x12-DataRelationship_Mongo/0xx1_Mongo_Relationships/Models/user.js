@@ -25,6 +25,8 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema)
 
+/**ONE TO FEW */
+/**=========== */
 const makeUser = async () => {
     const u = new User({
         first: 'Tolulope',
@@ -57,3 +59,7 @@ const addAddress = async (id) => {
 } // This is a way to add an array to a Data Collection.
 
 addAddress('62759a4fe057b9f327e0018d') // Tolulope Fakunle successfully has 2 Addresses
+
+
+/**ONE TO MANY */
+/**===========*/
