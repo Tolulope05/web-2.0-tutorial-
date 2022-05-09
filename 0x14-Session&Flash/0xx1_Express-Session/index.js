@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 // var cookieParser = require('cookie-parser'); // for session, You no longer need cookie-parser
-var session = require('express-session');
+const session = require('express-session');
 
 // app.use(session({ secret: 'ssshhhhh', resave: false, saveUninitialized: true }));
 const sessionOptions = { secret: 'ssshhhhh', resave: false, saveUninitialized: true };
