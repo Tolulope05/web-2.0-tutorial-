@@ -21,5 +21,6 @@ INITIAL 2>
 
 FINAL >
 > Fully Expressing Express with Flash
-> Added Session and Flash
+> Added Session and Flash Messaging
+> Tool used: Connect-flash
 > Flashing Messages `npm install connect-flash`
