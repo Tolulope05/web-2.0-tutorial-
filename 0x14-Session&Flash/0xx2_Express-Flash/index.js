@@ -25,12 +25,17 @@ app.use(methodOverride('_method')); // override with POST having ?_method=PUT
 const sessionOptions = { secret: 'thisismysecret', resave: false, saveUninitialized: true };
 app.use(session(sessionOptions));
 app.use(flash());
+/**FLASH MIDDLEWARE */
+app.use((req, res, next) => {
+    res.locals.messages = req.flash('success')
+    next()
+})
 
 // FARM ROUTE
 app.get('/farms', async (req, res) => {
     const farms = await Farm.find({})
-    res.render('farms/index', { farms, messages: req.flash('success') })
-});
+    res.render('farms/index', { farms })
+}); // Sending messages can be quite stressful, so we can define a middleware for it
 
 app.get('/farms/new', (req, res) => {
     res.render('farms/new')
@@ -138,3 +143,5 @@ const port = 3000;
 app.listen(port, () => {
     console.log(`App is listening on port: ${port}`)
 });
+
+//Oghenerukwe 
