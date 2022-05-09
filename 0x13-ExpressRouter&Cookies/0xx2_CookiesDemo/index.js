@@ -1,8 +1,14 @@
 const express = require('express');
 const app = express();
+var cookieParser = require('cookie-parser');
+
+app.use(cookieParser());
+
 
 app.get('/greet', (req, res) => {
-    res.send('Hey there!');
+    // console.log(req.cookies); // { name: 'Henrietta', animal: 'Harlequin ' }
+    const { name = 'User' } = req.cookies;
+    res.send(`Hello ${name}`);
 })
 
 /**SENDING COOKIES */
