@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Product = require('./models/product')
 
-mongoose.connect('mongodb://localhost:27017/farmStandTake2') // Creates a database called movieApp
+mongoose.connect('mongodb://localhost:27017/flashDemo') // Creates a database called movieApp
     .then(() => {
         console.log('Mongo Connection OPEN')
     })
