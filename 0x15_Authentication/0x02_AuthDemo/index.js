@@ -21,6 +21,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({ extended: true })); // Parsing the request body
 app.use(session({ secret: 'notagoodsecret', resave: true, saveUninitialized: true }));
 
+const requireLogin = (req, res, next) => {
+    if (!req.session.user_id) {
+        return res.redirect('/login')
+    }
+    next();
+} //defining a middleware for require login
+
 app.get('/', (req, res) => {
     res.send('This is the Home Page!');
 });
@@ -61,12 +68,13 @@ app.post('/logout', async (req, res) => {
     res.redirect('/login')
 })
 
-app.get('/secret', (req, res) => {
-    if (!req.session.user_id) {
-        return res.redirect('/login')
-    }
+app.get('/secret', requireLogin, (req, res) => {
     res.render('secret')
 });
+
+app.get('/topsecret', requireLogin, (req, res) => {
+    res.send('TOP SECRET')
+})
 
 app.listen(3000, () => {
     console.log(`Listening on PORT 3000`)
